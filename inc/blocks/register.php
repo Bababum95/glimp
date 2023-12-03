@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/settings.php';
+require_once __DIR__ . '/functions/render-product-card.php';
 
 function create_glimp_block_init() {
     $blocks = [
@@ -56,13 +57,6 @@ function create_glimp_block_init() {
     
         register_block_type($dir, $args);
     }
-}
-
-function render_product_card( $product_id ) {
-    $post_object = get_post( $product_id );
-    setup_postdata( $post_object );
-    get_template_part('/woocommerce/product-card');
-    wp_reset_postdata();
 }
 
 function render_callback_common($template, $attributes, $content, $block_instance) {
