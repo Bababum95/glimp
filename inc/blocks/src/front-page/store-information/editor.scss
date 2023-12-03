@@ -1,0 +1,10 @@
+.wp-block-glimp-store-information {
+    display: block;
+
+    .block-editor-block-list__layout {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 205px 77px 205px;
+        gap: 20px;
+    }
+}

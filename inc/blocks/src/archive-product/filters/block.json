@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/filters",
+	"version": "1.0.0",
+	"icon": "admin-settings",
+	"title": "Filters",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-filters__title"
+		}
+	},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/filters",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

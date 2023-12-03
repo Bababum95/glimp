@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/comments",
+	"version": "1.0.0",
+	"title": "Product comments",
+	"icon": "welcome-comments",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/comments",
+	"editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

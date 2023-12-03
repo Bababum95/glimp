@@ -1,0 +1,60 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/bundles-simple-item",
+	"version": "1.0.0",
+	"title": "Simple item",
+	"category": "theme",
+	"icon": "align-center",
+	"description": "The part of the Bundles block.",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-bundles-simple-item__title"
+		},
+		"stuck": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-bundles-simple-item__stuck"
+		},
+		"sale": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-bundles-simple-item__price-sale"
+		},
+		"regular": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-bundles-simple-item__price-regular"
+		},
+		"mediaID": {
+			"type": "number"
+		},
+		"mediaURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".wp-block-glimp-bundles-simple-item__image",
+			"attribute": "src"
+		},
+		"path": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".wp-block-glimp-bundles-simple-item__link",
+			"attribute": "href"
+		}
+	},
+	"example": {},
+	"parent": [
+		"glimp/bundles"
+	],
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true
+		}
+	},
+	"textdomain": "glimp/bundles-simple-item",
+	"editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}

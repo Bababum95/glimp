@@ -1,0 +1,10 @@
+@import '../../assets/styles/mixins';
+
+.wp-block-glimp-individual-product-card {
+    @include product-card();
+    width: 300px;
+
+    &__button {
+        padding-bottom: 4px;
+    }
+}

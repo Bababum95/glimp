@@ -1,0 +1,18 @@
+@import '../../assets/styles/mixins';
+
+.wp-block-glimp-discovery {
+    margin: 60px 0;
+    
+    &__title {
+        @include title;
+    }
+
+    &__text,
+    &__text p {
+        @include text;
+    }
+
+    @include media('tablet') {
+        margin: 40px 0;
+    }
+}

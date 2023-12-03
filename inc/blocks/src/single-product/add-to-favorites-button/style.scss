@@ -1,0 +1,10 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.add-to-favorites {
+    @include favorite-button(38px);
+    background-color: $color-grey;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+}

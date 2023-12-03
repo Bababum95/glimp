@@ -1,0 +1,18 @@
+@import './choices.scss';
+@import '../../../../assets/styles/mixins';
+
+.wp-block-glimp-filters-attribute {
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__button {
+    @include secondary-button-style;
+
+    &.hidden {
+      display: none;
+    }
+  }
+}

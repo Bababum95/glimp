@@ -1,0 +1,15 @@
+@import '../../../../assets/styles/variables';
+
+.wp-block-glimp-bundles-item-with-description {
+    align-items: center;
+
+    &__button {
+        a {
+            color: $color-white !important;
+
+            &:hover {
+                color: $color-white !important;
+            }
+        }
+    }
+}

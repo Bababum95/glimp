@@ -1,0 +1,26 @@
+@import '../../assets/styles/mixins';
+
+.wp-block-glimp-overview {
+    margin: 60px 0;
+    border-radius: 12px;
+    box-shadow: 0px 6.90632px 17.26581px 0px rgba(0, 0, 0, 0.05);
+    background-image: url('../../assets/icons/archive-page-overview.svg');
+    padding: 30px 315px 30px 30px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    box-sizing: border-box;
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
+    }
+
+    @include media('tablet') {
+        margin: 40px 0;
+        padding: 30px 20px;
+        background-image: none;
+    }
+}

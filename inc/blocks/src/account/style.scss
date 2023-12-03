@@ -1,0 +1,25 @@
+@import '../assets/styles/variables';
+@import '../assets/styles/mixins';
+
+.wp-block-glimp-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &:hover {
+
+        path {
+            fill: $color-primary;
+            stroke: $color-primary;
+        }
+    }
+
+    @include media('phone') {
+        font-size: 0;
+    }
+}

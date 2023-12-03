@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/filters-availability",
+	"version": "1.0.0",
+	"icon": "admin-post",
+	"title": "Filters availability",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"label": {
+			"type": "string",
+			"default": "In Stock"
+		}
+	},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"parent": ["glimp/filters"],
+	"textdomain": "glimp/filters-availability",
+	"editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}

@@ -1,0 +1,66 @@
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins/submit-button';
+
+.wp-block-glimp-bundles-item-with-description {
+    @include flex-layout(flex-start, flex-end);
+    border-radius: 20px;
+    width: 100%;
+    grid-column: 1 / 3;
+    padding-left: 45px;
+    gap: 50px;
+    box-sizing: border-box;
+
+    &__content {
+        width: 415px;
+        align-self: center;
+    }
+
+    &__title {
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        margin: 0 0 12px;
+    }
+
+    &__text {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        margin: 0 0 16px
+    }
+
+    &__button a {
+        @include submit-button-primary-style;
+        @include submit-button-size(12px 48px, fit-content);
+        display: block;
+        margin: 0;
+        color: $color-white;
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+
+    @include media('tablet') {
+        img {
+            display: none;
+        }
+    }
+
+    @include media('phone') {
+        padding: 20px;
+
+        &__title {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        &__text {
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+    }
+}

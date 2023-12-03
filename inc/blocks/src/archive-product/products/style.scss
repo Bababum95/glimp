@@ -1,0 +1,11 @@
+.wp-block-glimp-all-products {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+    gap: 40px;
+    flex-basis: 100%;
+
+    &__count {
+        display: none;
+    }
+}

@@ -1,0 +1,149 @@
+@import './assets/styles/variables';
+@import './assets/styles/mixins';
+
+.header-menu {
+    gap: 20px;
+
+    ul.header-menu {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .wp-block-navigation__responsive-container {
+        max-width: 400px;
+        padding: 40px 35px;
+        box-sizing: border-box;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .wp-block-navigation__responsive-container-content {
+            padding: 0;
+        }
+    }
+
+    .divider {
+        width: 100% !important;
+        min-height: 1px;
+        background-color: rgba(255, 255, 255, 0.30);
+    }
+
+    &__link {
+        width: 100%;
+        box-sizing: border-box;
+
+        .wp-block-navigation-item__content {
+            border-radius: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+            padding: 17px 20px 17px 77px !important;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            position: relative;
+
+            &:hover {
+                background-color: $color-dark-grey;
+            }
+        }
+
+        &_einweg-e-zigarette {
+            .wp-block-navigation-item__content::before {
+                content: $einweg-e-zigarette;
+                position: absolute;
+                left: 29px;
+                top: 13px;
+            }
+        }
+
+        &_pod-system {
+            .wp-block-navigation-item__content::before {
+                content: $pod-system;
+                position: absolute;
+                left: 24px;
+                top: 13px;
+            }
+        }
+
+        &_sets {
+            .wp-block-navigation-item__content::before {
+                content: $sets;
+                position: absolute;
+                left: 15px;
+                top: 13px;
+            }
+        }
+
+        &_marken {
+            .wp-block-navigation-item__content::before {
+                content: $marken;
+                position: absolute;
+                left: 28px;
+                top: 16px;
+            }
+        }
+
+        &_geschmacker {
+            .wp-block-navigation-item__content::before {
+                content: $geschmacker;
+                position: absolute;
+                left: 19px;
+                top: 8px;
+            }
+        }
+
+        &_angebote {
+            .wp-block-navigation-item__content::before {
+                content: $angebote;
+                position: absolute;
+                left: 29px;
+                top: 16px;
+            }
+        }
+
+        &_blog {
+            .wp-block-navigation-item__content::before {
+                content: $blog;
+                position: absolute;
+                left: 25px;
+                top: 16px;
+            }
+        }
+        &_whatsapp {
+            .wp-block-navigation-item__content::before {
+                content: $whatsapp;
+                position: absolute;
+                left: 25px;
+                top: 16px;
+            }
+        }
+    }
+}
+
+.header__search {
+    flex: 1;
+    .dgwt-wcas-sf-wrapp {
+        padding: 0;
+
+        button.dgwt-wcas-search-submit {
+            top: 11px;
+            left: 13px;
+        }
+    }
+    @include media('tablet') {
+        .dgwt-wcas-search-wrapp {
+            max-width: 100%;
+        }
+
+        width: 100%;
+        flex: auto;
+        order: 2;
+    }
+}
+
+.header__right {
+    gap: 20px;
+}

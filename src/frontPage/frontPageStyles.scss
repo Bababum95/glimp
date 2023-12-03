@@ -1,0 +1,49 @@
+@import '../assets/styles/mixins';
+
+.glimp-preview {
+    img {
+        border-radius: 14px;
+    }
+
+    @include media('tablet') {
+        width: 100vw;
+        transform: translateX(-20px);
+
+        .wp-block-image {
+            margin-bottom: 12px;
+        }
+
+        img {
+            border-radius: 0;
+        }
+    }
+}
+
+.glimp-shop {
+    margin-top: 120px;
+    gap: 20px;
+    justify-content: space-between;
+
+    &__left {
+        min-width: 60px;
+    }
+
+    @include media('tablet') {
+        margin-top: 60px;
+
+        &__right {
+            display: none;
+        }
+
+        .wp-block-heading {
+            text-align: start;
+            margin: 0;
+        }
+    }
+
+    @include media('phone') {
+        .wp-block-heading {
+            font-size: 24px;
+        }
+    }
+}

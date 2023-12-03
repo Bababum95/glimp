@@ -1,0 +1,65 @@
+@import '../../assets/styles/mixins';
+
+.wp-block-glimp-top-pages {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 157px);
+    gap: 20px;
+
+    .wp-block-glimp-page-card:first-of-type {
+        grid-row: span 3;
+
+        .wp-block-glimp-page-card {
+            &__info {
+                padding: 30px;
+            }
+
+            &__title {
+                font-size: 24px;
+            }
+
+            &__bottom {
+                font-size: 16px;
+            }
+
+            &__likes,
+            &__comments {
+                @include comments-button-size(4px 6px, 22px);
+            }
+        }
+    }
+
+    @include media('desktop') {
+        display: block;
+
+        .wp-block-glimp-page-card {
+            display: none;
+
+            &:first-of-type {
+                display: block;
+
+                .wp-block-glimp-page-card {
+                    &__info {
+                        padding: 15px 15px 20px;
+                        gap: 20px;
+                    }
+
+                    &__title {
+                        font-size: 15px;
+                    }
+
+                    &__bottom {
+                        font-size: 14px;
+                    }
+
+                    &__likes,
+                    &__comments {
+                        @include comments-button-size(2px 6px, 17px);
+                    }
+                }
+            }
+        }
+    }
+}

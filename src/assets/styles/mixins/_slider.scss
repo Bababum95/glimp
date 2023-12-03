@@ -1,0 +1,37 @@
+@import './media';
+
+@mixin slider {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 100vw;
+    margin-bottom: 30px;
+}
+
+@mixin slider-wrapper($width: 300px, $gap: 20px) {
+    display: grid;
+    align-items: stretch;
+    justify-content: start;
+    grid-auto-flow: column;
+    grid-auto-columns: $width;
+    gap: $gap;
+    overflow-x: auto;
+    padding-bottom: 25px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0 calc(50vw - 650px) 20px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @include media('desktop-large') {
+        padding: 0 20px 20px;
+    }
+
+    @include media('phone') {
+        gap: 12px;
+    }
+}

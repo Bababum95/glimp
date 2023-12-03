@@ -1,0 +1,70 @@
+@import './assets/styles/mixins';
+@import './assets/styles/placeholders';
+@import './assets/styles/variables';
+
+.glimp-footer {
+
+    &__top {
+        margin-bottom: 60px;
+    }
+
+    &__heading {
+        @include responsive-font-size(22px, 25px, 25px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0 0 24px;
+    }
+
+    &__main {
+        margin-bottom: 60px;
+        border-bottom: $grey-line;
+        padding-bottom: 20px;
+
+        &-menu {
+            gap: 84px;
+        }
+
+        &-col {
+            @extend %flex-column;
+            gap: 24px;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    &__bottom {
+        border-bottom: $grey-line;
+        gap: 100px;
+        padding-bottom: 60px;
+
+        &-row {
+            gap: 12px 28px;
+        }
+
+        &-versands {
+            gap: 32px;
+        }
+    }
+
+    &__under {
+        margin: 44px 0;
+
+        &-payments {
+            gap: 46px;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 130%;
+    }
+
+    .wp-block-navigation-item__content:hover {
+        color: $color-primary;
+    }
+}

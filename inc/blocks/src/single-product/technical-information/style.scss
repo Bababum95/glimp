@@ -1,0 +1,23 @@
+@import '../../assets/styles/mixins';
+
+.wp-block-glimp-technical-information {
+    @include table('odd');
+
+    tr:nth-of-type(even) th,
+    tr:nth-of-type(even) td {
+        background-color: #ffffff !important;
+    }
+
+    .woocommerce-product-attributes-item__label,
+    .woocommerce-product-attributes-item__value {
+        font-size: 16px;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        line-height: 130%;
+        text-align: start;
+    }
+    .woocommerce-product-attributes-item__label {
+        width: 40% !important;
+        padding-left: 30px !important;
+    }
+}

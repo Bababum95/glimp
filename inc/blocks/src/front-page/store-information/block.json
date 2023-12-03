@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/store-information",
+	"version": "1.0.0",
+	"title": "Store information",
+	"category": "theme",
+	"icon": "store",
+	"description": "The part of the Glimp theme.",
+	"attributes": {},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/store-information",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

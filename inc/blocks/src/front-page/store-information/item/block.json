@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/store-information-item",
+	"version": "1.0.0",
+	"title": "Store information item",
+	"category": "theme",
+	"icon": "saved",
+	"description": "The part of the Bundles block.",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-store-information-item__title"
+		},
+		"text": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-store-information-item__text"
+		},
+		"mediaID": {
+			"type": "number",
+			"default": 0
+		},
+		"mediaURL": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {},
+	"parent": [
+		"glimp/store-information"
+	],
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"textdomain": "glimp/store-information-item",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

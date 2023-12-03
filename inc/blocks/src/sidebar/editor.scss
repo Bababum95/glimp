@@ -1,0 +1,39 @@
+.wp-block-glimp-sidebar {
+    margin-bottom: 80px;
+
+    &__navlink {
+        position: relative;
+        max-width: 310px;
+    }
+
+    &__remove-link,
+    &__add-link {
+        opacity: 0.5;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__add-link {
+        max-width: 100%;
+        width: 310px;
+        border-radius: 15px;
+        background: #F5F5F7;
+        box-sizing: border-box;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #171717;
+    }
+
+    &__remove-link {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+}

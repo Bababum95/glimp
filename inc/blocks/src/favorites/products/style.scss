@@ -1,0 +1,11 @@
+.wp-block-glimp-favorites-products {
+    display: grid;
+    justify-content: start;
+    grid-template-columns: repeat(auto-fit, 208px);
+    gap: 40px;
+    flex-basis: 100%;
+
+    &__count {
+        display: none;
+    }
+}

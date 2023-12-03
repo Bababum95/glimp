@@ -1,0 +1,57 @@
+@import './assets/styles/variables';
+@import './assets/styles/mixins';
+@import './header';
+@import './footer';
+
+@font-face {
+    font-family: 'Archivo';
+    font-display: swap;
+    src: url('./assets/fonts/Archivo.woff2') format('woff2');
+    font-weight: 400 700;
+    font-style: normal;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.wc-block-components-product-badge {
+    border: none;
+
+    &__out-of-stock {
+        @include badge-style($color-dark-grey);
+        @include badge-size(4px 14px, 14px, 6px);
+        &::after {
+            content: 'In Kürze';
+        }
+    }
+    &__sale {
+        @include badge-style($color-red);
+        @include badge-size(4px 14px, 14px, 6px);
+        &::after {
+            content: 'Sale';
+        }
+    }
+    &__nikotinfrai {
+        @include badge-style($color-secondary);
+        @include badge-size(4px 14px, 14px, 6px);
+        &::after {
+            content: 'Nikotinfrai';
+        }
+    }
+}
+
+.glimp-product-card {
+    @include product-card;
+    max-width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+    .wc-block-components-product-badge {
+        &__out-of-stock,
+        &__sale,
+        &__nikotinfrai {
+            @include badge-size(4px 8px, 12px, 5px);
+        }
+    }    
+}

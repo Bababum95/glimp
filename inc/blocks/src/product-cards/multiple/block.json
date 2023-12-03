@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/multiple-product-card",
+	"version": "1.0.0",
+	"title": "Multiple product card",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"category": {
+			"type": "number",
+			"default": 0
+		},
+		"tag": {
+			"type": "number",
+			"default": 0
+		},
+		"count": {
+			"type": "number",
+			"default": 0
+		},
+		"sort": {
+			"type": "string",
+			"default": "date"
+		},
+		"save": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"parent": ["glimp/slider"],
+	"textdomain": "glimp/multiple-product-card",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

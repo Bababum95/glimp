@@ -1,0 +1,21 @@
+.wp-block-glimp-store-information-item {
+    overflow: hidden;
+
+    &__info {
+        position: relative;
+        z-index: 3;
+    }
+
+    img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    &:first-of-type,
+    &:last-of-type {
+        img {
+            height: 100%;
+        }
+    }
+}

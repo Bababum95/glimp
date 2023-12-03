@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/related-products",
+	"version": "1.0.0",
+	"title": "Related products",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/related-products",
+	"editorScript": "file:./index.js"
+}

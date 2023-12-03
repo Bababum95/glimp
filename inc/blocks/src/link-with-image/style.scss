@@ -1,0 +1,11 @@
+.wp-block-glimp-link-with-image {
+    --full-width: fit-content;
+    width: var(--full-width);
+    display: block;
+    box-sizing: border-box;
+
+    & * {
+        width: var(--children-width);
+        box-sizing: border-box;
+    }
+}

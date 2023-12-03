@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/filters-category",
+	"version": "1.0.0",
+	"icon": "admin-post",
+	"title": "Filters category",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"placeholder": {
+			"type": "string",
+			"default": "All"
+		},
+		"id": {
+			"type": "number",
+			"default": 0
+		},
+		"type": {
+			"type": "string",
+			"default": "dropdown"
+		}
+	},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"parent": ["glimp/filters"],
+	"textdomain": "glimp/filters-category",
+	"editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}
+

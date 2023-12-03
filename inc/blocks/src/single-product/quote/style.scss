@@ -1,0 +1,53 @@
+.wp-block-glimp-quote {
+    padding: 30px 30px 50px 30px;
+    border-radius: 12px;
+    background: var(--wp--preset--color--glimp-grey, #F2F2F2);
+    position: relative;
+    margin-bottom: 100px;
+
+    &__text {
+        font-size: 16px;
+        font-style: italic;
+        line-height: 24px;
+        margin: 0;
+
+        &::before,
+        &::after {
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        &::before {
+            content: '“';
+        }
+
+        &::after {
+            content: '”';
+        }
+    }
+
+    &__author {
+        position: absolute;
+        bottom: 0;
+        right: 10%;
+        transform: translateY(50%);
+        background-image: url('../../assets/icons/quote-author.svg');
+        min-height: 110px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wp-block-glimp-quote {
+        padding: 20px 20px 40px 20px;
+        margin-bottom: 120px;
+    }
+}

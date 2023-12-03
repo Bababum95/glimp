@@ -1,0 +1,22 @@
+.wp-block-glimp-tabs {
+    &__header {
+        display: flex;
+        border-bottom: 1px solid #a1a1a1;
+    }
+
+    &__tab-title {
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: 700;
+        border: 1px solid #a1a1a1;
+        border-bottom: transparent;
+        border-radius: 10px 10px 0 0;
+        padding: 10px 20px;
+
+        &.active {
+            background-color: #F2F2F2;
+            border-color: var(--wp-components-color-accent,var(--wp-admin-theme-color,#3858e9));
+            color: var(--wp-components-color-accent,var(--wp-admin-theme-color,#3858e9));
+        }
+    }
+}

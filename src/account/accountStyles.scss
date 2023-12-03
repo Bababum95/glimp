@@ -1,0 +1,136 @@
+@import '../assets/styles/mixins';
+@import '../assets/styles/variables';
+@import '../assets/styles/mixins/submit-button';
+
+.woocommerce-account .wp-block-post-title,
+.woocommerce-account main .woocommerce,
+.woocommerce-cart .wp-block-post-title,
+.woocommerce-cart main .woocommerce,
+.woocommerce-checkout .wp-block-post-title,
+.woocommerce-checkout main .woocommerce {
+    max-width: var(--wp--style--global--content-size);
+}
+
+.glimp-login {
+    @include input;
+    @include flex-layout(flex-start, flex-start);
+    gap: 20px;
+
+    &__image {
+        box-shadow: $box-shadow;
+        border-radius: 12px;
+        width: 50%;
+    }
+
+    &__content {
+        box-shadow: $box-shadow;
+        border-radius: 12px;
+        padding: 20px;
+        overflow: hidden;
+        width: 50%;
+    }
+
+    &__heading {
+        @include flex-layout(flex-start, flex-start);
+        gap: 24px;
+        margin-bottom: 32px;
+
+        h2 {
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+            color: $color-grey-active;
+            margin: 0;
+            cursor: pointer;
+
+            &:first-of-type {
+                color: $color-black;
+                text-decoration: underline;
+                cursor: auto;
+            }
+        }
+    }
+
+    &__form {
+        width: 100%;
+        flex-shrink: 0;
+
+        &-wrapper {
+            @include flex-layout(flex-start, flex-start);
+            gap: 10%;
+            transition: all 0.3s;
+        }
+    }
+
+    &-input-container {
+        margin-bottom: 12px;
+    }
+
+    &__checkbox {
+        @include checkbox;
+    }
+
+    &__bottom {
+        @include flex-layout(space-between, center);
+        margin-top: 24px;
+    }
+
+    &__submit {
+        @include submit-button-style;
+        @include submit-button-size(12px 46px);
+        margin: 0;
+    }
+
+    &.flipped {
+        .glimp-login {
+            &__form-wrapper {
+                transform: translateX(-110%);
+            }
+
+            &__heading {
+                h2 {
+                    &:last-of-type {
+                        color: $color-black;
+                        text-decoration: underline;
+                        cursor: auto;
+                    }
+
+                    &:first-of-type {
+                        color: $color-grey-active;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media('tablet') {
+    .glimp-login {
+        &__image {
+            display: none;
+        }
+
+        &__content {
+            width: 100%;
+        }
+    }
+}
+
+@include media('phone') {
+    .glimp-login {
+        &__heading h2 {
+            font-size: 20px;
+        }
+        &__bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        &__submit {
+            width: 100%;
+        }
+    }
+}

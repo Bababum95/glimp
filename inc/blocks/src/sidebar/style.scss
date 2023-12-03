@@ -1,0 +1,51 @@
+@import '../assets/styles/variables';
+
+.wp-block-glimp-sidebar {
+    padding: 0;
+    list-style: none !important;
+    position: sticky;
+    left: 0;
+    top: $header-height;
+    height: fit-content;
+    flex-basis: 310px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    z-index: 10;
+
+    &__navlink>* {
+        display: block;
+        max-width: 310px;
+        border-radius: 12px;
+        padding: 16px 20px;
+        color: $color-black;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        box-sizing: border-box;
+        box-shadow: $box-shadow;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .wp-block-glimp-sidebar {
+        top: 0;
+        flex-basis: auto;
+        flex-direction: row;
+        overflow: auto;
+        padding: 12px 0;
+
+        &__navlink>* {
+            white-space: nowrap;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 16px;
+        }
+
+        &::-webkit-progress-bar {
+            display: none;
+        }
+    }
+}

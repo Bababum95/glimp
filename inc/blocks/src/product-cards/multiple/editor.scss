@@ -1,0 +1,6 @@
+@import '../../assets/styles/mixins';
+
+.components-surface,
+.wp-block-glimp-multiple-product-card {
+    grid-column: 1 / 3;
+}

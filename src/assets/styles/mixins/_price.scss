@@ -1,0 +1,48 @@
+@import '../variables/colors';
+@import './abstract';
+
+@mixin price-style($justify: flex-start) {
+    @include flex-layout($justify, center);
+    gap: 10px;
+
+    &>* {
+        text-decoration: none;
+    }
+
+    .amount {
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    del {
+        .amount {
+            color: $color-dark-grey;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: $color-red;
+                top: 50%;
+                left: 0;
+                transform: rotate(-10deg);
+            }
+        }
+    }
+}
+
+@mixin price-size($ins-size: 32px, $del-size: 22px) {
+    .amount {
+        font-size: $ins-size;
+    }
+    
+    del .amount {
+        font-size: $del-size;
+    }
+}

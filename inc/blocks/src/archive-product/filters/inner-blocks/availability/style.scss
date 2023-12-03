@@ -1,0 +1,4 @@
+@import '../../../../assets/styles/mixins';
+.wp-block-glimp-filters-availability {
+  @include custom-checkbox;
+}

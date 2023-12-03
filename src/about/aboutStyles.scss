@@ -1,0 +1,29 @@
+@import '../assets/styles/mixins';
+@import '../assets/styles/variables';
+
+.entry-content {
+    @include flex-layout(flex-start, flex-start);
+    gap: 20px;
+}
+
+.glimp-about {
+
+    &__section {
+        box-shadow: $box-shadow;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 0 0 20px;
+    
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    h2 {
+        @include responsive-font-size(28px, 33px, 35px);
+        margin: 0 0 20px;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+}

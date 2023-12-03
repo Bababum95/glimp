@@ -1,0 +1,23 @@
+@import '../variables/colors';
+
+@mixin badge-style($background-color) {
+    color: $color-white;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    display: inline-block;
+    background-color: $background-color;
+
+    &:first-of-type {
+        margin-right: 4px;
+    }
+}
+
+@mixin badge-size($padding, $font-size, $border-radius) {
+    padding: $padding;
+    font-size: $font-size;
+    border-radius: $border-radius;
+}
+

@@ -1,0 +1,43 @@
+.wp-block-glimp-faqs {
+    summary {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        margin-bottom: 0;
+        cursor: pointer;
+
+        &>* {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        &::after {
+            content: '+';
+        }
+    }
+
+    details {
+        border-radius: 12px;
+        background-color: #F2F2F2;
+        padding: 0 30px;
+        margin-bottom: 12px;
+
+        &[open],
+        &:hover {
+            background-color: #D8DAE0;
+        }
+
+        &[open] {
+            padding-bottom: 1px;
+
+            summary::after {
+                content: '–';
+            }
+        }
+    }
+}

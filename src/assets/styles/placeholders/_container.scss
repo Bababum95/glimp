@@ -1,0 +1,17 @@
+@import '../variables/colors';
+@import '../variables/abstract';
+
+%container-with-shadow {
+    border-radius: 12px;
+    background: $color-white;
+    padding: 20px;
+    box-shadow: $box-shadow;
+}
+
+%container-full-size-absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

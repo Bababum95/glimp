@@ -1,0 +1,173 @@
+@import '../variables/colors';
+@import '../placeholders/flex';
+
+@mixin favorite-button($width:28px) {
+    @extend %flex-center;
+    border: none;
+
+    svg {
+        width: $width;
+        height: $width;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        path {
+            fill: $color-black;
+        }
+    }
+
+    &.active {
+        background-color: $color-primary;
+
+        svg {
+            stroke: $color-white;
+
+            path {
+                fill: $color-white;
+            }
+        }
+
+        &:hover {
+            svg {
+                stroke: $color-black;
+                
+                path {
+                    fill: $color-black;
+                }
+            }
+        }
+    }
+}
+
+@mixin quantity-button {
+    @extend %flex-center;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+        background-color: $color-grey-active;
+        cursor: pointer;
+    }
+}
+
+@mixin scroll-button() {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: $color-black;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        background-color: $color-primary;
+    }
+}
+
+@mixin close-button() {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    border: none;
+    transition: all 0.2s ease-in-out;
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 18px;
+        height: 3px;
+        background-color: $color-black;
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:hover {
+        background-color: $color-black;
+
+        &::after,
+        &::before {
+            background-color: $color-white;
+        }
+    }
+}
+
+@mixin comments-button-style {
+    @extend %flex-center;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    font-family: inherit;
+    gap: 8px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    font-size: inherit;
+
+    &:hover {
+        background-color: $color-grey-active;
+        cursor: pointer;
+    }
+
+    &.active {
+        color: $color-white;
+        background-color: $color-primary;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        background-size: contain;
+    }
+}
+
+@mixin comments-button-size($padding: 6px 12px, $width-icon: 22px) {
+    padding: $padding;
+
+    &::before {
+        width: $width-icon;
+        height: $width-icon;
+    }
+}
+
+@mixin secondary-button-style {
+    border-radius: 10px;
+    color: $color-black;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-family: inherit;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    background-color: $color-grey;
+    padding: 12px 26px;
+
+    &:hover {
+        background-color: $color-grey-active;
+        cursor: pointer;
+    }
+
+    &.active {
+        color: $color-white;
+        background-color: $color-black;
+    }
+}

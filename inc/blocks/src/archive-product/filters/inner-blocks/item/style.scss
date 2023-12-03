@@ -1,0 +1,49 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+$transition: all 0.1s ease;
+
+.wp-block-glimp-filters-item {
+    --height-content: 200px;
+    margin: 32px 0;
+
+    &__label {
+        @include flex-layout(flex-start, center);
+        cursor: pointer;
+        gap: 8px;
+        margin: 0;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        &:before {
+            content: $arrow-icon;
+            height: 100%;
+            transition: $transition;
+        }
+    }
+
+    &__content {
+        max-height: var(--height-content);
+        transition: $transition;
+        padding-top: 20px;
+    }
+
+    &.hidden {
+        .wp-block-glimp-filters-item {
+            &__label {
+                &:before {
+                    transform: rotate(180deg);
+                }
+            }
+        
+            &__content {
+                overflow: hidden;
+                padding: 0;
+                max-height: 0;
+            }
+        }
+    }
+
+}

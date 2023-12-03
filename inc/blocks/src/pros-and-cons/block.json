@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/pros-and-cons",
+	"version": "1.0.0",
+	"title": "Pros and cons",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"type": {
+			"type": "string",
+			"default": "single"
+		}
+	},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/pros-and-cons",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

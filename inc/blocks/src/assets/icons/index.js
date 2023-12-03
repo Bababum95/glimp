@@ -1,0 +1,14 @@
+export { default as notificationBell } from './notification-bell.png';
+export { vapeIcon } from './vape.js';
+export { vapesIcon } from './vapes.js';
+export { upsellIcon } from './upsell.js';
+export { docsIcon } from './docs.js';
+export { sliderIcon } from './slider.js';
+export { prosAndConsIcon } from './pros-and-cons.js';
+export { relatedProductsIcon } from './related-products.js';
+export { pageIcon } from './page.js';
+export { linkWithImageIcon } from './link-with-image.js';
+export { discoveryIcon } from './discovery.js';
+export { spectrumIcon } from './spectrum.js';
+export { subscribeFormIcon } from './subscribe-form.js';
+export { sidebarIcon } from './sidebar.js';

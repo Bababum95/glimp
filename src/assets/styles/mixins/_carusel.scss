@@ -1,0 +1,33 @@
+@import './abstract';
+
+@mixin carusel() {
+    @include flex-layout(flex-start, flex-start);
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 25px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &-wrapper {
+        position: relative;
+        transform: translateX(-50%);
+        left: 50%;
+        width: 100vw;
+        margin-bottom: 30px;
+
+        &>* {
+            padding-left: calc(50vw - 650px);
+        }
+    }
+
+    &>* {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+}

@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/tab",
+	"version": "1.0.0",
+	"icon": "feedback",
+	"title": "Tab",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": "h2"
+		}
+	},
+	"usesContext": [ "glimp/tabs" ],
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"parent": ["glimp/tabs"],
+	"textdomain": "glimp/tab",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

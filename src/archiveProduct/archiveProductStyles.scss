@@ -1,0 +1,13 @@
+@import '../assets/styles/mixins';
+
+.glimp-category {
+    @include slider;
+
+    &>ul {
+        @include slider-wrapper(198px, 20px);
+    }
+}
+
+.glimp-main {
+    gap: 50px;
+}

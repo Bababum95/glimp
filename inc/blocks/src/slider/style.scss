@@ -1,0 +1,70 @@
+@import '../assets/styles/placeholders';
+@import '../assets/styles/mixins';
+
+.wp-block-glimp-slider {
+    --slider-gap: 30px;
+    --width-teamplate-desctop: 260px;
+    --width-teamplate-phone: 200px;
+    @include slider;
+
+    &__wrapper {
+        @include slider-wrapper(var(--width-teamplate-desctop), var(--slider-gap));
+    }
+
+    &__button {
+        @include scroll-button();
+        position: absolute;
+        top: 50%;
+        transform: translate(0, calc(-50% - 12px));
+
+        &::after {
+            @extend %container-full-size-absolute;
+            content: '';
+            background-image: url(../assets/icons/arow.svg);
+            background-repeat: no-repeat;
+            background-position: 55% 50%;
+        }
+
+        &.left {
+            left: calc(50vw - 675px);
+
+            &::after {
+                transform: rotate(-180deg);
+            }
+        }
+
+        &.right {
+            right: calc(50vw - 675px);
+        }
+
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+        }
+    }
+
+    .wp-block-image {
+        margin-bottom: 0;
+    }
+
+    @include media('desktop-large') {
+        &__button {
+            &.left {
+                left: 10px;
+            }
+            &.right {
+                right: 10px;
+            }
+        }
+    }
+
+    @include media('phone') {
+        &__wrapper {
+            grid-auto-columns: var(--width-teamplate-phone);
+        }
+        &__button {
+            transform: translate(0, calc(-50% - 12px)) scale(0.6);
+        }
+    }
+}

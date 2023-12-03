@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/technical-information",
+	"version": "1.0.0",
+	"title": "Technical information",
+	"icon": "editor-table",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/technical-information",
+	"editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}
