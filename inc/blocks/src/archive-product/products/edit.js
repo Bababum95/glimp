@@ -17,7 +17,7 @@ export const Edit = ({ attributes, setAttributes }) => {
 
 	const getOptions = (arr) => {
 		return arr.map((el) => {
-			return { label: el.name, value: el.id }
+			return { label: el.name, value: el.slug }
 		})
 	}
 
@@ -32,6 +32,7 @@ export const Edit = ({ attributes, setAttributes }) => {
 		api.get('products/attributes')
 			.then(({ data }) => {
 				const newOptions = getOptions(data);
+				console.log(data)
 				setAttributesOptions(newOptions)
 			})
 	}, []);

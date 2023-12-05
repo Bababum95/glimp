@@ -6,16 +6,49 @@
 @import './price';
 @import './media';
 
+@mixin product-card-link($radius: 12px) {
+    box-shadow: $box-shadow;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius;
+    position: relative;
+    overflow: hidden;
+}
+
+@mixin product-card-title($size: 16px) {
+    font-size: $size;
+    line-height: 115%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+@mixin product-card-rating() {
+    border-radius: 7px;
+    padding: 6px 10px;
+    background-color: $color-white;
+    box-sizing: border-box;
+
+    &::before {
+        content: "★";
+        color: $color-gold-star;
+        font-size: 15px;
+    }
+
+    &::after {
+        content: attr(data-rating);
+        font-size: 15px;
+        color: $color-black;
+    }
+}
 
 @mixin product-card() {
     &__link {
+        @include product-card-link;
         @extend %flex-column;
-        box-shadow: $box-shadow;
-        width: 100%;
-        height: 100%;
-        border-radius: 12px;
-        position: relative;
-        overflow: hidden;
     }
 
     img {
@@ -39,16 +72,8 @@
     }
 
     &__title {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-        font-size: 16px;
-        font-style: normal;
+        @include product-card-title;
         font-weight: 400;
-        line-height: 115%;
         flex: 1;
         margin: 12px 0 16px;
         box-sizing: border-box;
@@ -105,21 +130,7 @@
     }
 
     &__rating {
-        border-radius: 7px;
-        padding: 6px 10px;
-        background-color: $color-white;
-        box-sizing: border-box;
-
-        &::before {
-            content: "★";
-            color: $color-gold-star;
-            font-size: 15px;
-        }
-
-        &::after {
-            content: attr(data-rating);
-            font-size: 15px;
-        }
+        @include product-card-rating;
     }
 
     @include media('phone') {

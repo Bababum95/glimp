@@ -1,3 +1,8 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/placeholders';
+@import '../../assets/styles/mixins/submit-button';
+
 .wp-block-glimp-all-products {
     display: grid;
     justify-content: center;
@@ -5,7 +10,133 @@
     gap: 40px;
     flex-basis: 100%;
 
+    &_list {
+        flex-basis: 100%;
+    }
+
     &__count {
         display: none;
+    }
+}
+
+.glimp-product-big-card {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 232px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__link {
+        @include product-card-link(16px);
+        display: flex;
+    }
+
+    img {
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        height: 100%;
+        width: auto;
+    }
+
+    &__image {
+        aspect-ratio: 1/1;
+        flex-shrink: 0;
+        height: 100%;
+    }
+
+    &__info {
+        @extend %flex-column;
+        gap: 8px;
+        padding: 20px 20px 20px 28px;
+        box-sizing: border-box;
+        width: 100%
+    }
+
+    &__title {
+        @include product-card-title(18px);
+        margin: 0;
+        font-weight: 600;
+        max-width: 530px;
+        padding-right: 60px;
+        box-sizing: content-box;
+    }
+
+    .wc-block-components-product-badge {
+        &__out-of-stock,
+        &__sale,
+        &__nikotinfrai {
+           padding-inline: 24px;
+        }
+    }   
+
+    .add-to-favorites {
+        @include favorite-button(33px);
+        background-color: $color-grey;
+        border-radius: 10px;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    &__rating {
+        @include product-card-rating;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    &__main {
+        @include flex-layout(space-between, flex-end);
+        margin-top: auto;
+    }
+
+    &__left {
+        display: flex;
+        gap: 52px;
+    }
+
+    &__table {
+        font-size: 14px;
+        font-style: normal;
+        line-height: 115%;
+        color: $color-dark-grey;
+        tbody {
+            border-spacing: 0 8px;
+        }
+
+        &-label {
+            font-weight: 500;
+            padding-right: 16px;
+        }
+
+        &-value {
+            font-weight: 300;
+        }
+    }
+
+    &__right {
+        @extend %flex-column;
+        align-items: flex-end;
+        gap: 17px;
+        margin-bottom: 6px;
+    }
+
+    &__price {
+        @include price-style;
+        @include price-size(20px, 13px);
+    }
+
+    &__button {
+        @include submit-button-primary-style;
+        @include submit-button-size(12px 18px, auto, 40px, 10px, 15px);
+
+        &.loading {
+            padding: 4px;
+            max-width: 40px;
+        }
     }
 }

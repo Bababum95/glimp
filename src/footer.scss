@@ -1,9 +1,9 @@
 @import './assets/styles/mixins';
 @import './assets/styles/placeholders';
 @import './assets/styles/variables';
+@import './assets/styles/mixins/submit-button';
 
 .glimp-footer {
-
     &__top {
         margin-bottom: 60px;
     }
@@ -35,6 +35,42 @@
         }
     }
 
+    &__subscribe {
+        display: flex;
+        gap: 8px;
+        max-width: 480px;
+        margin-bottom: 12px;
+    
+        &-input {
+            flex: 1;
+            max-width: 338px;
+            box-sizing: border-box;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: none;
+            background-color: $color-grey;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            outline: none;
+            
+            &::placeholder {
+                color: $color-grey-active;
+            }
+    
+            &:focus {
+                background-color: $color-grey-active;
+            }
+        }
+    
+        &-button {
+            @include submit-button-secondary-style;
+            @include submit-button-size(16px 32px);
+            flex-shrink: 0;
+        }
+    }
+
     &__bottom {
         border-bottom: $grey-line;
         gap: 100px;
@@ -62,6 +98,12 @@
         font-style: normal;
         font-weight: 300;
         line-height: 130%;
+        margin: 0;
+
+        a {
+            text-decoration-line: underline;
+            font-size: inherit;
+        }
     }
 
     .wp-block-navigation-item__content:hover {

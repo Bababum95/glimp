@@ -1,6 +1,6 @@
 import { addToCart } from './helpers/addToCart';
 import { addToFavorites, removeFromFavorites } from './helpers/api';
-const addToCartButtons = document.querySelectorAll('.glimp-product-card__button');
+const addToCartButtons = document.querySelectorAll('button[data-action="add-to-cart"]');
 const addToFavoritesButtons = document.querySelectorAll('.add-to-favorites');
 
 addToCartButtons.forEach((button) => {

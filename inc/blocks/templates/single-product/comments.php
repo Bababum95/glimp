@@ -2,7 +2,7 @@
 
 $args = [
     'post_id' => get_the_ID(),
-    'status' => 'all',
+    'status' => 'approve',
     'comment_type' => 'review'
 ];
 $reviews = get_comments($args);

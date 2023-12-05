@@ -18,6 +18,10 @@
 		"count": {
 			"type": "number",
 			"default": 0
+		},
+		"variationIds": {
+			"type": "array",
+			"default": []
 		}
 	},
 	"example": {},

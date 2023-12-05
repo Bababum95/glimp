@@ -1,17 +1,18 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { useEffect, useState } from '@wordpress/element';
-import { Spinner, ToggleControl, RangeControl } from '@wordpress/components';
+import { Spinner, ToggleControl, RangeControl, SelectControl } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { Sidebar, ProductCard, ProductSelect } from '../components';
 import { useWooCommerceApi } from '../../assets/hoocks';
 import './editor.scss';
 
 export function Edit({ attributes, setAttributes }) {
-	const { id, variation, count } = attributes;
+	const { id, variation, count, variationIds } = attributes;
 	const blockProps = useBlockProps();
 	const api = useWooCommerceApi();
 	const [currentProduct, setCurrentProduct] = useState(null);
 	const [currentProductType, setCurrentProductType] = useState(null);
+	const [variations, setVariations] = useState([]);
 	const products = useSelect((select) => {
 		return select('core').getEntityRecords('postType', 'product', { per_page: -1 });
 	}, []);
@@ -20,6 +21,27 @@ export function Edit({ attributes, setAttributes }) {
 		return { label: product.title.rendered, value: product.id }
 	})
 
+	const getOptions = (arr) => {
+		return arr.map((el) => {
+			return { label: el.name, value: el.id }
+		})
+	}
+
+	const handleChange = (value, index) => {
+		const updatedIds = [...variationIds];
+		updatedIds[index] = value;
+		setAttributes({ variationIds: updatedIds });
+	};
+
+
+	useEffect(() => {
+		if (!id || !variation) return;
+		api.get(`products/${id}/variations`)
+			.then(data => {
+				setVariations(data.data);
+			})
+	}, [id, variation]);
+
 	useEffect(() => {
 		if (!id || !products) return;
 		const selectedProduct = products.find(product => product.id === id);
@@ -27,7 +49,7 @@ export function Edit({ attributes, setAttributes }) {
 			api.get(`products/${id}`)
 				.then(product => {
 					setCurrentProductType(product.data.type)
-				})
+				});
 			setCurrentProduct({
 				imageId: selectedProduct.featured_media,
 				title: selectedProduct.title.rendered,
@@ -64,6 +86,13 @@ export function Edit({ attributes, setAttributes }) {
 											checked={count === -1}
 											onChange={(value) => setAttributes({ count: value ? -1 : 10 })}
 										/>
+										{count > 0 && Array(count).fill(0).map((el, i) => (
+											<SelectControl
+												options={getOptions(variations)}
+												value={variationIds[i] ?? handleChange(variations[i].id, i)}
+												onChange={(value) => handleChange(value, i)}
+											/>
+										))}
 									</>
 								)}
 							</>

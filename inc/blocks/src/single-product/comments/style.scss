@@ -59,7 +59,7 @@
         }
 
         &-button {
-            @include submit-button-style;
+            @include submit-button-primary-style;
             @include submit-button-size(13px, 100%);
         }
     }
@@ -68,7 +68,7 @@
         flex-basis: 626px;
 
         &-button {
-            @include submit-button-style;
+            @include submit-button-primary-style;
             @include submit-button-size(13px, 400px);
             display: block;
             min-height: 44px;
@@ -206,6 +206,7 @@
             border-radius: 16px;
             box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
             max-width: 634px;
+            width: calc(100% - 40px);
             position: relative;
             padding: 10px 40px;
             box-sizing: border-box;
@@ -363,7 +364,7 @@
         }
 
         &-button {
-            @include submit-button-style;
+            @include submit-button-primary-style;
             @include submit-button-size(20px, 100%);
             margin-top: 16px;
 

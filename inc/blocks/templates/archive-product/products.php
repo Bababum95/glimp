@@ -1,6 +1,18 @@
 <?php
 
-$wrapper = '<div ' . wp_kses_data(get_block_wrapper_attributes());
+$is_grid = $attributes['view'] == 'grid';
+
+$render_product_card_function = function($product_id) {
+	render_product_card($product_id);
+};
+if(!$is_grid) {
+    $render_product_card_function = function($product_id) use ($attributes) {
+        render_product_big_card($product_id, $attributes['attributes']);
+    };
+}
+
+$wrapper_class = $is_grid ? 'wp-block-glimp-all-products' : 'wp-block-glimp-all-products_list';
+$wrapper = '<div class="' . $wrapper_class . '"';
 
 $queried_object = get_queried_object();
 if ($queried_object instanceof WP_Term) {
@@ -52,11 +64,11 @@ if (woocommerce_product_loop()) {
 					$variations_ids = $product->get_children();
 
 					foreach ($variations_ids as $variation_id) {
-						render_product_card($variation_id);
+						$render_product_card_function($variation_id);
 						$cards_count++;
 					}
 				} else {
-					render_product_card($product_id);
+					$render_product_card_function($product_id);
 					$cards_count++;
 				}
 			}
