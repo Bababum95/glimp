@@ -38,6 +38,8 @@ export interface IProductData {
   is_in_stock: boolean;
   is_on_sale: boolean;
   is_variation: boolean;
+  is_variable: boolean;
+  is_favorite?: boolean;
   link: string;
   name: string;
   nikotinfrai: boolean;

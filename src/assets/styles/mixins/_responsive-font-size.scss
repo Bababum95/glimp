@@ -2,11 +2,10 @@
 
 @mixin responsive-font-size($small, $medium, $large) {
     font-size: $large;
-
-    @include media('phone') {
-        font-size: $small;
-    }
     @include media('tablet') {
         font-size: $medium;
+    }
+    @include media('phone') {
+        font-size: $small;
     }
 }

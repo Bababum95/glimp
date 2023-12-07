@@ -4,12 +4,16 @@
 @import './assets/styles/mixins/submit-button';
 
 .glimp-footer {
+    .wp-block-image {
+        margin: 0;
+    }
+
     &__top {
         margin-bottom: 60px;
     }
 
     &__heading {
-        @include responsive-font-size(22px, 25px, 25px);
+        @include responsive-font-size(18px, 22px, 25px);
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -19,10 +23,22 @@
     &__main {
         margin-bottom: 60px;
         border-bottom: $grey-line;
-        padding-bottom: 20px;
+        padding-bottom: 44px;
 
         &-menu {
             gap: 84px;
+            margin-bottom: 0;
+
+            @include media('desktop-large') {
+                gap: 10px;
+                justify-content: space-between;
+            }
+        }
+
+        &-right {
+            @extend %flex-column;
+            justify-content: space-between;
+            min-width: 385px;
         }
 
         &-col {
@@ -35,12 +51,29 @@
         }
     }
 
+    &__whatsapp {
+        display: none !important;
+    }
+
+    &__social {
+        gap: 20px;
+
+        .wp-block-glimp-link-with-image {
+            width: 25px;
+            transition: all 0.2s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
     &__subscribe {
         display: flex;
-        gap: 8px;
+        gap: 4px;
         max-width: 480px;
         margin-bottom: 12px;
-    
+
         &-input {
             flex: 1;
             max-width: 338px;
@@ -54,16 +87,16 @@
             font-weight: 500;
             line-height: normal;
             outline: none;
-            
+
             &::placeholder {
                 color: $color-grey-active;
             }
-    
+
             &:focus {
                 background-color: $color-grey-active;
             }
         }
-    
+
         &-button {
             @include submit-button-secondary-style;
             @include submit-button-size(16px 32px);
@@ -82,6 +115,20 @@
 
         &-versands {
             gap: 32px;
+        }
+
+        &-mitglied {
+            gap: 32px;
+            align-items: flex-end;
+
+            .wp-block-glimp-link-with-image {
+                width: 75px;
+                transition: all 0.2s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
         }
     }
 
@@ -108,5 +155,122 @@
 
     .wp-block-navigation-item__content:hover {
         color: $color-primary;
+    }
+
+    @include media('desktop') {
+        &__main-right {
+            order: -1;
+            max-width: 480px;
+            gap: 16px;
+        }
+
+        &__bottom {
+            gap: 10px;
+        }
+
+        &__main,
+        &__under {
+            flex-direction: column;
+            gap: 60px;
+        }
+    }
+
+    @include media('tablet') {
+        &__main {
+
+            &>.wp-block-column:first-of-type {
+                width: 100%;
+            }
+
+            &-menu {
+                gap: 40px 0;
+
+                .wp-block-column {
+                    max-width: 170px;
+                }
+            }
+        }
+
+        &__bottom {
+            gap: 60px;
+        }
+    }
+
+    @include media('phone') {
+
+        p:not(.glimp-footer__heading),
+        li,
+        span,
+        a {
+            font-size: 15px;
+        }
+
+        &__social {
+            gap: 10px;
+            width: 100%;
+            justify-content: space-between;
+
+            .wp-block-glimp-link-with-image {
+                width: 20px;
+            }
+        }
+
+        &__main {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+
+            &-menu {
+                .wp-block-column {
+                    max-width: 150px;
+                }
+
+                .wp-block-column:last-of-type {
+                    max-width: 100%;
+                    order: -1;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    &>* {
+                        width: 150px;
+                    }
+
+                    .glimp-footer__heading {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &-col {
+                gap: 16px 0;
+            }
+
+            &-right {
+                min-width: 0;
+
+                &>div {
+                    justify-content: space-between !important;
+                }
+            }
+        }
+
+        &__whatsapp {
+            display: block !important;
+        }
+
+        &__subscribe {
+
+            &-input {
+                font-size: 15px;
+                width: 100%;
+            }
+        }
+
+
+        &__bottom {
+            gap: 60px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+        }
     }
 }

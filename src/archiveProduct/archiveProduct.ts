@@ -1,4 +1,4 @@
-import { products } from '../helpers/api';
+import { products, getFavorites } from '../helpers/api';
 import { ICurrentFilters, IProductData, IFilterResult, IFilterResultPair, IResponseProducts } from '../interfaces';
 import { createProductCard } from '../helpers/createProductCard';
 
@@ -20,6 +20,7 @@ let isLoading = false;
 let productCount: string | number = productsContainer
   ?.querySelector('.wp-block-glimp-all-products__count')
   ?.getAttribute('data-count') as string;
+let favoritesList: number[] = [];
 const filterResultsMap = new Map<string, IFilterResultPair>();
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -79,6 +80,7 @@ const loadNewProduct = () => {
 const getProductsList = (data: IProductData[]) => {
   const fragment = document.createDocumentFragment();
   data.forEach((product: IProductData) => {
+    if (favoritesList.includes(product.id)) product.is_favorite = true;
     const card = createProductCard(product);
     fragment.appendChild(card);
   });
@@ -132,6 +134,12 @@ if (inStockElement && inStockElement instanceof HTMLInputElement) {
   })
 }
 
+getFavorites()
+  .then((data) => {
+    if (data) {
+      favoritesList = data.data;
+    }
+  });
 filterSelects?.forEach((select) => {
   const taxonomy = select.getAttribute('data-slug');
 

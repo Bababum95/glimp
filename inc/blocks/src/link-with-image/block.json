@@ -17,6 +17,10 @@
 		"fullPage": {
 			"type": "boolean",
 			"default": false
+		},
+		"target": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"example": {},

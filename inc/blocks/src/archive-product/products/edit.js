@@ -32,7 +32,6 @@ export const Edit = ({ attributes, setAttributes }) => {
 		api.get('products/attributes')
 			.then(({ data }) => {
 				const newOptions = getOptions(data);
-				console.log(data)
 				setAttributesOptions(newOptions)
 			})
 	}, []);

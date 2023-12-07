@@ -30,6 +30,13 @@ export const Edit = ({ attributes, setAttributes }) => {
                             setAttributes({ fullPage })
                         }
                     />
+                    <ToggleControl
+                        label="Open in new tab"
+                        checked={attributes.target}
+                        onChange={(target) =>
+                            setAttributes({ target })
+                        }
+                    />
                 </PanelBody>
             </InspectorControls>
         </div>

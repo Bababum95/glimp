@@ -47,6 +47,7 @@ function woocommerce_ajax_remove_from_favorites() {
         $favorites = get_user_meta($user_id, 'user_favorites', true) ?: array();
         if (($key = array_search($product_id, $favorites)) !== false) {
             unset($favorites[$key]);
+            $favorites = array_values($favorites);
             update_user_meta($user_id, 'user_favorites', $favorites);
         }
     } else {
@@ -56,6 +57,7 @@ function woocommerce_ajax_remove_from_favorites() {
         $_SESSION['user_favorites'] = $_SESSION['user_favorites'] ?? array();
         if (($key = array_search($product_id, $_SESSION['user_favorites'])) !== false) {
             unset($_SESSION['user_favorites'][$key]);
+            $_SESSION['user_favorites'] = array_values($_SESSION['user_favorites']);
         }
         $favorites = $_SESSION['user_favorites'];
     }

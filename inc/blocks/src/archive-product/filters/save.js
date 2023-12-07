@@ -5,12 +5,15 @@ export const Save = ({ attributes }) => {
 
 	return (
 		<div { ...blockProps }>
-			<RichText.Content
-				tagName="p"
-				value={attributes.title}
-				className='wp-block-glimp-filters__title'
-			/>
-			<InnerBlocks.Content />
+			<div className='wp-block-glimp-filters__container'>
+				<RichText.Content
+					tagName="p"
+					value={attributes.title}
+					className='wp-block-glimp-filters__title'
+				/>
+				<button className='wp-block-glimp-filters__close' />
+				<InnerBlocks.Content />
+			</div>
 		</div>
 	);
 };

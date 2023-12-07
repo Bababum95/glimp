@@ -37,9 +37,7 @@ $imageWidth = $direction === 'column' ? '100%' : '50%';
             </h3>
             <div class="wp-block-glimp-page-card__bottom">
                 <div class="wp-block-glimp-page-card__buttons">
-                    <button class='wp-block-glimp-page-card__likes'>
-                        0
-                    </button>
+                    <?php echo render_page_like_button($page_id); ?>
                     <button class='wp-block-glimp-page-card__comments'>
                         <?php echo $comment_count; ?>
                     </button>

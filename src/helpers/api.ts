@@ -76,6 +76,16 @@ const getFavorites = () => {
         .then(getResponseData);
 }
 
+const addPageLike = (productId: string) => {
+    return fetch(`${ajaxUrl}add_page_like&post_id=${productId}`)
+        .then(getResponseData);
+}
+
+const removePageLike = (productId: string) => {
+    return fetch(`${ajaxUrl}remove_page_like&post_id=${productId}`)
+        .then(getResponseData);
+}
+
 export {
     auth,
     forgotPassword,
@@ -83,5 +93,7 @@ export {
     addToFavorites,
     removeFromFavorites,
     getFavorites,
+    addPageLike,
+    removePageLike,
     products
 };

@@ -167,6 +167,7 @@ class Products_Handler {
             'id' => $id,
             'parent_id' => $parent_id,
             'is_variation' => $is_variation,
+            'is_variable' => $product->is_type('variable'),
             'link' => $product_permalink,
             'name' => $product->get_name(),
             'price' => $price,

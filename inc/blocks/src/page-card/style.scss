@@ -55,10 +55,10 @@
 
     &__likes::before {
         background-image: url(../../../../assets/icons/Thumbs\ Up\ default.png);
+    }
 
-        &.active {
-            background-image: url(../../../../assets/icons/Thumbs\ Up\ active.png);
-        }
+    &__likes.active::before {
+        background-image: url(../../../../assets/icons/Thumbs\ Up\ active.png);
     }
 
     &__comments::before {

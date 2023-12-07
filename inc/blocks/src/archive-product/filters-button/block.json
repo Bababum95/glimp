@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/filters-button",
+	"version": "1.0.0",
+	"title": "Filters button",
+	"icon": "admin-settings",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/filters-button",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

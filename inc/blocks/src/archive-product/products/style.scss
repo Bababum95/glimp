@@ -17,6 +17,11 @@
     &__count {
         display: none;
     }
+
+    @include media('desktop') {
+        flex-basis: auto;
+        width: 100%;
+    }
 }
 
 .glimp-product-big-card {
