@@ -7,11 +7,13 @@ export function createPopup(popup: HTMLElement) {
 
     const close = () => {
         popup.classList.remove('open');
+        document.querySelector('body')?.classList.remove('no-scroll');
         document.removeEventListener('keydown', handleEscape);
     };
 
     const open = () => {
         popup.classList.add('open');
+        document.querySelector('body')?.classList.add('no-scroll');
         document.addEventListener('keydown', handleEscape);
     };
 

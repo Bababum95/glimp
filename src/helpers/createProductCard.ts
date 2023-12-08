@@ -100,7 +100,7 @@ const getBadges = (data: IProductData): HTMLElement => {
         badgesDiv.appendChild(nikotinfraiBadge);
     }
 
-    if (data.is_on_sale) {
+    if (data.is_on_sale && data.is_in_stock) {
         const onSaleBadge = document.createElement('span');
         onSaleBadge.className = 'wc-block-components-product-badge__sale';
         badgesDiv.appendChild(onSaleBadge);

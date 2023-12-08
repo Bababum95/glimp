@@ -6,6 +6,7 @@ export const Save = ({ attributes }) => {
 	return (
 		<div { ...blockProps }>
 			<div className='wp-block-glimp-filters__container'>
+				<div className='wp-block-glimp-filters__resizer'/>
 				<RichText.Content
 					tagName="p"
 					value={attributes.title}

@@ -68,8 +68,12 @@ if (!function_exists('glimp_enqueue_scripts')) :
             glimp_enqueue_dynamic_script('archiveProductStyles-', 'archiveProduct-');
         }
 
-        if (is_account_page()) {
-            glimp_enqueue_dynamic_script('accountStyles-', 'account-');
+        // if (is_account_page()) {
+        //     glimp_enqueue_dynamic_script('accountStyles-', 'account-');
+        // }
+
+        if (!is_user_logged_in()) {
+            glimp_enqueue_dynamic_script('loginFormStyles-', 'loginForm-');
         }
 
         if ( is_front_page() ) {

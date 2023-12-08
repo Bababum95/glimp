@@ -1,4 +1,5 @@
 @import '../assets/styles/mixins';
+@import '../assets/styles/placeholders';
 @import '../assets/styles/variables';
 @import '../assets/styles/mixins/submit-button';
 
@@ -105,10 +106,8 @@
             }
         }
     }
-}
 
-@include media('tablet') {
-    .glimp-login {
+    @include media('tablet') {
         &__image {
             display: none;
         }
@@ -117,20 +116,77 @@
             width: 100%;
         }
     }
-}
 
-@include media('phone') {
-    .glimp-login {
+    @include media('phone') {
         &__heading h2 {
             font-size: 20px;
         }
+
         &__bottom {
             flex-direction: column;
             align-items: flex-start;
             gap: 16px;
         }
+
         &__submit {
             width: 100%;
+        }
+    }
+}
+
+.wp-block-glimp-account__popup {
+    @include popup-overlay;
+    @extend %flex-center;
+
+    &-container {
+        @include popup-container(1100px, 40px);
+    }
+
+    &-close {
+        @include close-button;
+    }
+
+    &-title {
+        display: none;
+    }
+
+    .glimp-login {
+        &__image {
+            width: 40%;
+            aspect-ratio: 390 / 350;
+            object-fit: cover;
+        }
+
+        &__content {
+            width: 60%;
+        }
+    }
+
+    &.simple &-container {
+        max-width: 634px;
+    }
+
+    &.simple &-title {
+        display: block;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        margin: 0 0 40px;
+    }
+
+    &.simple {
+        .glimp-login {
+            &__image {
+                display: none;
+            }
+
+            &__content {
+                width: 100%;
+                padding: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
         }
     }
 }

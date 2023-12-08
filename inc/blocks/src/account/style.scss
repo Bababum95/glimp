@@ -12,6 +12,8 @@
     line-height: normal;
 
     &:hover {
+        color: $color-primary;
+        cursor: pointer;
 
         path {
             fill: $color-primary;

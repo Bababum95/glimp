@@ -22,6 +22,11 @@
         flex-basis: auto;
         width: 100%;
     }
+
+    @include media('phone') {
+        grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+        gap: 20px;
+    }
 }
 
 .glimp-product-big-card {

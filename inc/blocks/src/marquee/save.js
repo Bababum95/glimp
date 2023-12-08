@@ -40,10 +40,19 @@ export function Save({ attributes }) {
 			</div>
 			{submarquee && (
 				<div className="wp-block-glimp-marquee__submarquee">
-					Kostenlose Lieferung ab 39€ Bestellwert
-					Schneller Support via WhatsApp
-					Faire Preise  sind mehr als wettbewerbsfähig
-					Größte Auswahl an eZigaretten und eine garantierte Verfügbarkeit
+					<div className="wp-block-glimp-marquee__submarquee-text">
+						<p><strong>Kostenlose Lieferung</strong> ab 39€ Bestellwert</p>
+						<p><strong>Schneller Support</strong> via WhatsApp</p>
+						<p><strong>Faire Preise</strong> sind mehr als wettbewerbsfähig</p>
+						<p><strong>Größte Auswahl an eZigaretten</strong> und eine garantierte Verfügbarkeit</p>
+						<p><strong>Kostenlose Lieferung</strong> ab 39€ Bestellwert</p>
+					</div>
+					<div className="wp-block-glimp-marquee__submarquee-dots">
+						<span />
+						<span />
+						<span />
+						<span />
+					</div>
 				</div>
 			)}
 		</div>

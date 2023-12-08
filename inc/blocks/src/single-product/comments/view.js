@@ -1,4 +1,4 @@
-import { createPopup } from '../../../../../src/helpers/popup';
+import { createPopup } from '../../assets/utils';
 
 const popupElement = document.querySelector('.wp-block-glimp-comments__popup');
 const form = popupElement.querySelector('.wp-block-glimp-comments__popup-form');

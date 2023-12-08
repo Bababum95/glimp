@@ -1,3 +1,6 @@
+@import '../assets/styles/mixins';
+@import '../assets/styles/variables';
+
 .wp-block-glimp-marquee {
     height: 48px;
     position: relative;
@@ -20,6 +23,37 @@
         left: 0;
         width: 100%;
         text-align: center;
+        box-sizing: border-box;
+        border-top: $grey-line;
+        border-bottom: $grey-line;
+
+        &-text {
+            @include flex-layout(space-between, center);
+            max-width: $conten-size;
+            padding: 0 20px;
+            margin: 0 auto;
+            height: 100%;
+
+            p {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+                margin: 0;
+
+                strong {
+                    font-weight: 500;
+                }
+
+                &:last-of-type {
+                    display: none;
+                }
+            }
+        }
+
+        &-dots {
+            display: none;
+        }
     }
 
     &__text-wrapper {
@@ -51,6 +85,64 @@
         border: none;
         cursor: pointer;
     }
+
+    @include media('tablet') {
+        &__submarquee {
+            @include flex-layout(space-between, flex-start);
+            border-top: $grey-line;
+            border-bottom: $grey-line;
+            padding: 0 20px;
+
+            &-text {
+                flex-direction: column;
+                overflow: hidden;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 0;
+                margin: 0;
+                border: none;
+
+                p {
+                    height: 100%;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    align-content: center;
+                    animation: text-scroll 10s linear infinite;
+
+                    &:last-of-type {
+                        display: flex;
+                    }
+                }
+            }
+
+            &-dots {
+                @include flex-layout(flex-end, center);
+                height: 100%;
+                gap: 4px;
+
+                span {
+                    display: block;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background-color: $color-grey;
+                    animation: change-color 10s infinite;
+
+                    &:nth-of-type(2) {
+                        animation-delay: 2.5s;
+                    }
+                    &:nth-of-type(3) {
+                        animation-delay: 5s;
+                    }
+                    &:nth-of-type(4) {
+                        animation-delay: 7.5s;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @keyframes marquee {
@@ -60,5 +152,41 @@
 
     to {
         transform: translateX(-100%);
+    }
+}
+
+@keyframes text-scroll {
+
+    0%,
+    20% {
+        transform: translateY(0);
+    }
+
+    25%,
+    45% {
+        transform: translateY(-100%);
+    }
+
+    50%,
+    70% {
+        transform: translateY(-200%);
+    }
+
+    75%,
+    95% {
+        transform: translateY(-300%);
+    }
+
+    100% {
+        transform: translateY(-400%);
+    }
+}
+
+@keyframes change-color {
+    0%, 20% {
+        background-color: $color-black;
+    }
+    25%, 100% {
+        background-color: $color-grey;
     }
 }
