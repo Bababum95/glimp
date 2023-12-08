@@ -5,7 +5,7 @@ Glimp is a custom WordPress theme tailored for an online vaping products store, 
 ## Features
 
 - **Full-Page Editor**: A seamless full-page editing experience for managing content.
-- **Custom WooCommerce Blocks**: Designed to showcase vaping products with elegance and efficiency.
+- **Custom Gutenberg Blocks**: Tailored specifically for vaping products, these blocks are integrated within the full-page editor to provide a sophisticated and efficient way to display products.
 - **Favorites Functionality**: Custom functionality to allow users to favorite products they love.
 - **Likes System**: Users can like posts, providing feedback and interaction.
 - **Custom REST API & AJAX Endpoints**: For dynamic content updates without page reloads.
