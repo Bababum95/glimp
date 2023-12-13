@@ -1,0 +1,9 @@
+@import '../../../assets/styles/placeholders';
+
+.wp-block-glimp-info-with-emoji-item {
+    display: block;
+
+    p {
+        @extend %flex-center;
+    }
+}

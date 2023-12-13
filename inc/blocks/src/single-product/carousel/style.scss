@@ -1,5 +1,8 @@
-.wp-block-glimp-carousel {
+@import '../../assets/styles/mixins';
 
+.wp-block-glimp-carousel {
+    margin-bottom: 60px;
+    
     &__title {
         font-size: 26px;
         font-style: normal;
@@ -8,15 +11,30 @@
         margin: 0 0 20px;
     }
 
+    &__slider {
+        @include slider;
+
+        &-wrapper {
+            @include flex-layout(flex-start, flex-start);
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 25px;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            padding: 0 calc(50vw - 650px) 20px;
+        
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
     iframe {
         border-radius: 8px;
         width: 245px;
         height: 415px;
-    }
-
-    .wp-block-glimp-slider__wrapper {
-        gap: 12px;
-        display: flex;
     }
     
     .gallery {
@@ -24,7 +42,6 @@
         gap: 12px;
         figure.gallery-item {
             width: 341px;
-            // aspect-ratio: 341/415;
             border-radius: 8px;
             height: 415px;
             overflow: hidden;
@@ -51,6 +68,12 @@
                     object-position: center;
                 }
             }
+        }
+    }
+
+    @include media('desktop-large') {
+        &__slider-wrapper {
+            padding: 0 20px 20px;
         }
     }
 }

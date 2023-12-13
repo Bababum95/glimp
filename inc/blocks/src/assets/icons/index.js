@@ -1,3 +1,4 @@
+export { default as shareIcon } from '../../../../../assets/icons/Forward Arrow.png';
 export { default as notificationBell } from './notification-bell.png';
 export { vapeIcon } from './vape.js';
 export { vapesIcon } from './vapes.js';

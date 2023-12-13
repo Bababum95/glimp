@@ -1,0 +1,9 @@
+@import '../../assets/styles/mixins';
+
+.wp-block-glimp-upsells {
+    @include slider;
+
+    &__wrapper {
+        @include slider-wrapper(208px, 20px);
+    }
+}

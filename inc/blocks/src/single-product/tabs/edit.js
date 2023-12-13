@@ -11,7 +11,8 @@ export const Edit = ({ clientId, attributes, setAttributes }) => {
 
     const tabs = useSelect((select) => {
         const { getBlocks } = select('core/block-editor');
-        return getBlocks( clientId );
+        const blocks = getBlocks( clientId );
+        return blocks;
     }, [clientId]);
 
     useEffect(() => {
@@ -19,6 +20,11 @@ export const Edit = ({ clientId, attributes, setAttributes }) => {
         setAttributes( { activeTab: tabs[0].clientId } )
     }, [tabs[0], attributes.activeTab])
     
+    useEffect(() => {
+        if ( !tabs ) return
+        const titles = tabs.map((tab) => tab.attributes.title)
+        setAttributes( { tabs: titles } )
+    },[tabs])
 
     return (
             <div { ...blockProps }>
@@ -26,7 +32,10 @@ export const Edit = ({ clientId, attributes, setAttributes }) => {
                     {tabs.length && tabs.map((tab) => (
                         <div
                             key={tab.clientId}
-                            className={classnames('wp-block-glimp-tabs__tab-title', { 'active': tab.clientId === attributes.activeTab })}
+                            className={classnames(
+                                'wp-block-glimp-tabs__tab-title',
+                                { 'active': tab.clientId === attributes.activeTab }
+                            )}
                             onClick={() => setAttributes( { activeTab: tab.clientId } )}
                         >
                             {tab.attributes.title || 'Tab'}

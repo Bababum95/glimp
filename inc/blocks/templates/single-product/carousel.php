@@ -9,8 +9,8 @@ if (!empty($carousel)) : ?>
         <p class="wp-block-glimp-carousel__title">
             <?php echo $carousel_title; ?>
         </p>
-        <div class="wp-block-glimp-slider">
-            <div class="wp-block-glimp-slider__wrapper">
+        <div class="wp-block-glimp-carousel__slider">
+            <div class="wp-block-glimp-carousel__slider-wrapper">
                 <?php
                 echo $carousel_youtube_short;
                 echo apply_filters('the_content', $carousel);

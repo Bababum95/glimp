@@ -1,5 +1,175 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
-<!-- wp:group {"layout":{"inherit":true}} -->
-<div class="wp-block-group"><!-- wp:woocommerce/legacy-template {"template":"single-product"} /--></div>
+<!-- wp:template-part {"slug":"header","theme":"glimp"} /-->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"right":"20px","left":"20px"}}},"layout":{"inherit":true,"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-right:20px;padding-left:20px"><!-- wp:woocommerce/breadcrumbs /-->
+
+    <!-- wp:woocommerce/store-notices /-->
+
+    <!-- wp:post-title {"textAlign":"","level":1,"__woocommerceNamespace":"woocommerce/product-query/product-title"} /-->
+
+    <!-- wp:woocommerce/product-rating {"isDescendentOfSingleProductTemplate":true} /-->
+
+    <!-- wp:columns {"align":"wide","className":"product-summary"} -->
+    <div class="wp-block-columns alignwide product-summary">
+        <!-- wp:column {"width":"746px","className":"product-summary__images"} -->
+        <div class="wp-block-column product-summary__images" style="flex-basis:746px">
+            <!-- wp:woocommerce/product-gallery {"thumbnailsNumberOfThumbnails":30,"pagerDisplayMode":"off","productGalleryClientId":"bd131a43-d688-4af9-94ff-5c0389f6ceef","hoverZoom":false,"fullScreenOnClick":false} -->
+            <div
+                class="wp-block-woocommerce-product-gallery wc-block-product-gallery wc-block-product-gallery--has-next-previous-buttons-inside-image">
+                <!-- wp:group {"className":"wc-block-product-gallery__wrapper","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group wc-block-product-gallery__wrapper">
+                    <!-- wp:woocommerce/product-gallery-thumbnails {"lock":{"move":true,"remove":true}} /-->
+
+                    <!-- wp:group {"lock":{"move":true,"remove":true},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+                    <div class="wp-block-group">
+                        <!-- wp:woocommerce/product-gallery-large-image {"lock":{"move":true,"remove":true}} -->
+                        <div
+                            class="wp-block-woocommerce-product-gallery-large-image wc-block-product-gallery-large-image__inner-blocks">
+                            <!-- wp:woocommerce/product-sale-badge {"isDescendentOfSingleProductTemplate":true,"align":"right","lock":{"move":true},"style":{"spacing":{"margin":{"top":"12px","right":"10px","bottom":"12px","left":"10px"},"padding":{"top":"0","bottom":"0"}}}} /-->
+
+                            <!-- wp:woocommerce/product-gallery-large-image-next-previous {"lock":{"move":true,"remove":true},"layout":{"type":"flex","verticalAlignment":"bottom"}} -->
+                            <div class="wp-block-woocommerce-product-gallery-large-image-next-previous"></div>
+                            <!-- /wp:woocommerce/product-gallery-large-image-next-previous -->
+                        </div>
+                        <!-- /wp:woocommerce/product-gallery-large-image -->
+
+                        <!-- wp:woocommerce/product-gallery-pager {"lock":{"move":true,"remove":true}} /-->
+                    </div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:woocommerce/product-gallery -->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column {"width":"534px","className":"product-summary__info"} -->
+        <div class="wp-block-column product-summary__info" style="flex-basis:534px">
+            <!-- wp:group {"className":"product-summary__info-wrapper","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group product-summary__info-wrapper">
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+                <div class="wp-block-group"><!-- wp:glimp/add-to-favorites-button /-->
+
+                    <!-- wp:group {"layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group">
+                        <!-- wp:woocommerce/product-price {"isDescendentOfSingleProductTemplate":true,"fontFamily":"glimp-font","fontSize":"large"} /-->
+
+                        <!-- wp:paragraph {"className":"product-summary__info-price-prefix"} -->
+                        <p class="product-summary__info-price-prefix">inkl. MwSt. zzgl. Versandkosten</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:post-excerpt {"style":{"spacing":{"margin":{"top":"24px"}}},"__woocommerceNamespace":"woocommerce/product-query/product-summary"} /-->
+
+                <!-- wp:woocommerce/add-to-cart-form /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:group {"style":{"spacing":{"margin":{"top":"12px","bottom":"12px"}}},"className":"product-summary__info-delivery","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group product-summary__info-delivery" style="margin-top:12px;margin-bottom:12px">
+                <!-- wp:paragraph -->
+                <p>Standart <strong>1-3 Werktag</strong></p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:paragraph -->
+                <p>Express <strong>1 Tag</strong></p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:paragraph -->
+                <p><strong>Versandkostenfrei ab 39 €</strong></p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:columns {"className":"product-summary__info-danger"} -->
+            <div class="wp-block-columns product-summary__info-danger"><!-- wp:column {"width":"383px"} -->
+                <div class="wp-block-column" style="flex-basis:383px"><!-- wp:paragraph -->
+                    <p>Einordung nach CLP-Verordnung</p>
+                    <!-- /wp:paragraph -->
+
+                    <!-- wp:paragraph -->
+                    <p><strong>Gefahr! Enthält Nikotin</strong></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:column -->
+
+                <!-- wp:column {"width":"134px"} -->
+                <div class="wp-block-column" style="flex-basis:134px"></div>
+                <!-- /wp:column -->
+            </div>
+            <!-- /wp:columns -->
+        </div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+</div>
 <!-- /wp:group -->
-<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"right":"20px","left":"20px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-right:20px;padding-left:20px">
+    <!-- wp:group {"layout":{"type":"constrained","justifyContent":"left","wideSize":"1100px"}} -->
+    <div class="wp-block-group"><!-- wp:glimp/info-with-emoji -->
+        <div class="wp-block-glimp-info-with-emoji">
+            <!-- wp:glimp/info-with-emoji-item {"label":"Akku:","emoji":"🔋","slug":"pa_akku"} /-->
+
+            <!-- wp:glimp/info-with-emoji-item {"label":"Akku:","emoji":"🔋","slug":"pa_akku"} /-->
+
+            <!-- wp:glimp/info-with-emoji-item {"label":"Akku:","emoji":"🔋","slug":"pa_akku"} /-->
+
+            <!-- wp:glimp/info-with-emoji-item {"label":"Akku:","emoji":"🔋","slug":"pa_akku"} /-->
+        </div>
+        <!-- /wp:glimp/info-with-emoji -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:glimp/tabs {"activeTab":"9f9a7df5-af4a-4c9e-8ac8-846d151ed288","tabs":["Beschreibung","Technische Informationen","Produktbewertungen"]} -->
+    <div class="wp-block-glimp-tabs">
+        <div class="wp-block-glimp-tabs__navigator"><button
+                class="wp-block-glimp-tabs__button">Beschreibung</button><button
+                class="wp-block-glimp-tabs__button">Technische Informationen</button><button
+                class="wp-block-glimp-tabs__button">Produktbewertungen</button></div><!-- wp:glimp/tab -->
+        <div id="beschreibung" class="wp-block-glimp-tab">
+            <h2 class="tab-title">Beschreibung</h2>
+            <!-- wp:group {"layout":{"type":"constrained","contentSize":"1100px","justifyContent":"left"}} -->
+            <div class="wp-block-group"><!-- wp:post-content /-->
+
+                <!-- wp:glimp/quote /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:glimp/carousel /-->
+
+            <!-- wp:glimp/upsells /-->
+        </div>
+        <!-- /wp:glimp/tab -->
+
+        <!-- wp:glimp/tab -->
+        <div id="technische-informationen" class="wp-block-glimp-tab">
+            <h2 class="tab-title">Technische Informationen</h2>
+            <!-- wp:group {"layout":{"type":"constrained","contentSize":"1100px","justifyContent":"left"}} -->
+            <div class="wp-block-group"><!-- wp:glimp/technical-information /-->
+
+                <!-- wp:glimp/faqs /-->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:glimp/tab -->
+
+        <!-- wp:glimp/tab -->
+        <div id="produktbewertungen" class="wp-block-glimp-tab">
+            <h2 class="tab-title">Produktbewertungen</h2><!-- wp:glimp/comments /-->
+        </div>
+        <!-- /wp:glimp/tab -->
+    </div>
+    <!-- /wp:glimp/tabs -->
+
+    <!-- wp:group {"layout":{"type":"default"}} -->
+    <div class="wp-block-group"><!-- wp:glimp/related-products /--></div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"glimp"} /-->

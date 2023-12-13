@@ -3,11 +3,11 @@
 <div class="wp-block-group" style="padding-top:16px;padding-right:20px;padding-bottom:16px;padding-left:20px">
 	<!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
 	<div class="wp-block-group alignwide">
-		<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"0"}}},"layout":{"type":"flex","justifyContent":"left"}} -->
-		<div class="wp-block-group alignwide" style="padding-bottom:0">
+		<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"0"}}},"className":"header__left","layout":{"type":"flex","justifyContent":"left"}} -->
+		<div class="wp-block-group alignwide header__left" style="padding-bottom:0">
 			<!-- wp:navigation {"ref":3197,"overlayMenu":"always","icon":"menu","overlayBackgroundColor":"glimp-black","overlayTextColor":"glimp-white","className":"header-menu","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left"}} /-->
 
-			<!-- wp:site-logo /-->
+			<!-- wp:site-logo {"className":"header__logo"} /-->
 		</div>
 		<!-- /wp:group -->
 
@@ -28,28 +28,43 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:glimp/marquee {"delay":33,"showAnimation":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|glimp-white"}}},"spacing":{"padding":{"right":"20px","left":"20px"}}},"backgroundColor":"glimp-primary","textColor":"glimp-white"} -->
-<div class="wp-block-glimp-marquee" style="--marquee-animation:marquee 33s linear infinite 0.2s">
+<!-- wp:glimp/marquee {"submarquee":true,"delay":36,"showAnimation":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|glimp-white"}}},"spacing":{"padding":{"right":"20px","left":"20px"}}},"backgroundColor":"glimp-primary","textColor":"glimp-white"} -->
+<div class="wp-block-glimp-marquee" style="--marquee-animation:marquee 36s linear infinite 0.2s">
 	<div style="padding-right:20px;padding-left:20px"
 		class="wp-block-glimp-marquee__main wp-block-glimp-marquee has-glimp-white-color has-glimp-primary-background-color has-text-color has-background has-link-color">
 		<img
 			src="http://localhost:8888/wp-content/themes/glimp/inc/blocks/build/marquee/../images/notification-bell.a2510a6b.png" />
 		<div class="wp-block-glimp-marquee__text-wrapper">
-			<p class="wp-block-glimp-marquee__text">Вы вошли как admin.&nbsp;
-				<a href="http://localhost:8888/wp-admin/profile.php">Изменить свой профиль</a>.&nbsp;<a
+			<p class="wp-block-glimp-marquee__text">Вы вошли как admin.&nbsp; <a
+					href="http://localhost:8888/wp-admin/profile.php">Изменить свой профиль</a>.&nbsp;<a
 					href="http://localhost:8888/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Flocalhost%3A8888%2Fblocks-builder%2F&amp;_wpnonce=c0042f2d06">Выйти?</a>&nbsp;Обязательные
-				поля помечены&nbsp;* Вы вошли как admin.&nbsp;<a
+				поля помечены&nbsp;* Вы вошли как adin.&nbsp;<a
 					href="http://localhost:8888/wp-admin/profile.php">Изменить свой профиль</a>.&nbsp;<a
 					href="http://localhost:8888/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Flocalhost%3A8888%2Fblocks-builder%2F&amp;_wpnonce=c0042f2d06">Выйти?</a>&nbsp;Обязательные
 				поля помечены&nbsp;*</p>
-		</div>
-		<button class="wp-block-glimp-marquee__close">
-			<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<p class="wp-block-glimp-marquee__text">Вы вошли как admin.&nbsp; <a
+					href="http://localhost:8888/wp-admin/profile.php">Изменить свой профиль</a>.&nbsp;<a
+					href="http://localhost:8888/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Flocalhost%3A8888%2Fblocks-builder%2F&amp;_wpnonce=c0042f2d06">Выйти?</a>&nbsp;Обязательные
+				поля помечены&nbsp;* Вы вошли как adin.&nbsp;<a
+					href="http://localhost:8888/wp-admin/profile.php">Изменить свой профиль</a>.&nbsp;<a
+					href="http://localhost:8888/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Flocalhost%3A8888%2Fblocks-builder%2F&amp;_wpnonce=c0042f2d06">Выйти?</a>&nbsp;Обязательные
+				поля помечены&nbsp;*</p>
+		</div><button class="wp-block-glimp-marquee__close"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+				xmlns="http://www.w3.org/2000/svg">
 				<line x1="9.46967" y1="16.54" x2="16.5407" y2="9.46891" stroke="#FFFFFF" stroke-width="1.5"></line>
 				<line x1="9.53033" y1="9.46967" x2="16.6014" y2="16.5407" stroke="#FFFFFF" stroke-width="1.5"></line>
 				<circle cx="13" cy="13" r="12.25" stroke="#FFFFFF" stroke-width="1.5"></circle>
-			</svg>
-		</button>
+			</svg></button>
+	</div>
+	<div class="wp-block-glimp-marquee__submarquee">
+		<div class="wp-block-glimp-marquee__submarquee-text">
+			<p><strong>Kostenlose Lieferung</strong> ab 39€ Bestellwert</p>
+			<p><strong>Schneller Support</strong> via WhatsApp</p>
+			<p><strong>Faire Preise</strong> sind mehr als wettbewerbsfähig</p>
+			<p><strong>Größte Auswahl an eZigaretten</strong> und eine garantierte Verfügbarkeit</p>
+			<p><strong>Kostenlose Lieferung</strong> ab 39€ Bestellwert</p>
+		</div>
+		<div class="wp-block-glimp-marquee__submarquee-dots"><span></span><span></span><span></span><span></span></div>
 	</div>
 </div>
 <!-- /wp:glimp/marquee -->

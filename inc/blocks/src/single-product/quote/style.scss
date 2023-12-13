@@ -4,6 +4,8 @@
     background: var(--wp--preset--color--glimp-grey, #F2F2F2);
     position: relative;
     margin-bottom: 100px;
+    margin-top: 60px;
+    box-sizing: border-box;
 
     &__text {
         font-size: 16px;

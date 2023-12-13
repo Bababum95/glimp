@@ -2,52 +2,11 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-
-    &__item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        width: 100%;
-        border-radius: 12px;
-        background-color: var(--wp--preset--color--glimp-grey, #F2F2F2);
-        padding: 14px;
-        box-sizing: border-box;
-    }
-
-    &__image {
-        font-size: 42px;
-    }
-
-    &__text {
-        font-size: 18px;
-        line-height: 115%;
-        margin: 0;
-    }
 }
 
 @media screen and (max-width: 781px) {
     .wp-block-glimp-info-with-emoji {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .wp-block-glimp-info-with-emoji {
         gap: 8px 10px;
-
-        &__item {
-            gap: 8px;
-            border-radius: 8px;
-            padding: 12px;
-        }
-
-        &__image {
-            font-size: 21px;
-        }
-
-        &__text {
-            font-size: 15px;
-        }
+        grid-template-columns: repeat(2, 1fr);
     }
 }

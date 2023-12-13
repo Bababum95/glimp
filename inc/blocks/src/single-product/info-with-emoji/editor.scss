@@ -1,0 +1,19 @@
+.wp-block-glimp-info-with-emoji {
+    width: 100%;
+
+    .block-editor-block-list__layout {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+}
+
+@media screen and (max-width: 781px) {
+    .wp-block-glimp-info-with-emoji {
+        .block-editor-block-list__layout {
+            gap: 8px 10px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

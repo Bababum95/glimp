@@ -112,6 +112,7 @@
                 top: 16px;
             }
         }
+
         &_whatsapp {
             .wp-block-navigation-item__content::before {
                 content: $whatsapp;
@@ -123,27 +124,39 @@
     }
 }
 
-.header__search {
-    flex: 1;
-    .dgwt-wcas-sf-wrapp {
-        padding: 0;
+.header {
+    &__search {
+        flex: 1;
 
-        button.dgwt-wcas-search-submit {
-            top: 11px;
-            left: 13px;
-        }
-    }
-    @include media('tablet') {
-        .dgwt-wcas-search-wrapp {
-            max-width: 100%;
+        .dgwt-wcas-sf-wrapp {
+            padding: 0;
+
+            button.dgwt-wcas-search-submit {
+                top: 11px;
+                left: 13px;
+            }
         }
 
-        width: 100%;
-        flex: auto;
-        order: 2;
-    }
-}
+        @include media('tablet') {
+            .dgwt-wcas-search-wrapp {
+                max-width: 100%;
+            }
 
-.header__right {
-    gap: 20px;
+            width: 100%;
+            flex: auto;
+            order: 2;
+        }
+    }
+
+    &__right {
+        gap: 20px;
+    }
+
+    &__left {
+        gap: 40px;
+    }
+
+    &__logo {
+        width: 85px;
+    }
 }

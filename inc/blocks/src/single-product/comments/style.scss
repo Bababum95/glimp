@@ -6,6 +6,7 @@
 .wp-block-glimp-comments {
     display: flex;
     gap: 20px;
+    margin-bottom: 40px;
 
     &__ratings {
         border-radius: 12px;
@@ -29,7 +30,7 @@
                 font-size: 20px;
 
                 &_non-active {
-                    color: $color-grey;
+                    color: $color-grey-active;
                 }
             }
         }
@@ -102,15 +103,15 @@
             position: relative;
 
             &-stars {
-                // font-size: 20px;
-                // color: $color-grey;
+                font-size: 20px;
+                color: $color-grey-active;
 
                 &_active {
                     color: $color-gold-star;
                     font-size: 20px;
-                    // position: absolute;
-                    // top: 0;
-                    // left: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                 }
             }
         }
@@ -307,7 +308,6 @@
 
             &-star:hover ~ &-star {
                 color: $color-grey;
-                    
             }
         }
         
@@ -352,6 +352,49 @@
                 max-width: 59px;
                 padding: 20px;
             }
+        }
+
+        &_verified {
+            @extend %flex-center;
+            @include popup-overlay;
+            color: $color-white;
+
+            &-container {
+                @include popup-container(844px, 40px);
+                background: rgba(26, 26, 26, 0.80);
+                backdrop-filter: blur(17px);
+            }
+
+            &-close {
+                @include close-button;
+            }
+
+            &-title {
+                font-size: 45px;
+                font-style: normal;
+                font-weight: 700;
+                margin: 0 0 12px;
+            }
+
+            &-description {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 130%;
+                margin: 0;
+            }
+        }
+    }
+
+    @include media('tablet') {
+        flex-direction: column;
+
+        &__ratings {
+            flex-basis: auto;
+        }
+
+        &__content {
+            flex-basis: auto;
         }
     }
 }

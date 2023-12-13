@@ -1,0 +1,74 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/placeholders';
+@import '../../assets/styles/variables';
+
+
+.wp-block-glimp-share {
+    border-radius: 8px;
+    padding: 0 18px 12px 0;
+    width: fit-content;
+
+    &__popup {
+        display: none;
+        gap: 6px;
+        width: fit-content;
+        padding-left: 18px;
+    }
+
+    &__copy,
+    &__link {
+        @extend %flex-column;
+        align-items: center;
+        padding: 8px;
+        border-radius: 8px;
+        background-color: $color-white;
+        gap: 6px;
+        border: none;
+        box-sizing: border-box;
+        width: 74px;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 140%;
+        cursor: pointer;
+        transition: all 0.1s ease;
+
+        img {
+            height: 24px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        &:hover {
+            color: $color-black;
+            transform: scale(1.05);
+        }
+    }
+
+    &__button {
+        @extend %flex-center;
+        gap: 8px;
+        padding: 8px 18px;
+        border-radius: 8px;
+        border: none;
+        background-color: transparent;
+
+        img {
+            height: 22px;
+            width: 22px;
+        }
+
+        &:hover {
+            background-color: $color-grey-active;
+            cursor: pointer;
+        }
+    }
+
+    &.open {
+        background-color: $color-grey-active;
+
+        .wp-block-glimp-share__popup {
+            @extend %flex-center;
+        }
+    }
+}

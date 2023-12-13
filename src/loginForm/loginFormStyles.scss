@@ -78,7 +78,7 @@
     }
 
     &__submit {
-        @include submit-button-style;
+        @include submit-button-secondary-style;
         @include submit-button-size(12px 46px);
         margin: 0;
     }
@@ -186,6 +186,17 @@
                 padding: 0;
                 border-radius: 0;
                 box-shadow: none;
+            }
+
+            &__bottom {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            &__submit {
+                width: 100%;
+                padding: 20px;
             }
         }
     }

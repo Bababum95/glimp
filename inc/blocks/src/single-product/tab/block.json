@@ -17,7 +17,8 @@
 	"usesContext": [ "glimp/tabs" ],
 	"example": {},
 	"supports": {
-		"html": false
+		"html": false,
+		"anchor": true
 	},
 	"parent": ["glimp/tabs"],
 	"textdomain": "glimp/tab",

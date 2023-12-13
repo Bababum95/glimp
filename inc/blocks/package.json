@@ -43,8 +43,11 @@
 		"webpack-merge": "^5.10.0"
 	},
 	"dependencies": {
+		"@emoji-mart/data": "^1.1.2",
+		"@emoji-mart/react": "^1.1.1",
 		"@woocommerce/woocommerce-rest-api": "^1.0.1",
 		"@wordpress/components": "^25.9.0",
-		"choices.js": "^10.2.0"
+		"choices.js": "^10.2.0",
+		"emoji-mart": "^5.5.2"
 	}
 }

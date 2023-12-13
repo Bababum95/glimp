@@ -30,8 +30,14 @@ export function Save({ attributes }) {
 						className="wp-block-glimp-marquee__text"
 						value={text}
 					/>
+					{showAnimation && (
+						<RichText.Content
+							tagName="p"
+							className="wp-block-glimp-marquee__text"
+							value={text}
+						/>
+					)}
 				</div>
-
 				{canClose && (
 					<button className="wp-block-glimp-marquee__close">
 						<CircularClose color="#FFFFFF" />

@@ -20,7 +20,7 @@ if ( is_user_logged_in() ) {
             </svg>
             Anmelden
         </div>';
-    echo '<div class="wp-block-glimp-account__popup simple">
+    echo '<div class="wp-block-glimp-account__popup">
             <div class="wp-block-glimp-account__popup-container">
                 <p class="wp-block-glimp-account__popup-title">Einloggen, um diesen Artikel zu bewerten</p>
                 <button class="wp-block-glimp-account__popup-close open"></button>'

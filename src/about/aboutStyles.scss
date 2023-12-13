@@ -1,12 +1,9 @@
 @import '../assets/styles/mixins';
 @import '../assets/styles/variables';
 
-.entry-content {
+.glimp-about {
     @include flex-layout(flex-start, flex-start);
     gap: 20px;
-}
-
-.glimp-about {
 
     &__section {
         box-shadow: $box-shadow;
@@ -25,5 +22,93 @@
         font-size: 35px;
         font-weight: 700;
         line-height: 120%;
+    }
+
+    &__team-items {
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    &__team-item {
+        @extend %flex-column;
+        border-radius: 12px;
+        width: 312px;
+        box-shadow: $box-shadow;
+        box-sizing: border-box;
+        padding: 16px;
+        gap: 16px;
+
+        .wp-block-image {
+            margin: 0;
+            img {
+                width: auto;
+                height: 106px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%;
+            margin: 0;
+        }
+    }
+
+    &__vdeh {
+        @extend %flex-center;
+        width: 310px;
+        height: 110px;
+
+        .wp-block-image {
+            margin: 0;
+        }
+    }
+
+    &__productes {
+        gap: 20px;
+
+        &-item {
+            padding: 20px 20px 0;
+            width: 306px;
+
+            .wp-block-image {
+                margin: 0 auto;
+                width: fit-content;
+
+                img {
+                    height: 117px;
+                    width: auto;
+                }
+            }
+
+            p {
+                margin: 0 0 28px;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 120%;
+            }
+        }
+    }
+    &__contacts {
+        gap: 8px;
+
+        &-item {
+            padding: 12px 20px;
+
+            p {
+                margin: 0;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 130%;
+                color: $color-dark-grey;
+
+                a {
+                    font-size: 15px;
+                }
+            }
+        }
     }
 }

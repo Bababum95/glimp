@@ -17,7 +17,7 @@ $formattedDate = $date->format('d.m.Y');
 <div class="wp-block-glimp-comments__comment">
     <div class="wp-block-glimp-comments__comment-header">
         <div class="wp-block-glimp-comments__comment-rating">
-            <!-- <span class="wp-block-glimp-comments__comment-rating-stars">★ ★ ★ ★ ★</span> -->
+            <span class="wp-block-glimp-comments__comment-rating-stars">★ ★ ★ ★ ★</span>
             <span class="wp-block-glimp-comments__comment-rating-stars_active">
                 <?php 
                 if (!empty($rating)) {
@@ -46,7 +46,7 @@ $formattedDate = $date->format('d.m.Y');
         </p>
         <?php if (!empty($device)) : ?>
             <p class="wp-block-glimp-comments__comment-device">
-                <?php echo $device; ?>
+                Über: <?php echo $device; ?>
             </p>
         <?php endif; ?>
     </div>

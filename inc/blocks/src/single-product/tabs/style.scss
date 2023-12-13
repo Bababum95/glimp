@@ -1,0 +1,76 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/mixins/submit-button';
+@import '../../assets/styles/placeholders';
+
+.wp-block-glimp-tabs {
+    &__navigator {
+        @include flex-layout(flex-start, center);
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px calc(50vw - 645px);
+        background-color: $color-white;
+        box-sizing: border-box;
+        z-index: 10;
+        gap: 32px;
+    }
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        padding: 0;
+
+        &:hover {
+            color: $color-primary;
+            cursor: pointer;
+        }
+    }
+
+    &__right {
+        @include flex-layout(flex-end, center);
+        order: 3;
+        margin-left: auto;
+        gap: 20px;
+    }
+    
+    &__price {
+        @include price-style;
+        @include price-size(23px, 15px);
+
+        &-wrapper {
+            @extend %flex-column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+    }
+
+    &__tax {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__add-to-cart {
+        @include submit-button-primary-style;
+        @include submit-button-size(14px 40px, auto, 43px, 8px, 14px);
+    }
+
+    @include media('desktop-large') {
+        &__navigator {
+            padding: 10px 20px;
+        }
+    }
+
+    @include media('desktop') {
+        &__button {
+            display: none;
+        }
+    }
+}

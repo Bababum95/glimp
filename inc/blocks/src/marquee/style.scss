@@ -68,6 +68,7 @@
         display: inline-block;
         animation: var(--marquee-animation);
         min-width: 100%;
+        padding-right: 100px;
 
         a {
             color: inherit;
@@ -146,11 +147,11 @@
 }
 
 @keyframes marquee {
-    from {
+    0%, 5% {
         transform: translateX(0);
     }
 
-    to {
+    100% {
         transform: translateX(-100%);
     }
 }

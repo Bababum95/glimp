@@ -2,6 +2,7 @@ import { registerBlockForSpecificTemplate } from '../../../HOC/registerBlockForS
 import { Edit as edit } from './edit.js';
 import metadata from './block.json';
 import { upsellIcon } from '../../assets/icons';
+import './style.scss';
 
 registerBlockForSpecificTemplate({
     metadata,

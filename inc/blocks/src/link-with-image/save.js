@@ -13,6 +13,7 @@ export const Save = ({attributes}) => {
 				'--children-width': attributes.fullPage ? '100%' : '',
 			}}
 			target={ attributes.target ? '_blank' : '_self' }
+			rel='noopener'
 		>
 			<InnerBlocks.Content />
 		</a>
