@@ -11,7 +11,6 @@ class API_Init {
         $files = [
             '/endpoints/class-login-endpoint.php',
             '/endpoints/class-register-endpoint.php',
-            '/endpoints/class-lost-password-endpoint.php',
             '/endpoints/class-products-endpoint.php',
             '/endpoints/class-add-review-endpoint.php',
             '/endpoints/class-get-reviews-endpoint.php',
@@ -29,7 +28,6 @@ class API_Init {
     public function register_endpoints() {
         new Login_Endpoint();
         new Register_Endpoint();
-        new Lost_Password_Endpoint();
         new Products_Endpoint();
         new Add_Review_Endpoint();
         new Get_Reviews_Endpoint();

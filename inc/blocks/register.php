@@ -1,8 +1,7 @@
 <?php
 
 require_once __DIR__ . '/settings.php';
-require_once __DIR__ . '/functions/render-product-card.php';
-require_once __DIR__ . '/functions/render-page-like-button.php';
+require_once __DIR__ . '/functions/index.php';
 
 function create_glimp_block_init() {
     $blocks = [
@@ -13,6 +12,8 @@ function create_glimp_block_init() {
         'link-with-image',
         'faqs' => 'faqs',
         'account' => 'account',
+        'all-posts' => 'all-posts',
+        'breadcrumbs' => 'breadcrumbs',
         'favorites/button' => 'favorites/button',
         'favorites/products' => 'favorites/products',
         'pros-and-cons' => 'pros-and-cons',
@@ -47,7 +48,11 @@ function create_glimp_block_init() {
         'single-product/info-with-emoji',
         'single-product/info-with-emoji/item' => 'single-product/info-with-emoji-item',
         'single-product/technical-information' => 'single-product/technical-information',
+        'post/sidebar',
+        'post/sidebar/inner-blocks/image-with-button',
+        'post/wrapper' => 'post/wrapper',
         'post/share' => 'post/share',
+        'post/social-actions-panel' => 'post/social-actions-panel',
     ];
 
     foreach ($blocks as $path => $template) {

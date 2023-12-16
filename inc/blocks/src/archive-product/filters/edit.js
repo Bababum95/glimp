@@ -11,7 +11,7 @@ const allowedBlocks = [
 	'glimp/filters-item'
 ];
 
-export const Edit = ({ clientId, attributes, setAttributes }) => {
+const Edit = ({ clientId, attributes, setAttributes }) => {
 	const blockProps = useBlockProps();
 	const [templateArray, setTemplateArray] = useState(null);
 	const [template, setTemplate] = useState({

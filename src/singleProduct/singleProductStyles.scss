@@ -157,6 +157,7 @@
             }
 
             .wc-block-components-product-badge {
+
                 &__out-of-stock,
                 &__sale,
                 &__nikotinfrai {
@@ -269,17 +270,26 @@
     }
 }
 
-.glimp-carusel {
-    @include carusel;
-    display: flex !important;
+.glimp-single {
+    margin-top: 30px;
 
-    li {
-        @include product-card;
+    &__title {
+        @include responsive-font-size(28px, 28px, 24px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
     }
 }
 
+.wc-block-grid__product-rating .wc-block-grid__product-rating__stars span::before,
+.wc-block-grid__product-rating .star-rating span::before {
+    color: #FFC979;
+}
 
-
+.wc-block-grid__product-rating .wc-block-grid__product-rating__stars::before,
+.wc-block-grid__product-rating .star-rating::before {
+    color: $color-grey;
+}
 
 @media screen and (max-width: 1240px) {
     .product-summary {
@@ -299,10 +309,12 @@
         }
     }
 }
+
 @media screen and (max-width: 781px) {
     .product-summary {
         &__info {
             position: relative;
+            top: 0;
 
             &-danger {
                 &:not(.is-not-stacked-on-mobile)>.wp-block-column {
@@ -313,6 +325,11 @@
 
         &__images {
             position: relative;
+            top: 0;
         }
+    }
+
+    .glimp-single {
+        margin-top: 20px;
     }
 }

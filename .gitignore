@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
+glimp
 inc/blocks/build
 inc/blocks/node_modules
 old

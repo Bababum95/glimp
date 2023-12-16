@@ -1,6 +1,6 @@
 <?php
 
-function reset_password_callback() {
+function woocommerce_ajax_reset_password() {
     $username = $_GET['username'];
 
     $result = retrieve_password($username); 
@@ -12,5 +12,5 @@ function reset_password_callback() {
     }
 }
 
-add_action('wp_ajax_reset_password', 'reset_password_callback');
-add_action('wp_ajax_nopriv_reset_password', 'reset_password_callback');
+add_action('wp_ajax_woocommerce_ajax_reset_password', 'woocommerce_ajax_reset_password');
+add_action('wp_ajax_nopriv_woocommerce_ajax_reset_password', 'woocommerce_ajax_reset_password');

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/all-posts",
+	"version": "1.0.0",
+	"title": "All posts",
+	"category": "theme",
+	"icon": "grid-view",
+	"description": "The part of the Glimp theme.",
+	"attributes": {},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/all-posts",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

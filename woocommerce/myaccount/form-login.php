@@ -20,9 +20,13 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
+$error_form_template = 	'<div class="glimp-login__error">
+							<p class="glimp-login__error-message"></p>
+						</div>';
+
 do_action('woocommerce_before_customer_login_form'); ?>
 
-<div class="glimp-login" id="customer_login">
+<div class="glimp-login">
 	<img
 		src="<?php echo get_template_directory_uri() . '/assets/images/account.jpg'; ?>"
 		class="glimp-login__image"
@@ -34,14 +38,13 @@ do_action('woocommerce_before_customer_login_form'); ?>
 			<h2><?php esc_html_e('Register', 'woocommerce'); ?></h2>
 		</div>
 		<div class="glimp-login__form-wrapper">
-			<form class="glimp-login__form" method="post">
+			<form class="glimp-login__form" method="post" data-type="login">
 				<?php do_action('woocommerce_login_form_start'); ?>
 				<div class="glimp-login-input-container">
 					<input
 						type="text"
 						class="glimp-login-input"
 						name="username"
-						id="username"
 						autocomplete="username"
 						placeholder=""
 						value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"
@@ -56,7 +59,6 @@ do_action('woocommerce_before_customer_login_form'); ?>
 						class="glimp-login-input"
 						type="password"
 						name="password"
-						id="password"
 						placeholder=""
 						autocomplete="current-password"
 					/>
@@ -71,7 +73,6 @@ do_action('woocommerce_before_customer_login_form'); ?>
 						class="glimp-login__checkbox-input"
 						name="rememberme"
 						type="checkbox"
-						id="rememberme"
 						value="forever"
 					/>
 					<span class="glimp-login__checkbox-checkmark"></span>
@@ -79,7 +80,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 						<?php esc_html_e('Remember me', 'woocommerce'); ?>
 					</p>
             	</label>
-				<?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
+				<?php echo $error_form_template; ?>
 				<div class="glimp-login__bottom">
 					<button
 						type="submit"
@@ -88,25 +89,51 @@ do_action('woocommerce_before_customer_login_form'); ?>
 					>
 						<?php esc_html_e('Log in', 'woocommerce'); ?>
 					</button>
-					<a href="<?php echo esc_url(wp_lostpassword_url()); ?>">
+					<span class="glimp-login__forgot">
 						<?php esc_html_e('Lost your password?', 'woocommerce'); ?>
-					</a>
+					</span>
 				</div>
 				<?php do_action('woocommerce_login_form_end'); ?>
 			</form>
+
 			<form
 				method="post"
 				class="glimp-login__form"
-				<?php do_action('woocommerce_register_form_tag'); ?>
+				data-type="register"
 			>
 				<?php do_action('woocommerce_register_form_start'); ?>
+				<div class="glimp-login-input-container">
+					<input
+						class="glimp-login-input"
+						type="text"
+						name="first_name"
+						placeholder=""
+						autocomplete="first_name"
+					/>
+					<label for="first_name" class="glimp-login-label">
+						Vorname
+						<span class="required">*</span>
+					</label>
+				</div>
+				<div class="glimp-login-input-container">
+					<input
+						class="glimp-login-input"
+						type="text"
+						name="last_name"
+						placeholder=""
+						autocomplete="last_name"
+					/>
+					<label for="last_name" class="glimp-login-label">
+						Nachname
+						<span class="required">*</span>
+					</label>
+				</div>
 				<?php if ('no' === get_option('woocommerce_registration_generate_username')) : ?>
 					<div class="glimp-login-input-container">
 						<input
 							class="glimp-login-input"
 							type="text"
 							name="username"
-							id="reg_username"
 							placeholder=""
 							autocomplete="username"
 							value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"
@@ -122,7 +149,6 @@ do_action('woocommerce_before_customer_login_form'); ?>
 						class="glimp-login-input"
 						type="email"
 						name="email"
-						id="reg_email"
 						placeholder=""
 						autocomplete="email"
 						value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>"
@@ -138,7 +164,6 @@ do_action('woocommerce_before_customer_login_form'); ?>
 							class="glimp-login-input"
 							type="password"
 							name="password"
-							id="reg_password"
 							placeholder=""
 							autocomplete="new-password"
 						/>
@@ -152,17 +177,70 @@ do_action('woocommerce_before_customer_login_form'); ?>
 						<?php esc_html_e('A link to set a new password will be sent to your email address.', 'woocommerce'); ?>
 					</p>
 				<?php endif; ?>
-				<?php do_action('woocommerce_register_form'); ?>
-				<?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
-				<button
-					type="submit"
-					class="glimp-login__submit"
-					name="register"
-					value="<?php esc_attr_e('Register', 'woocommerce'); ?>"
-				>
-					<?php esc_html_e('Register', 'woocommerce'); ?>
-				</button>
+				<label class="glimp-login__checkbox">
+					<input
+						class="glimp-login__checkbox-input"
+						type="checkbox"
+						require
+					/>
+					<span class="glimp-login__checkbox-checkmark"></span>
+					<p class="glimp-login__checkbox-label">
+						Ja, ich möchte ein neues Konto einrichten und habe die Datenschutzerklärung gelesen und verstanden.
+					</p>
+            	</label>
+				<?php echo $error_form_template; ?>
+				<div class="glimp-login__bottom">
+					<button
+						type="submit"
+						class="glimp-login__submit"
+						name="register"
+						value="<?php esc_attr_e('Register', 'woocommerce'); ?>"
+					>
+						<?php esc_html_e('Register', 'woocommerce'); ?>
+					</button>
+				</div>
 				<?php do_action('woocommerce_register_form_end'); ?>
+			</form>
+		</div>
+		<div class="glimp-login__lost-password">
+			<button class="glimp-login__back">Zurück</button>
+			<p  class="glimp-login__title">
+				Hast du dein Passwort vergessen?
+			</p>
+			<p  class="glimp-login__description">
+				Bitte gib deinen Benutzernamen oder E-Mail-Adresse ein. Du erhältst einen Link
+				per E-Mail, womit du dir ein neues Passwort erstellen kannst.
+			</p>
+			<form class="glimp-login__form" method="post" data-type="lost-password">
+				<div class="glimp-login__notice">
+					<p class="glimp-login__notice-message">
+						Check your email for the confirmation link, then visit the
+						<a href="<?php echo wc_get_page_permalink('myaccount'); ?>">login page.</a>
+					</p>
+				</div>
+				<div class="glimp-login-input-container">
+					<input
+						type="text"
+						class="glimp-login-input"
+						name="username"
+						autocomplete="username"
+						placeholder=""
+						value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"
+					/>
+					<label for="username" class="glimp-login-label">
+						<?php esc_html_e('Username or email address', 'woocommerce'); ?>
+					</label>
+				</div>
+				<?php echo $error_form_template; ?>
+				<div class="glimp-login__bottom">
+					<button
+						type="submit"
+						class="glimp-login__submit"
+						name="Passwort zurückseten"
+					>
+						Passwort zurückseten
+					</button>
+				</div>
 			</form>
 		</div>
 	</div>

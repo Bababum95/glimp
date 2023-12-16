@@ -68,9 +68,9 @@ if (!function_exists('glimp_enqueue_scripts')) :
             glimp_enqueue_dynamic_script('archiveProductStyles-', 'archiveProduct-');
         }
 
-        // if (is_account_page()) {
-        //     glimp_enqueue_dynamic_script('accountStyles-', 'account-');
-        // }
+        if (is_account_page()) {
+            glimp_enqueue_dynamic_script('accountPageStyles-', 'accountPage-');
+        }
 
         if (!is_user_logged_in()) {
             glimp_enqueue_dynamic_script('loginFormStyles-', 'loginForm-');
@@ -82,6 +82,10 @@ if (!function_exists('glimp_enqueue_scripts')) :
 
         if (is_page($about_page_id)) {
             glimp_enqueue_dynamic_script('aboutStyles-', 'about-');
+        }
+
+        if (is_page_template('blog')) {
+            glimp_enqueue_dynamic_script('blogPageStyle-', 'blogPage-');
         }
     }
 

@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/image-with-button",
+	"version": "1.0.0",
+	"title": "Image with button",
+	"icon": "slides",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"button": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-image-with-button__button"
+		},
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-image-with-button__title"
+		},
+		"mediaID": {
+			"type": "number"
+		},
+		"mediaURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		}
+	},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/image-with-button",
+	"editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}

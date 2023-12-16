@@ -3,15 +3,6 @@
 @import '../assets/styles/variables';
 @import '../assets/styles/mixins/submit-button';
 
-.woocommerce-account .wp-block-post-title,
-.woocommerce-account main .woocommerce,
-.woocommerce-cart .wp-block-post-title,
-.woocommerce-cart main .woocommerce,
-.woocommerce-checkout .wp-block-post-title,
-.woocommerce-checkout main .woocommerce {
-    max-width: var(--wp--style--global--content-size);
-}
-
 .glimp-login {
     @include input;
     @include flex-layout(flex-start, flex-start);
@@ -62,6 +53,10 @@
             gap: 10%;
             transition: all 0.3s;
         }
+
+        &:nth-of-type(2) {
+            display: none;
+        }
     }
 
     &-input-container {
@@ -81,12 +76,119 @@
         @include submit-button-secondary-style;
         @include submit-button-size(12px 46px);
         margin: 0;
+
+        &.loading {
+            max-width: 39px;
+        }
+    }
+
+    &__forgot {
+        cursor: pointer;
+    }
+
+    &__lost-password {
+        display: none;
+    }
+
+    &__error {
+        background-color: $color-red;
+        color: $color-grey;
+        padding: 20px;
+        border-radius: 12px;
+        display: none;
+
+        a {
+            color: $color-grey;
+            text-decoration-line: underline;
+        }
+
+        &-message {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            margin: 0;
+        }
+
+        &.show {
+            display: block;
+        }
+    }
+
+    &__notice {
+        gap: 12px;
+        background-color: $color-grey;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        display: none;
+
+        &-message {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            margin: 0;
+        }
+
+        &::before {
+            content: '';
+            background-image: url(../assets/icons/Info.png);
+            background-size: cover;
+            width: 22px;
+            height: 22px;
+            display: block;
+        }
+
+        &.show {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+        margin: 32px 0 4px;
+    }
+
+    &__description {
+        margin: 0 0 32px;
+    }
+
+    &__back {
+        background-color: transparent;
+        color: $color-dark-grey;
+        border: none;
+        padding: 0;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        cursor: pointer;
+
+        &::before {
+            content: '←';
+            margin-right: 10px;
+        }
+
+        &:hover {
+            color: $color-black;
+        }
     }
 
     &.flipped {
         .glimp-login {
-            &__form-wrapper {
-                transform: translateX(-110%);
+            &__form {
+                &-wrapper {
+                    transform: translateX(-110%);
+                }
+
+                &:nth-of-type(2) {
+                    display: block;
+                }
             }
 
             &__heading {
@@ -103,6 +205,22 @@
                         cursor: pointer;
                     }
                 }
+            }
+        }
+    }
+
+    &.forgot {
+        .glimp-login {
+            &__form-wrapper {
+                display: none;
+            }
+
+            &__heading {
+                display: none;
+            }
+
+            &__lost-password {
+                display: block;
             }
         }
     }

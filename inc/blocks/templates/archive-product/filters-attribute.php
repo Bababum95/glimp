@@ -43,6 +43,11 @@ if ($queried_object instanceof WP_Term) {
     $terms = get_terms($attribute_taxonomy_name);
 }
 
+if (empty($terms)) {
+    echo '<span class="empty"></span>';
+    return;
+}
+
 if($type == 'dropdown') {
     echo '<select data-slug="' . $attribute_taxonomy_name . '" class="wp-block-glimp-filters-attribute__dropdown">';
     echo '<option value="0">' . $attributes['placeholder'] . '</option>';

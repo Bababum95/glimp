@@ -1,6 +1,6 @@
 import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 
-export const Save = ({ attributes }) => {
+const Save = ({ attributes }) => {
 	const blockProps = useBlockProps.save();
 
 	return (

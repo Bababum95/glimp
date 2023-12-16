@@ -1,0 +1,52 @@
+@import '../assets/styles/variables';
+
+.woocommerce-account .wp-block-post-title,
+.woocommerce-account main .woocommerce,
+.woocommerce-cart .wp-block-post-title,
+.woocommerce-cart main .woocommerce,
+.woocommerce-checkout .wp-block-post-title,
+.woocommerce-checkout main .woocommerce {
+    max-width: var(--wp--style--global--content-size);
+}
+
+
+.woocommerce-MyAccount-navigation {
+    max-width: 285px;
+
+    &-link {
+        padding: 0 !important;
+        margin-bottom: 12px;
+
+        a {
+            width: 100%;
+            padding: 16px;
+            background-color: $color-grey;
+            display: block;
+            box-sizing: border-box;
+            border-radius: 12px;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &.is-active,
+        &:hover {
+            a {
+                background-color: $color-primary;
+                color: $color-white;
+                text-decoration-line: none !important;
+            }
+        }
+    }
+}
+
+.woocommerce-MyAccount-content {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: $box-shadow;
+
+    a {
+        text-decoration-line: underline;
+    }
+}

@@ -1,0 +1,26 @@
+@import '../../assets/styles/mixins';
+
+.wp-block-glimp-social-actions-panel {
+    @include flex-layout(flex-start, flex-start);
+    gap: 6px;
+
+
+    &__likes,
+    &__comments {
+        @include comments-button-style;
+        @include comments-button-size(6px 12px, 19px);
+        margin-top: 4px;
+    }
+
+    &__likes::before {
+        background-image: url(../../../../../assets/icons/Thumbs\ Up\ default.png);
+    }
+
+    &__likes.active::before {
+        background-image: url(../../../../../assets/icons/Thumbs\ Up\ active.png);
+    }
+
+    &__comments::before {
+        background-image: url(../../../../../assets/icons/Speech\ Bubble.png);
+    }
+}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/social-actions-panel",
+	"version": "1.0.0",
+	"title": "Social Actions Panel",
+	"icon": "groups",
+	"category": "theme",
+	"description": "Enhance your site's social presence with the Social Actions Panel, a Gutenberg block offering easy content sharing via Twitter, Facebook, LinkedIn, Reddit, email, and a quick 'Copy Link' feature.",
+	"attributes": {},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/social-actions-panel",
+	"editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

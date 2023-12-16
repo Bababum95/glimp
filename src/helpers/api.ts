@@ -14,7 +14,7 @@ const getResponseData = (res: Response): Promise<any> => {
                 throw {
                     status: res.status,
                     statusText: res.statusText,
-                    error: parsedError.error,
+                    error: parsedError.error || parsedError.data,
                 } as IApiError;
             })
             .catch((error: IApiError) => {

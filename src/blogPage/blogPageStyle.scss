@@ -1,0 +1,162 @@
+@import '../assets/styles/variables';
+@import '../assets/styles/mixins';
+@import '../assets/styles/placeholders';
+
+.glimp-post {
+    margin-top: 30px;
+
+    &__main {
+        box-shadow: $box-shadow;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        &-content {
+            padding: 0 20px 8px;
+        }
+    }
+
+    &__bonus {
+        box-shadow: $box-shadow;
+        border-radius: 12px;
+        padding: 30px;
+        gap: 28px;
+
+        &-title {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+            margin: 0 0 8px;
+        }
+
+        &-text {
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            margin: 0 0 12px;
+            color: $color-dark-grey;
+        }
+
+        &-link {
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            margin: 0;
+            text-decoration-line: underline;
+            color: $color-dark-grey;
+        }
+    }
+
+    &__comments {
+        box-shadow: $box-shadow;
+        border-radius: 12px;
+        padding: 40px 20px 20px;
+        box-sizing: border-box;
+
+        &-replay a {
+            @extend %flex-center;
+            gap: 8px;
+            border-radius: 6px;
+            padding: 2px 6px;
+            width: fit-content;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-image: url(./reply.png);
+                background-size: cover;
+            }
+
+            &:hover {
+                background-color: $color-grey;
+                color: $color-black;
+            }
+        }
+
+        ol:not(.wp-block-comment-template) {
+            .wp-block-comment-author-name {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 15px;
+                    top: -4px;
+                    left: -20px;
+                    border: solid 1px $color-dark-grey;
+                    border-right: none;
+                    border-top: none;
+                    border-radius: 0 0 0 8px;
+                }
+            }
+        }
+
+        .logged-in-as,
+        label {
+            display: none;
+        }
+
+        .comment-form {
+            position: relative;
+
+            .wp-block-button__link {
+                position: absolute;
+                bottom: 14px;
+                right: 14px;
+                font-size: 0;
+                padding: 9px;
+                border-radius: 8px;
+                width: 38px;
+                height: 38px;
+                box-sizing: border-box;
+                background-image: url(./Sent-active.png);
+                background-size: 20px 20px;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            &:invalid {
+                .wp-block-button__link {
+                    background-color: $color-grey-active;
+                    background-image: url(./Sent-disaibled.png);
+                }
+            }
+
+            &:valid {
+                .wp-block-button__link:hover {
+                    background-color: $color-primary;
+                }
+            }
+
+            &:has(.comment-form-author) {
+                .wp-block-button__link {
+                    position: static;
+                    font-size: 16px;
+                    background-image: none;
+                    width: auto;
+                }
+
+
+                .comment-reply-title,
+                .logged-in-as,
+                label {
+                    display: block;
+                }
+            }
+        }
+
+        textarea {
+            @include textarea;
+        }
+    }
+
+    @include media('phone') {
+        margin-top: 20px;
+    }
+}

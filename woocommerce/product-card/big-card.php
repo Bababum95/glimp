@@ -6,7 +6,7 @@ if (empty($product) || !$product->is_visible()) {
     return;
 }
 
-$title = $product->get_name();
+$title = get_product_name($product);
 $is_variation = $product->is_type('variation');
 $id = $product->get_id();
 $parent_id = $product->get_parent_id();
@@ -14,15 +14,7 @@ $product_attributes = $product->get_attributes();
 $product_permalink = $is_variation ? get_permalink($parent_id) : get_permalink($id);
 $rating = $product->get_average_rating();
 $out_of_stock = !$product->is_in_stock();
-$image = $product->get_image(
-    'woocommerce_thumbnail',
-    array(
-        'alt'         => $title,
-        'data-testid' => 'product-image',
-        'title'       => $title,
-        'lazy'        => true,
-    )
-);
+$image = get_product_image($product, $title);
 
 $button_classes = 'glimp-product-big-card__button';
 $button_data = '';

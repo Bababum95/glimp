@@ -67,7 +67,7 @@ const loadNewProduct = () => {
   .then(data => {
     const newProducts = getProductsList(data.products);
     productsContainer?.appendChild(newProducts);
-    productCount += data.product_count;
+    productCount = Number(data.product_count) + Number(productCount);
   })
   .catch(() => {
     if (loadingTrigger) observer.unobserve(loadingTrigger);

@@ -1,7 +1,6 @@
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
-import './editor.scss';
 
 
 export const Edit = ({ attributes, setAttributes }) => {

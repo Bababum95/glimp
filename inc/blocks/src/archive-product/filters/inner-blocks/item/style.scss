@@ -4,8 +4,12 @@
 $transition: all 0.1s ease;
 
 .wp-block-glimp-filters-item {
-    --height-content: 200px;
+    --height-content: 1000px;
     margin: 32px 0;
+
+    &:has(.empty) {
+        display: none;
+    }
 
     &__label {
         @include flex-layout(flex-start, center);

@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/breadcrumbs",
+	"version": "1.0.0",
+	"title": "breadcrumbs",
+	"icon": "ellipsis",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"has": {
+			"type": "boolean",
+			"default": false
+		},
+		"text": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-breadcrumbs__item"
+		}
+	},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "glimp/breadcrumbs",
+	"editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}

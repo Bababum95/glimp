@@ -42,7 +42,7 @@ export const Edit = ({ attributes, setAttributes }) => {
         const selectedPage = pages.find(page => page.id === id);
         if (selectedPage) {
             setCurrentPage({
-                comments: selectedPage._embedded.replies[0].length,
+                comments: 0,
                 likes: 0,
                 date: selectedPage.modified,
                 image: selectedPage._embedded['wp:featuredmedia'][0].source_url,

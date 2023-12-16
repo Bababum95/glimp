@@ -1,0 +1,10 @@
+@import '../page-card/style';
+
+.wp-block-glimp-all-posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 157px;
+    gap: 20px;
+    padding: 0;
+    margin: 40px 0;
+}

@@ -1,33 +1,103 @@
 <!-- wp:template-part {"slug":"header","theme":"glimp","area":"header"} /-->
 
-<!-- wp:post-content /-->
+<!-- wp:group {"className":"glimp-post","layout":{"type":"constrained"}} -->
+<div class="wp-block-group glimp-post"><!-- wp:glimp/breadcrumbs {"has":true} -->
+    <li class="wp-block-glimp-breadcrumbs__item"><a href="http://localhost:8888/blog/" data-type="link"
+            data-id="http://localhost:8888/blog/">Blog</a> </li>
+    <!-- /wp:glimp/breadcrumbs -->
 
-<!-- wp:comments -->
-<div class="wp-block-comments"><!-- wp:comments-title /-->
+    <!-- wp:glimp/post-wrapper -->
+    <div class="wp-block-glimp-post-wrapper"><!-- wp:group {"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group"><!-- wp:group {"className":"glimp-post__main","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group glimp-post__main"><!-- wp:post-featured-image /-->
 
-    <!-- wp:comment-template -->
-    <!-- wp:columns -->
-    <div class="wp-block-columns"><!-- wp:column {"width":"40px"} -->
-    <div class="wp-block-column" style="flex-basis:40px"><!-- wp:avatar {"size":40,"style":{"border":{"radius":"20px"}}} /--></div>
-    <!-- /wp:column -->
-    
-    <!-- wp:column -->
-    <div class="wp-block-column"><!-- wp:comment-author-name {"fontSize":"small"} /-->
-    
-    <!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"flex"}} -->
-    <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px"><!-- wp:comment-date {"fontSize":"small"} /-->
-    
-    <!-- wp:comment-edit-link {"fontSize":"small"} /--></div>
-    <!-- /wp:group -->
-    
-    <!-- wp:comment-content /-->
-    
-    <!-- wp:comment-reply-link {"fontSize":"small"} /--></div>
-    <!-- /wp:column --></div>
-    <!-- /wp:columns -->
-    <!-- /wp:comment-template -->
-    
-    <!-- wp:post-comments-form /--></div>
-    <!-- /wp:comments -->
-    
-    <!-- wp:template-part {"slug":"footer","theme":"glimp","area":"footer"} /-->
+                <!-- wp:group {"className":"glimp-post__main-content","layout":{"type":"constrained"}} -->
+                <div class="wp-block-group glimp-post__main-content"><!-- wp:post-title /-->
+
+                    <!-- wp:post-date {"format":"j F Y","displayType":"modified"} /-->
+
+                    <!-- wp:post-content /-->
+
+                    <!-- wp:glimp/social-actions-panel -->
+                    <div class="wp-block-glimp-social-actions-panel">
+                        <div class="root"></div><!-- wp:glimp/share /-->
+                    </div>
+                    <!-- /wp:glimp/social-actions-panel -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:columns {"className":"glimp-post__bonus"} -->
+            <div class="wp-block-columns glimp-post__bonus"><!-- wp:column {"width":"48px"} -->
+                <div class="wp-block-column" style="flex-basis:48px">
+                    <!-- wp:image {"id":3578,"sizeSlug":"full","linkDestination":"none"} -->
+                    <figure class="wp-block-image size-full"><img
+                            src="http://localhost:8888/wp-content/uploads/2023/12/coin.png" alt=""
+                            class="wp-image-3578" /></figure>
+                    <!-- /wp:image -->
+                </div>
+                <!-- /wp:column -->
+
+                <!-- wp:column {"width":""} -->
+                <div class="wp-block-column"><!-- wp:paragraph {"className":"glimp-post__bonus-title"} -->
+                    <p class="glimp-post__bonus-title">Geschrieben von glimp</p>
+                    <!-- /wp:paragraph -->
+
+                    <!-- wp:paragraph {"className":"glimp-post__bonus-text"} -->
+                    <p class="glimp-post__bonus-text">glimp ist ein Berliner Unternehmen, das sich auf
+                        Einweg-E-Zigaretten, Pod-Systeme, E-Liquids und andere Dampfprodukte spezialisiert hat. Seit der
+                        Gründung im Jahr 2021 beliefert glimp den deutschen Markt mit qualitativ hochwertigen,
+                        benutzerfreundlichen und nachhaltigen Produkten. Als Experte in der Dampfbranche teilt glimp
+                        sein Wissen und seine Erfahrung durch informative Artikel und hilfreiche Tipps, um das
+                        Dampferlebnis sowohl für Anfänger als auch für erfahrene Dampfer zu verbessern.</p>
+                    <!-- /wp:paragraph -->
+
+                    <!-- wp:paragraph {"className":"glimp-post__bonus-link"} -->
+                    <p class="glimp-post__bonus-link">Mehr erfahren</p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:column -->
+            </div>
+            <!-- /wp:columns -->
+
+            <!-- wp:group {"layout":{"type":"constrained"}} -->
+            <div id="reviews" class="wp-block-group"><!-- wp:comments {"className":"glimp-post__comments"} -->
+                <div class="wp-block-comments glimp-post__comments"><!-- wp:comment-template -->
+                    <!-- wp:columns -->
+                    <div class="wp-block-columns"><!-- wp:column -->
+                        <div class="wp-block-column">
+                            <!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"flex"}} -->
+                            <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px">
+                                <!-- wp:comment-author-name {"isLink":false,"style":{"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"600"}}} /-->
+
+                                <!-- wp:comment-date {"isLink":false,"style":{"typography":{"fontSize":"14px"},"elements":{"link":{"color":{"text":"var:preset|color|glimp-grey-text"}}}},"textColor":"glimp-grey-text"} /-->
+
+                                <!-- wp:comment-edit-link {"fontSize":"small"} /-->
+                            </div>
+                            <!-- /wp:group -->
+
+                            <!-- wp:comment-content /-->
+
+                            <!-- wp:comment-reply-link {"className":"glimp-post__comments-replay","fontSize":"small"} /-->
+                        </div>
+                        <!-- /wp:column -->
+                    </div>
+                    <!-- /wp:columns -->
+                    <!-- /wp:comment-template -->
+
+                    <!-- wp:comments-title {"showPostTitle":false} /-->
+
+                    <!-- wp:post-comments-form /-->
+                </div>
+                <!-- /wp:comments -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:glimp/post-wrapper -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"glimp","area":"footer"} /-->

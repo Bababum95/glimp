@@ -1,0 +1,19 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/placeholders';
+@import '../../assets/styles/mixins';
+
+.wp-block-glimp-post-sidebar {
+    gap: 12px;
+    order: 2;
+    position: sticky;
+    top: $header-height;
+    right: 0;
+
+    &.show {
+        @extend %flex-column;
+
+        @include media('desktop') {
+            display: none;
+        }
+    }
+}

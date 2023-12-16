@@ -20,6 +20,7 @@ export const Image = ({ mediaID, mediaURL, setAttributes, imageClass }) => {
                     <Button
                         className={mediaID ? '' : 'button button-large'}
                         onClick={open}
+                        style={{ height: 'fit-content' }}
                     >
                         {!mediaID ? ('Upload Image') : (
                             <img

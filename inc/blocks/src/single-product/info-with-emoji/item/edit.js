@@ -42,7 +42,7 @@ export const Edit = ({ attributes, setAttributes, isSelected }) => {
 				/>
 				{(attributes.slug && attributesOptions) && (
 					<strong>
-						{attributesOptions.find((el) => el.value === attributes.slug).label}
+						{attributesOptions.find((el) => el.value === attributes.slug)?.label}
 					</strong>
 				)}
 			</p>
