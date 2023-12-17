@@ -18,6 +18,10 @@
 		"gap": {
 			"type": "string",
 			"default": "20px"
+		},
+		"view": {
+			"type": "string",
+			"default": "full-screen"
 		}
 	},
 	"example": {},

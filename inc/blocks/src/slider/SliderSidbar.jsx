@@ -1,5 +1,9 @@
 import { InspectorControls, HeightControl } from '@wordpress/block-editor';
-import { PanelBody } from '@wordpress/components';
+import {
+    PanelBody,
+    __experimentalToggleGroupControl as ToggleGroupControl,
+    __experimentalToggleGroupControlOption as ToggleGroupControlOption,
+} from '@wordpress/components';
 
 export const SliderSidbar = ({ attributes, setAttributes }) => {
     return (
@@ -16,12 +20,26 @@ export const SliderSidbar = ({ attributes, setAttributes }) => {
                     value={attributes.phone}
                 />
             </PanelBody>
-            <PanelBody title="Spacing">
+            <PanelBody title="View Settings">
                 <HeightControl
                     label='gap'
                     onChange={(value) => setAttributes({ gap: value })}
                     value={attributes.gap}
                 />
+                <ToggleGroupControl
+                    label="View Mode"
+                    value={attributes.view}
+                    onChange={(view) => setAttributes({ view })}
+                >
+                    <ToggleGroupControlOption
+                        value="container"
+                        label="Container"
+                    />
+                    <ToggleGroupControlOption
+                        value="full-screen"
+                        label="Full Screen"
+                    />
+                </ToggleGroupControl>
             </PanelBody>
         </InspectorControls>
     )
