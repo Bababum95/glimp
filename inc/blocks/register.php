@@ -53,6 +53,7 @@ function create_glimp_block_init() {
         'post/wrapper' => 'post/wrapper',
         'post/share' => 'post/share',
         'post/social-actions-panel' => 'post/social-actions-panel',
+        'post/related-posts' => 'post/related-posts',
     ];
 
     foreach ($blocks as $path => $template) {

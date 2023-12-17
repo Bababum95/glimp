@@ -3,6 +3,15 @@
 @import '../assets/styles/variables';
 @import '../assets/styles/mixins/submit-button';
 
+.woocommerce div.product form.cart .bundled_product_summary {
+    margin: 0 !important;
+}
+
+.bundle_form table.variations td.value,
+.single-product div.product .bundle_form table.variations td.value {
+    padding: 0 !important;
+}
+
 .product-summary {
     gap: 25px;
     margin-bottom: 82px;
@@ -124,6 +133,103 @@
                 @include select-input;
             }
 
+            &.bundle_form {
+                flex-wrap: wrap;
+                gap: 12px;
+
+                .bundled_product_summary {
+                    display: flex;
+                    margin-bottom: 12px;
+
+                    .bundled_item_col {
+                        padding: 0;
+                    }
+
+                    .bundled_item_details_col {
+                        flex: 1;
+                    }
+                }
+
+                .bundled_product_title {
+                    @include flex-layout(flex-start, center);
+                    flex: 1;
+                    font-size: 16px !important;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    padding: 14px 20px;
+                    background-color: $color-grey;
+                    border-radius: 10px;
+                    margin: 0 !important;
+
+
+                    &_link {
+                        display: none;
+                    }
+                }
+
+                .cart.bundle_data {
+                    width: 100%;
+                }
+
+                .variations_form {
+                    width: 100%;
+                    display: flex;
+
+                    .quantity {
+                        margin: 0 0 0 12px !important;
+                    }
+                }
+
+                .reset_bundled_variations_fixed,
+                .bundled_product_images,
+                .bundled_item_cart_details,
+                thead,
+                .bundled_item_images_col {
+                    display: none !important;
+                }
+
+                .bundle_button {
+                    display: flex;
+                }
+
+                .details {
+                    display: flex;
+                    width: 100% !important;
+                    padding: 0 !important;
+                    gap: 8px;
+                    height: 100%;
+
+                    &:has(.variations_form) {
+                        flex-wrap: wrap;
+                    }
+                }
+
+                .bundled_product {
+                    width: 100%;
+                }
+
+                .variations tr {
+                    position: relative;
+                }
+
+                .label {
+                    @include select-label;
+                }
+
+                .quantity:not(.quantity_hidden) {
+                    margin: 0;
+                    display: flex !important;
+                }
+
+                table.bundled_products {
+                    width: 100%;
+
+                    td.bundled_item_col {
+                        padding: 0 !important;
+                    }
+                }
+            }
         }
 
         form.cart:not(.variations_form),

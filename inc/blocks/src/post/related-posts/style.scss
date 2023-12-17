@@ -1,6 +1,6 @@
-@import '../assets/styles/variables';
-@import '../assets/styles/mixins';
-@import '../assets/styles/placeholders';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/placeholders';
 
 .wp-block-glimp-page-card {
     --flex-direction: row;
@@ -20,8 +20,8 @@
     &__info {
         @extend %flex-column;
         padding: 20px;
-        height: 100%;
         gap: 20px;
+        height: 100%;
         width: var(--image-width);
         box-sizing: border-box;
     }
@@ -56,15 +56,15 @@
     }
 
     &__likes::before {
-        background-image: url(../../../../assets/icons/Thumbs\ Up\ default.png);
+        background-image: url(../../../../../assets/icons/Thumbs\ Up\ default.png);
     }
 
     &__likes.active::before {
-        background-image: url(../../../../assets/icons/Thumbs\ Up\ active.png);
+        background-image: url(../../../../../assets/icons/Thumbs\ Up\ active.png);
     }
 
     &__comments::before {
-        background-image: url(../../../../assets/icons/Speech\ Bubble.png);
+        background-image: url(../../../../../assets/icons/Speech\ Bubble.png);
     }
 
     @include media('phone') {
