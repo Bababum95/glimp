@@ -9,6 +9,7 @@ function create_glimp_block_init() {
         'slider',
         'sidebar',
         'referral',
+        'loader',
         'link-with-image',
         'faqs' => 'faqs',
         'account' => 'account',

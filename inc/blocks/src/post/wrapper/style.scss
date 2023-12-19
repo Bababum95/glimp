@@ -7,6 +7,10 @@
     &.has-sidebar {
         @include flex-layout(flex-start, flex-start);
         gap: 30px;
+
+        &>div {
+            width: 64%;
+        }
     }
 
     @include media('tablet') {

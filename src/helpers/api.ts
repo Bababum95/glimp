@@ -55,7 +55,6 @@ const products = (data: ICurrentFilters) => {
     }).then(getResponseData);
 }
 
-
 const addToCart = (currentProductId: string, quantity: number, variationId: string | null): Promise<any> => {
     return fetch(`${ajaxUrl}add_to_cart&product_id=${currentProductId}&quantity=${quantity}${variationId ? `&variation_id=${variationId}` : ''}`)
         .then(getResponseData);
@@ -84,6 +83,11 @@ const addPageLike = (productId: string) => {
 const removePageLike = (productId: string) => {
     return fetch(`${ajaxUrl}remove_page_like&post_id=${productId}`)
         .then(getResponseData);
+
+    }
+const loadMorePosts = (page: number) => {
+    return fetch(`${ajaxUrl}load_more_posts&page=${page}`)
+        .then(getResponseData);
 }
 
 export {
@@ -95,5 +99,6 @@ export {
     getFavorites,
     addPageLike,
     removePageLike,
-    products
+    products,
+    loadMorePosts
 };

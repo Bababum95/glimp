@@ -1,0 +1,31 @@
+@import '../assets/styles/mixins';
+
+.glimp-not-found {
+    margin: 120px 0 200px;
+
+    .wp-block-heading {
+        @include responsive-font-size(24px, 36px, 45px);
+        margin: 0 0 8px;
+    }
+
+    .dgwt-wcas-search-wrapp {
+        margin-top: 32px;
+        max-width: 530px;
+    }
+
+    .dgwt-wcas-sf-wrapp {
+        padding-left: 0;
+    }
+
+    @include media('tablet') {
+        margin: 80px 0 120px;
+
+        .dgwt-wcas-search-wrapp {
+            margin-top: 24px;
+        }
+
+        .wp-block-image {
+            display: none;
+        }
+    }
+}

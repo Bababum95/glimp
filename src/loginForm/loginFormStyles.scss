@@ -65,6 +65,11 @@
 
     &__checkbox {
         @include checkbox;
+        padding-left: 12px;
+
+        &-label {
+            font-size: 14px;
+        }
     }
 
     &__bottom {

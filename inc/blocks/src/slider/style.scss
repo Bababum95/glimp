@@ -9,6 +9,7 @@
 
     &__wrapper {
         @include slider-wrapper(var(--width-teamplate-desctop), var(--slider-gap));
+        padding: var(--padding-container);
     }
 
     &__button {
@@ -49,6 +50,10 @@
     }
 
     @include media('desktop-large') {
+        &__wrapper {
+            padding: var(--padding-container-phone);
+        }
+
         &__button {
             &.left {
                 left: 10px;

@@ -8,6 +8,7 @@
     position: sticky;
     top: $header-height;
     right: 0;
+    width: 34%;
 
     &.show {
         @extend %flex-column;

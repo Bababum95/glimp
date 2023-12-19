@@ -12,15 +12,15 @@
     }
     
     &__contents {
-        display: flex;
+        @include flex-layout(flex-start, flex-start);
         gap: 20px;
-        align-items: flex-start;
     }
 
     &__list {
         border-radius: 12px;
         padding: 30px;
         background-color: var(--wp--preset--color--glimp-grey, #F2F2F2);
+        max-width: 635px;
 
         ol,
         ul {

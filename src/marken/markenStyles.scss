@@ -1,0 +1,36 @@
+@import '../assets/styles/mixins';
+
+.glimp-marken {
+    &__brend {
+        gap: 35px;
+
+        .wp-block-image {
+            margin: 0;
+
+            img {
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
+    }
+
+    &__heading {
+        @include responsive-font-size(24px, 36px, 45px);
+        margin: 0 0 20px;
+    }
+
+    &__text {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+}
+
+.glimp-mb-d60 {
+    margin-bottom: 60px;
+    @include media('phone') {
+        margin-bottom: 44px;
+    }
+}

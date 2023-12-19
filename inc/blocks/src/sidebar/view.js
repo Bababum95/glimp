@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
 			event.preventDefault();
 			const section = document.getElementById(id);
 			window.scrollTo({
-				top: section.offsetTop - 80,
+				top: section.offsetTop - 140,
 				behavior: 'smooth',
 			});
 		});

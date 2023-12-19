@@ -18,6 +18,10 @@
         display: none;
     }
 
+    .wp-block-glimp-loader__card {
+        min-height: 350px;
+    }
+
     @include media('desktop') {
         flex-basis: auto;
         width: 100%;
@@ -26,6 +30,11 @@
     @include media('phone') {
         grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
         gap: 20px;
+
+        .wp-block-glimp-loader__card {
+            min-height: 285px;
+        }
+    
     }
 }
 

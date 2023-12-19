@@ -50,6 +50,13 @@ body::-webkit-scrollbar {
     max-width: 300px;
 }
 
+.glimp-mb-d80 {
+    margin-bottom: 80px;
+    @include media('phone') {
+        margin-bottom: 40px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .wc-block-components-product-badge {
         &__out-of-stock,

@@ -21,7 +21,7 @@ function render_page_card($id, $direction = 'row') {
     return sprintf(
         '<li class="wp-block-glimp-page-card" style="--flex-direction: %s; --image-width: %s;">
             <a class="wp-block-glimp-page-card__link" href="%s" title="%s">
-                <img class="wp-block-glimp-page-card__image" src="%s" alt="%s" loading="lazy" onerror="this.onerror=null;this.src=\'%s\';" />
+                <img class="wp-block-glimp-page-card__image" src="%s" alt="%s" onerror="this.onerror=null;this.src=\'%s\';" />
                 <div class="wp-block-glimp-page-card__info">
                     <h3 class="wp-block-glimp-page-card__title">%s</h3>
                     <div class="wp-block-glimp-page-card__bottom">

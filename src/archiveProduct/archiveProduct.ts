@@ -1,14 +1,16 @@
 import { products, getFavorites } from '../helpers/api';
 import { ICurrentFilters, IProductData, IFilterResult, IFilterResultPair, IResponseProducts } from '../interfaces';
 import { createProductCard } from '../helpers/createProductCard';
+import { startLoading, endLoading } from '../helpers/loading';
 
 const productsContainer = document.querySelector('.wp-block-glimp-all-products');
 const filterSelects = document.querySelectorAll('.wp-block-glimp-filters-attribute__dropdown');
 const filterButtonsContainers = document.querySelectorAll('.wp-block-glimp-filters-attribute__buttons');
 const inStockElement = document.querySelector('.wp-block-glimp-filters-availability__input');
-const loadingTrigger = document.querySelector('.loading-observer');
 const currentPageTaxonomy = productsContainer?.getAttribute('data-taxonomy');
 const currentPageTerm = productsContainer?.getAttribute('data-term');
+const loadingTrigger = document.querySelector('.wp-block-glimp-loader');
+const cardLoader = document.querySelector('.wp-block-glimp-loader__card');
 
 const currentFilters: ICurrentFilters = {
   sort: 'date',
@@ -63,18 +65,20 @@ const fetchProductsIfNotCached = (filter: ICurrentFilters) => {
 const loadNewProduct = () => {
   if (isLoading) return;
   isLoading = true;
-  products({...currentFilters, offset: productCount})
-  .then(data => {
-    const newProducts = getProductsList(data.products);
-    productsContainer?.appendChild(newProducts);
-    productCount = Number(data.product_count) + Number(productCount);
-  })
-  .catch(() => {
-    if (loadingTrigger) observer.unobserve(loadingTrigger);
-  })
-  .finally(() => {
-    isLoading = false;
-  })
+  if (cardLoader && productsContainer) startLoading(cardLoader, productsContainer);
+  products({ ...currentFilters, offset: productCount })
+    .then(data => {
+      const newProducts = getProductsList(data.products);
+      productsContainer?.appendChild(newProducts);
+      productCount = Number(data.product_count) + Number(productCount);
+    })
+    .catch(() => {
+      if (loadingTrigger) observer.unobserve(loadingTrigger);
+    })
+    .finally(() => {
+      if (productsContainer) endLoading(productsContainer);
+      isLoading = false;
+    })
 }
 
 const getProductsList = (data: IProductData[]) => {
@@ -115,7 +119,7 @@ const setFiltersElements = (data: IFilterResult) => {
     buttons?.forEach((button) => {
       button.classList.add('hidden');
       data[taxonomy]?.find((term) => {
-        if ( term.term_id.toString() === button.getAttribute('data-id') ) {
+        if (term.term_id.toString() === button.getAttribute('data-id')) {
           button.classList.remove('hidden');
         }
       })

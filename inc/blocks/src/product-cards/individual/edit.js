@@ -41,6 +41,7 @@ export function Edit({ attributes, setAttributes }) {
 				setVariations(data.data);
 			})
 	}, [id, variation]);
+	console.log(variations)
 
 	useEffect(() => {
 		if (!id || !products) return;
@@ -86,7 +87,7 @@ export function Edit({ attributes, setAttributes }) {
 											checked={count === -1}
 											onChange={(value) => setAttributes({ count: value ? -1 : 10 })}
 										/>
-										{count > 0 && Array(count).fill(0).map((el, i) => (
+										{count > 0 && Array(Math.min(count, variations.length)).fill(0).map((el, i) => (
 											<SelectControl
 												options={getOptions(variations)}
 												value={variationIds[i] ?? handleChange(variations[i].id, i)}

@@ -214,8 +214,8 @@ do_action('woocommerce_before_customer_login_form'); ?>
 			<form class="glimp-login__form" method="post" data-type="lost-password">
 				<div class="glimp-login__notice">
 					<p class="glimp-login__notice-message">
-						Check your email for the confirmation link, then visit the
-						<a href="<?php echo wc_get_page_permalink('myaccount'); ?>">login page.</a>
+						Prüfen Sie Ihre E-Mail auf den Bestätigungslink und besuchen Sie dann die
+						<a href="<?php echo wc_get_page_permalink('myaccount'); ?>">Anmeldeseite.</a>
 					</p>
 				</div>
 				<div class="glimp-login-input-container">
