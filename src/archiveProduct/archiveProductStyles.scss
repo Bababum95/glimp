@@ -16,3 +16,26 @@
         gap: 20px;
     }
 }
+
+.angebote {
+    &__preview {
+        margin: 34px 0 20px;
+        gap: 30px;
+
+        &-title {
+            @include responsive-font-size(28px, 33px, 35px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            margin: 0 0 12px;
+        }
+
+        &-text {
+            margin: 0;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+        }
+    }
+}

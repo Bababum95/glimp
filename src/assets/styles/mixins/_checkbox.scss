@@ -1,6 +1,25 @@
 @import '../variables/colors';
 @import './abstract';
 
+@mixin checkmark($color, $width, $weight) {
+    &::after {
+        position: absolute;
+        content: "";
+        z-index: 2;
+        top: -2px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: $width;
+        height: calc(#{$width} / 2);
+        border: $weight solid $color;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+    }
+}
+
 @mixin checkbox {
     @include flex-layout(flex-start, flex-start);
     margin: 16px 0 0;
@@ -15,6 +34,7 @@
     }
 
     &-checkmark {
+        @include checkmark($color-white, 7px, 2px);
         background-color: $color-grey;
         width: 16px;
         height: 16px;
@@ -25,22 +45,7 @@
         transition: all 0.2s;
 
         &::after {
-            position: absolute;
-            content: "";
-            z-index: 2;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             opacity: 0;
-            margin: auto;
-            top: -2px;
-            width: 7px;
-            height: 4px;
-            border: 2px solid $color-white;
-            border-top: none;
-            border-right: none;
-            transform: rotate(-45deg);
         }
     }
 
@@ -124,4 +129,3 @@
         line-height: normal;
     }
 }
-

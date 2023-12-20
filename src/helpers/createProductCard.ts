@@ -70,16 +70,26 @@ const getAddToCartButton = (data: IProductData): HTMLButtonElement => {
 const getPrice = (data: IProductData): HTMLElement => {
     const priceSpan = document.createElement('span');
     priceSpan.className = 'glimp-product-card__price';
-  
     if (data.is_on_sale) {
       const originalPrice = document.createElement('del');
-      originalPrice.innerHTML = `<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>${data.regular_price}</bdi></span>`;
+      originalPrice.innerHTML = `<span class="woocommerce-Price-amount amount">
+                                    <bdi>
+                                        ${data.regular_price}
+                                        <span class="woocommerce-Price-currencySymbol">€</span>
+                                    </bdi>
+                                 </span>`;
       priceSpan.appendChild(originalPrice);
     }
-  
+
     const salePrice = document.createElement('ins');
-    salePrice.innerHTML = `<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>${data.price}</bdi></span>`;
+    salePrice.innerHTML = `<span class="woocommerce-Price-amount amount">
+                            <bdi>
+                                ${data.price}
+                                <span class="woocommerce-Price-currencySymbol">€</span>
+                            </bdi>
+                          </span>`;
     priceSpan.appendChild(salePrice);
+
   
     return priceSpan;
 }

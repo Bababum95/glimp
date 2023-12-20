@@ -23,7 +23,7 @@
         padding: 10px;
         max-width: 53px;
         border-radius: 50%;
-        color: transparent;
+        color: transparent !important;
         pointer-events: none;
         transition: max-width 0.3s ease-in-out, 
             border-radius 0.4s ease-in-out;

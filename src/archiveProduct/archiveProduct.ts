@@ -55,6 +55,8 @@ const fetchProductsIfNotCached = (filter: ICurrentFilters) => {
     if (!cachedResult) return;
     setData(cachedResult.data);
   } else {
+    productsContainer?.replaceChildren();
+    if (cardLoader && productsContainer) startLoading(cardLoader, productsContainer, 8);
     products(filter).then(data => {
       filterResultsMap.set(filterKey, { filter, data });
       setData(data);
