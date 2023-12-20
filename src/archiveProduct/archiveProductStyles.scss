@@ -1,4 +1,5 @@
 @import '../assets/styles/mixins';
+@import '../assets/styles/variables';
 
 .glimp-category {
     @include slider;
@@ -36,6 +37,79 @@
             font-style: normal;
             font-weight: 400;
             line-height: 130%;
+        }
+    }
+
+    &__subscribe {
+        gap: 30px;
+        margin-bottom: 120px;
+
+        &>div {
+            box-shadow: $box-shadow;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .wp-block-image {
+            margin-bottom: 0;
+            width: 100%;
+            height: 100%;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &-form {
+            padding: 40px 40px 28px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="436" height="282" viewBox="0 0 436 282" fill="none"><path d="M200.726 212.903C184.69 235.026 169.591 258.085 155.704 281.511C111.576 355.947 70.4131 435.018 40.2724 515.829C33.6426 533.604 66.2651 606.941 62.0248 625.307C58.4143 640.944 46.5479 675.682 52.2545 692.275C52.7026 693.578 55.5613 692.83 56.4681 691.754C76.6639 667.783 91.2919 639.84 108.509 613.761C170.215 520.299 66.5701 697.782 131.462 606.36C217.468 485.192 225.65 363.566 321.31 249.464C363.02 199.713 404.405 146.887 453.408 103.52C499.812 67.6154 549.943 44.9225 540.963 104.28C538.927 117.739 450.827 334.691 450.233 336.29C406.261 454.649 424.566 372.298 368.578 485.606C295.191 634.122 386.781 511.809 318.235 662.482C304.742 692.142 290.819 722.183 281.599 753.398C276.058 772.157 282.927 756.915 288.814 746.599C345.702 646.917 406.819 549.248 468.393 452.27C501.286 400.465 534.27 348.705 568.235 297.555C584.616 272.885 656.558 164.571 690.284 129.325C705.761 113.151 710.851 120.832 710.957 136.76C711.217 176.119 700.874 219.21 694.942 258.022C683.721 331.455 670.987 404.588 661.991 478.29C660.965 486.7 653.568 498.793 660.558 503.632C662.234 504.792 664.507 501.974 665.924 500.47C671.963 494.062 699.858 456.65 701.099 454.993C773.317 358.618 844.065 106.23 922.993 15.0497" stroke="%23E6DBF3" stroke-width="78.5505" stroke-linecap="round"/></svg>');
+            background-position: bottom right;
+            background-repeat: no-repeat;
+        }
+
+        &-title {
+            @include responsive-font-size(22px, 28px, 30px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin: 0 0 12px;
+        }
+
+        &-text {
+            @include responsive-font-size(15px, 16px, 16px);
+            margin: 0 0 32px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            max-width: 471px;
+        }
+    }
+
+    @include media('tablet') {
+        &__subscribe {
+            gap: 20px;
+            margin-bottom: 80px;
+
+            &-text {
+                margin-bottom: 20px;
+            }
+
+            &-form {
+                // background-color: $color-grey;
+
+                .glimp-footer__subscribe {
+                    flex-direction: column;
+                    gap: 0;
+
+                    &-button,
+                    &-input {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
         }
     }
 }

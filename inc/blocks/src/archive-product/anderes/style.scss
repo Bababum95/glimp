@@ -1,0 +1,77 @@
+@import '../../assets/styles/mixins';
+
+.wp-block-glimp-anderes {
+    margin: 100px 0;
+
+    &__title {
+        @include responsive-font-size(24px, 36px, 45px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        margin: 0 0 12px;
+    }
+
+    &__text {
+        @include responsive-font-size(15px, 16px, 16px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        margin: 0;
+    }
+
+    &__images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 40px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+
+            &:first-of-type,
+            &:last-of-type {
+                grid-column: span 2;
+            }
+        }
+    }
+
+    @include media('phone') {
+        margin: 60px 0;
+
+        &__images {
+            grid-template-columns: 1fr;
+            margin-top: 20px;
+
+            img {
+                border-radius: 6px;
+
+                &:first-of-type {
+                    grid-column: span 1;
+                }
+
+                &:nth-of-type(2) {
+                    order: 2;
+                }
+
+                &:nth-of-type(3) {
+                    order: 3;
+                }
+
+                &:nth-of-type(4) {
+                    order: 5;
+                }
+
+                &:nth-of-type(5) {
+                    order: 6;
+                }
+
+                &:last-of-type {
+                    order: 4;
+                    grid-column: span 1;
+                }
+            }
+        }
+    }
+}

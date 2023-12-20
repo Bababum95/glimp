@@ -196,75 +196,69 @@ if ( is_admin() ) {
 }
 
 
-function newsletter_signup_shortcode_function() {
-	$newsletter_sign_up_options = get_option( 'newsletter_sign_up_option_name' ); // Array of All Options
-	$heading_0 = $newsletter_sign_up_options['heading_0']; // Heading
-	$placeholder_1 = $newsletter_sign_up_options['placeholder_1']; // Placeholder
-	$button_text_2 = $newsletter_sign_up_options['button_text_2']; // Button Text
-	$checkbox_text_4 = $newsletter_sign_up_options['checkbox_text_4']; // Checkbox Text
-	$success_message_5 = $newsletter_sign_up_options['success_message_5']; // Success Message
-	$invalid_email_message_6 = $newsletter_sign_up_options['invalid_email_message_6']; // Invalid Email Message
-	ob_start(); // start output buffering
-	?>
-	<form action="#owt_newslettersignup_form" method="post" id="owt_newslettersignup_form">
-		<p for="owt_newslettersignup_email" class="glimp-footer__heading"><?php echo $heading_0; ?></p>
-			<div class="glimp-footer__subscribe">
-				<input
-					class="glimp-footer__subscribe-input"
-					type="owt_newslettersignup_email"
-					name="owt_newslettersignup_email"
-					id="owt_newslettersignup_email"
-					placeholder="<?php echo $placeholder_1; ?>"
-				>
-				<button class="glimp-footer__subscribe-button"><?php echo $button_text_2; ?></button>
-			</div>
-			<?php echo $checkbox_text_4; ?>
-			<?php
-		// Check if the form has been submited
-	
-		// TODO: handle error msgs
-	
-		if ( isset( $_POST['owt_newslettersignup_email'] ) ) {
-			$owt_newslettersignup_email = $_POST['owt_newslettersignup_email'];
+function newsletter_signup_shortcode_function($atts) {
+    $newsletter_sign_up_options = get_option('newsletter_sign_up_option_name'); // Array of All Options
+    $heading = isset($atts['heading']) && $atts['heading'] === 'false' ? false : true;
+    $show_checkbox = isset($atts['show_checkbox']) && $atts['show_checkbox'] === 'false' ? false : true;
+    $placeholder = $newsletter_sign_up_options['placeholder_1']; // Placeholder
+    $button_text = $newsletter_sign_up_options['button_text_2']; // Button Text
+    $success_message = $newsletter_sign_up_options['success_message_5']; // Success Message
+    $invalid_email_message = $newsletter_sign_up_options['invalid_email_message_6']; // Invalid Email Message
+    ob_start(); // start output buffering
+    ?>
+    <form action="#owt_newslettersignup_form" method="post" id="owt_newslettersignup_form">
+        <?php if ($heading) : ?>
+            <p for="owt_newslettersignup_email" class="glimp-footer__heading"><?php echo $newsletter_sign_up_options['heading_0']; ?></p>
+        <?php endif; ?>
+        <div class="glimp-footer__subscribe">
+            <input
+                class="glimp-footer__subscribe-input"
+                type="owt_newslettersignup_email"
+                name="owt_newslettersignup_email"
+                id="owt_newslettersignup_email"
+                placeholder="<?php echo $placeholder; ?>"
+            >
+            <button class="glimp-footer__subscribe-button"><?php echo $button_text; ?></button>
+        </div>
+        <?php if ($show_checkbox) : ?>
+            <?php echo $newsletter_sign_up_options['checkbox_text_4']; ?>
+        <?php endif; ?>
+        <?php
+        if (isset($_POST['owt_newslettersignup_email'])) {
+            $owt_newslettersignup_email = $_POST['owt_newslettersignup_email'];
 
-			if ( filter_var( $owt_newslettersignup_email, FILTER_VALIDATE_EMAIL ) ) {
-				// Email is valid, add to CSV file
-				// add the email to a CSV file in the uploads directory
-				$upload_dir = wp_upload_dir();
-				$filename = $upload_dir['basedir'] . '/newsletter.csv';
+            if (filter_var($owt_newslettersignup_email, FILTER_VALIDATE_EMAIL)) {
+                $upload_dir = wp_upload_dir();
+                $filename = $upload_dir['basedir'] . '/newsletter.csv';
 
-				// Read the existing CSV file and check for the email
-				$email_exists = false;
-				if ( file_exists( $filename ) ) {
-					$file = fopen( $filename, 'r' );
-					while ( ( $data = fgetcsv( $file ) ) !== false ) {
-						if ( $data[0] == $owt_newslettersignup_email ) {
-							$email_exists = true;
-							break;
-						}
-					}
-					fclose( $file );
-				}
+                $email_exists = false;
+                if (file_exists($filename)) {
+                    $file = fopen($filename, 'r');
+                    while (($data = fgetcsv($file)) !== false) {
+                        if ($data[0] == $owt_newslettersignup_email) {
+                            $email_exists = true;
+                            break;
+                        }
+                    }
+                    fclose($file);
+                }
 
-				// If the email doesn't exist in the CSV, add it
-				if ( ! $email_exists ) {
-					$fp = fopen( $filename, 'a' );
-					fputcsv( $fp, array( $owt_newslettersignup_email ) );
-					fclose( $fp );
-				}
-				// Print success message
-				echo '<p class="glimp-footer__">' . $success_message_5 . '</p>';
-			} else {
-				// Email isn't valid, set error message
-				echo '<p>' . $invalid_email_message_6 . '</p>';
-			}
-		}
-		?>
-	</form>
-	<?php
-	return ob_get_clean(); // return the contents of the output buffer
+                if (!$email_exists) {
+                    $fp = fopen($filename, 'a');
+                    fputcsv($fp, array($owt_newslettersignup_email));
+                    fclose($fp);
+                }
+                echo '<p class="glimp-footer__">' . $success_message . '</p>';
+            } else {
+                echo '<p>' . $invalid_email_message . '</p>';
+            }
+        }
+        ?>
+    </form>
+    <?php
+    return ob_get_clean();
 }
-add_shortcode( 'newsletter_signup_form', 'newsletter_signup_shortcode_function' );
+add_shortcode('newsletter_signup_form', 'newsletter_signup_shortcode_function');
 
 
 // Download as CSV file

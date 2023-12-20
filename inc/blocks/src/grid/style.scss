@@ -1,0 +1,6 @@
+@import '../page-card/style';
+
+.wp-block-glimp-grid {
+    display: grid;
+    grid-template-columns: var(--template-columns-desktop, repeat(3, 1fr));
+}

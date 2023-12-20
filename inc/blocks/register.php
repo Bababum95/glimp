@@ -6,6 +6,7 @@ require_once __DIR__ . '/functions/index.php';
 function create_glimp_block_init() {
     $blocks = [
         'marquee',
+        'grid',
         'slider',
         'sidebar',
         'referral',
@@ -33,6 +34,7 @@ function create_glimp_block_init() {
         'archive-product/listing' => 'archive-product/listing',
         'archive-product/technical-features' => 'archive-product/technical-features',
         'archive-product/overview' => 'archive-product/overview',
+        'archive-product/anderes',
         'archive-product/filters',
         'archive-product/filters-button',
         'archive-product/filters/inner-blocks/availability',
