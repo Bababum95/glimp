@@ -34,7 +34,6 @@ if ($reviews) {
         null,
         array('average_rating' => $average_rating, 'ratings' => $ratings)
     );
-    get_template_part('/woocommerce/single-product/comments/verified-popup');
     $content .= ob_get_clean();
 
     $content .= '<div class="wp-block-glimp-comments__content">';

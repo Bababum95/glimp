@@ -58,6 +58,7 @@
             &.left {
                 left: 10px;
             }
+
             &.right {
                 right: 10px;
             }
@@ -68,8 +69,10 @@
         &__wrapper {
             grid-auto-columns: var(--width-teamplate-phone);
         }
+
         &__button {
-            transform: translate(0, calc(-50% - 12px)) scale(0.6);
+            display: none;
+            // transform: translate(0, calc(-50% - 12px)) scale(0.6);
         }
     }
 }

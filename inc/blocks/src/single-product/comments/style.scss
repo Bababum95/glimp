@@ -117,32 +117,7 @@
         }
 
         &-approved {
-            display: flex;
-            gap: 8px;
-            padding: 6px 16px;
-            border-radius: 8px;
-            background-color: $color-grey-active;
-
-            &::before {
-                content: "";
-                width: 9px;
-                height: 4px;
-                border: 2px solid $color-black;
-                border-top: none;
-                border-right: none;
-                margin: auto;
-                transform: rotate(305deg);
-            }
-
-            &:hover {
-                background-color: $color-primary;
-                color: $color-white;
-                cursor: pointer;
-
-                &::before {
-                    border-color: $color-white;
-                }
-            }
+            @include comment-approved-button();
         }
 
         &-author {
@@ -336,37 +311,6 @@
                 display: block;
                 max-width: 59px;
                 padding: 20px;
-            }
-        }
-
-        &_verified {
-            @extend %flex-center;
-            @include popup-overlay;
-            color: $color-white;
-
-            &-container {
-                @include popup-container(844px, 40px);
-                background: rgba(26, 26, 26, 0.80);
-                backdrop-filter: blur(17px);
-            }
-
-            &-close {
-                @include close-button;
-            }
-
-            &-title {
-                font-size: 45px;
-                font-style: normal;
-                font-weight: 700;
-                margin: 0 0 12px;
-            }
-
-            &-description {
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 130%;
-                margin: 0;
             }
         }
     }

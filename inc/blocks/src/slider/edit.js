@@ -13,6 +13,16 @@ const templates = {
     blank: ''
 }
 
+const AllOWED_BLOCKS = [
+    'glimp/link-with-image',
+    'glimp/individual-product-card',
+    'glimp/multiple-product-card',
+    'glimp/page-card',
+    'glimp/review',
+    'glimp/crossels-products',
+    'core/image',
+]
+
 export const Edit = ({ clientId, attributes, setAttributes }) => {
     const blockProps = useBlockProps();
     const [templateArray, setTemplateArray] = useState(null);
@@ -39,7 +49,7 @@ export const Edit = ({ clientId, attributes, setAttributes }) => {
             {childrens.length === 0 && !templateArray ? (
                 <CardSelectTemplate handleSave={handleSave} />
             ) : (
-                <InnerBlocks template={templateArray} />
+                <InnerBlocks allowedBlocks={AllOWED_BLOCKS} template={templateArray} />
             )}
             <SliderSidbar attributes={attributes} setAttributes={setAttributes} />
         </div>

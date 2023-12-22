@@ -1,0 +1,53 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/placeholders';
+
+.wp-block-glimp-nikotin {
+    @include flex-layout(space-between, center);
+    gap: 12px;
+
+    &__content {
+        @include flex-layout(flex-start, center);
+        box-shadow: $box-shadow;
+        border-radius: 12px;
+        padding: 20px;
+        gap: 25px;
+        flex: 1;
+        flex-basis: 370px;
+        box-sizing: border-box;
+
+        img {
+            width: 42px;
+        }
+    }
+
+    &__text {
+        margin: 0;
+
+        strong {
+            display: block;
+            margin-top: 4px;
+        }
+    }
+
+    &__eighteen {
+        @extend %flex-center;
+        box-shadow: $box-shadow;
+        border-radius: 12px;
+        padding: 22px;
+        flex-basis: 137px;
+        box-sizing: border-box;
+    }
+
+    @include media('tablet-small') {
+        flex-direction: column;
+
+        &__content,
+        &__eighteen {
+            width: 100%;
+            flex-basis: auto;
+            justify-content: center;
+        }
+
+    }
+}

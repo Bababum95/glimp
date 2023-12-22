@@ -9,7 +9,7 @@ export const registerBlockForSpecificTemplate = ({ metadata, icon, edit, save, s
     const unsubscribe = subscribe(() => {
         const store = select('core/edit-site');
         const newTemplateId = store?.getEditedPostId();
-
+        
         if (newTemplateId === currentTemplateId || !newTemplateId || !metadata.name) {
             return;
         }
@@ -26,6 +26,4 @@ export const registerBlockForSpecificTemplate = ({ metadata, icon, edit, save, s
             blocksRegistered.delete(metadata.name);
         }
     });
-
-    // return unsubscribe;
 };

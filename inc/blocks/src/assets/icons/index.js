@@ -13,3 +13,6 @@ export { discoveryIcon } from './discovery.js';
 export { spectrumIcon } from './spectrum.js';
 export { subscribeFormIcon } from './subscribe-form.js';
 export { sidebarIcon } from './sidebar.js';
+export { default as achtungIcon } from '../../../../../assets/icons/achtung.jpg';
+export { default as eighteenIcon } from '../../../../../assets/icons/18.svg';
+export { default as dangerIcon } from '../../../../../assets/icons/danger.svg';

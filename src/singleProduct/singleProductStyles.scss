@@ -52,47 +52,6 @@
             }
         }
 
-        &-danger {
-            margin: 0;
-            gap: 12px;
-
-            &>div {
-                @extend %container-with-shadow;
-                background-repeat: no-repeat;
-                box-sizing: border-box;
-
-                &:first-of-type {
-                    background-image: url(../assets/icons/danger.svg);
-                    background-position: 30px 50%;
-                }
-
-                &:last-of-type {
-                    background-image: url(../assets/icons/18.svg);
-                    background-position: center;
-                }
-            }
-
-            p {
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 120%;
-                margin: 0;
-                text-align: center;
-
-                strong {
-                    font-size: 18px;
-                    font-weight: 600;
-                    line-height: normal;
-                }
-
-                &:first-of-type {
-                    padding-right: 9px;
-                    margin-bottom: 5px;
-                }
-            }
-        }
-
         .wc-block-components-product-price {
             @include price-style(flex-end);
             @include price-size(32px, 22px);

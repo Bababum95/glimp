@@ -1,7 +1,6 @@
 import { createPopup } from '../../assets/utils';
 import { createComment } from './createComment';
 const popupElement = document.querySelector('.wp-block-glimp-comments__popup');
-const popupVerifiedElement = document.querySelector('.wp-block-glimp-comments__popup_verified');
 const form = popupElement.querySelector('.wp-block-glimp-comments__popup-form');
 const selectDevices = form?.querySelector('.wp-block-glimp-comments__popup-card-select-input');
 const authorName = form?.querySelector('input[name="author"]');
@@ -10,12 +9,10 @@ const saveName = form?.querySelector('.wp-block-glimp-comments__popup-checkbox-i
 const comment = form?.querySelector('.wp-block-glimp-comments__popup-textarea');
 const submitButton = form?.querySelector('.wp-block-glimp-comments__popup-button');
 const popupButton = document.querySelector('.wp-block-glimp-comments__ratings-button');
-const popupVerifiedButtons = document.querySelectorAll('.wp-block-glimp-comments__comment-approved');
 const stars = popupElement.querySelectorAll('.wp-block-glimp-comments__popup-stars-star');
 const getRewiewsButton = document.querySelector('.wp-block-glimp-comments__content-button');
 const commentsContainer = document.querySelector('.wp-block-glimp-comments__content');
 const popup = createPopup(popupElement);
-const popupVerified = createPopup(popupVerifiedElement);
 const apiUrl = `${window.location.origin}/wp-json/glimp-api/v1`;
 const productId = form.getAttribute('data-product');
 let rating = 0;
@@ -32,15 +29,6 @@ const openPopup = () => {
 
 popup.setEventListeners();
 popupButton.addEventListener('click', openPopup);
-
-if(popupVerifiedButtons.length > 0) {
-    popupVerified.setEventListeners();
-    popupVerifiedButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            popupVerified.open();
-        })
-    })
-}
 
 const selectStar = (evt) => {
     rating = evt.target.getAttribute('data-value');

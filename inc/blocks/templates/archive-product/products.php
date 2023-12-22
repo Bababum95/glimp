@@ -11,8 +11,13 @@ if(!$is_grid) {
     };
 }
 
-$wrapper_class = $is_grid ? 'wp-block-glimp-all-products' : 'wp-block-glimp-all-products_list';
-$wrapper = '<div class="' . $wrapper_class . '"';
+$wrapper = '<div ';
+
+if ($is_grid) {
+	$wrapper .= 'class="wp-block-glimp-all-products"';
+} else {
+	$wrapper .= 'class="wp-block-glimp-all-products_list" data-table="' . esc_attr(json_encode($attributes['attributes'])) . '"';
+}
 
 $queried_object = get_queried_object();
 if ($queried_object instanceof WP_Term) {

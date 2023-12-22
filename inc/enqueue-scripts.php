@@ -39,8 +39,13 @@ function glimp_enqueue_dynamic_script($css_name, $js_name, $base_path='/dist/ass
 /* Enqueue scripts */
 if (!function_exists('glimp_enqueue_scripts')) :
     function glimp_enqueue_scripts() {
+        // locale dependent
         $about_page_ids = array(3314, 3747);
         $marken_page_id = 3756;
+        // hopeful-perlman
+        // $about_page_ids = array(227562, 246618);
+        // $marken_page_id = 104619;
+
 
         wp_enqueue_style('glimp-style', get_stylesheet_uri(), array(), (WP_DEBUG ? time() : wp_get_theme()->get('Version')));
         glimp_enqueue_dynamic_script('styles-', 'main-');

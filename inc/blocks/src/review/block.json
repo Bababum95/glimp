@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/review",
+	"version": "1.0.0",
+	"title": "Review",
+	"category": "theme",
+	"icon": "admin-comments",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"name": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-review__name"
+		},
+		"text": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-review__text"
+		},
+		"date": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-review__date"
+		},
+		"quelle": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-glimp-review__quelle-content"
+		},
+		"rating": {
+			"type": "number",
+			"default": 4
+		}
+	},
+	"example": {},
+	"parent": ["glimp/slider"],
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true
+		}
+	},
+	"textdomain": "glimp/review",
+	"editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}

@@ -1,0 +1,36 @@
+@import '../assets/styles/mixins';
+@import '../assets/styles/placeholders';
+@import '../assets/styles/variables';
+
+
+.wp-block-glimp-verified-popup {
+    @extend %flex-center;
+    @include popup-overlay;
+    color: $color-white;
+    max-width: none !important;
+
+    &__container {
+        @include popup-container(844px, 40px);
+        background: rgba(26, 26, 26, 0.80);
+        backdrop-filter: blur(17px);
+    }
+
+    &__close {
+        @include close-button;
+    }
+
+    &__title {
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 700;
+        margin: 0 0 12px;
+    }
+
+    &__description {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        margin: 0;
+    }
+}

@@ -51,7 +51,6 @@
 .glimp-recommend {
     gap: 40px;
     margin: 120px 0;
-    justify-content: center;
 
     &__heading {
         @include responsive-font-size(24px, 36px, 45px);

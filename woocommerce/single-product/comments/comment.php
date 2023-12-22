@@ -30,7 +30,12 @@ $formattedDate = $date->format('d.m.Y');
         </div>
         <?php
         if($review->comment_approved) {
-            echo '<span class="wp-block-glimp-comments__comment-approved">Verifizierte</span>';
+            echo '<span
+                    class="wp-block-glimp-comments__comment-approved"
+                    data-type="open-verified-popup"
+                  >
+                    Verifizierte
+                  </span>';
         }
         ?>
     </div>

@@ -12,6 +12,7 @@ export interface ICurrentFilters {
   offset: number | string;
   in_stock: boolean;
   attributes: attribute[],
+  table?: []
 };
 
 
@@ -47,6 +48,7 @@ export interface IProductData {
   price: string;
   regular_price: string;
   rating: string;
+  table?: { [key: string]: string[] }
 }
 
 export interface IFilterResultPair {

@@ -87,6 +87,7 @@ class Products_Handler {
     private function get_products($args, $data) {
         $args['posts_per_page'] = '20';
         $args['offset'] = $data['offset'];
+        $table = isset($data['table']) ? $data['table'] : null;
         $cards_count = 0;
 		$product_count = 0;
 
@@ -122,11 +123,11 @@ class Products_Handler {
                             if($data['in_stock'] && !$child_product->is_in_stock()) {
                                 continue;
                             }
-                            $products_data[] = $this->get_product_data($child_product);
+                            $products_data[] = $this->get_product_data($child_product, $table);
                             $cards_count++;
                         }
                     } else {
-                        $products_data[] = $this->get_product_data($product);
+                        $products_data[] = $this->get_product_data($product, $table);
                         $cards_count++;
                     }
                 }
@@ -145,7 +146,7 @@ class Products_Handler {
         }
     }
 
-    private function get_product_data($product) {
+    private function get_product_data($product, $table) {
         $id = $product->get_id();
         $parent_id = $product->get_parent_id();
         $is_variation = $product->is_type('variation');
@@ -163,7 +164,7 @@ class Products_Handler {
             $price = number_format($price, 2);
         }
 
-        return [
+        $output = [
             'id' => $id,
             'parent_id' => $parent_id,
             'is_variation' => $is_variation,
@@ -179,5 +180,27 @@ class Products_Handler {
             'rating' => $product->get_average_rating(),
             'image' =>  wp_get_attachment_image_src($product->get_image_id(), 'woocommerce_thumbnail'),
         ];
+
+        if (!empty($table)) {
+            $product_attributes = $product->get_attributes();
+            foreach ($table as $attribute_taxonomy) {
+                $attribute_label = wc_attribute_label($attribute_taxonomy);
+                if (isset($product_attributes[$attribute_taxonomy])) {
+                    $attribute_details = $product_attributes[$attribute_taxonomy];
+                    $value = array();
+                    if ($attribute_details->is_taxonomy()) {
+                        $terms = wp_get_post_terms($id, $attribute_taxonomy);
+                        foreach ($terms as $term) {
+                            $value[] = $term->name;
+                        }
+                    } else {
+                        $value = $attribute_details->get_options();
+                    }
+                    $output['table'][$attribute_label] = $value;
+                }
+            }
+        }
+
+        return $output;
     }
 }

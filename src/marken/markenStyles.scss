@@ -26,6 +26,11 @@
         line-height: 130%;
     }
 
+    &__details {
+        summary {
+            @include summary;
+        }
+    }
 }
 
 .glimp-mb-d60 {

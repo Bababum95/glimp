@@ -1,4 +1,5 @@
 @import '../assets/styles/mixins';
+@import '../assets/styles/placeholders';
 @import '../assets/styles/variables';
 
 .glimp-about {
@@ -6,12 +7,23 @@
     gap: 20px;
     margin-bottom: 60px;
 
+    &__main {
+        width: 80%;
+    }
+
     &__section {
         box-shadow: $box-shadow;
         border-radius: 20px;
         padding: 20px;
         margin: 0 0 20px;
-    
+
+        &>p:not(.wp-block-heading) {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+        }
+
         &:last-of-type {
             margin-bottom: 0;
         }
@@ -41,6 +53,7 @@
 
         .wp-block-image {
             margin: 0;
+
             img {
                 width: auto;
                 height: 106px;
@@ -53,6 +66,23 @@
             font-weight: 600;
             line-height: 120%;
             margin: 0;
+        }
+    }
+
+    &__rait {
+        @include flex-layout(space-between, center);
+
+        &-item {
+            @extend %flex-center;
+            box-shadow: $box-shadow;
+            border-radius: 12px;
+            padding: 20px 24px;
+            width: fit-content;
+
+            p {
+                @extend %flex-center;
+                gap: 8px;
+            }
         }
     }
 
@@ -92,6 +122,7 @@
             }
         }
     }
+
     &__contacts {
         gap: 8px;
 

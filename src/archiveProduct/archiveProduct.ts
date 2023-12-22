@@ -3,14 +3,13 @@ import { ICurrentFilters, IProductData, IFilterResult, IFilterResultPair, IRespo
 import { createProductCard } from '../helpers/createProductCard';
 import { startLoading, endLoading } from '../helpers/loading';
 
-const productsContainer = document.querySelector('.wp-block-glimp-all-products');
+let productsContainer = document.querySelector('.wp-block-glimp-all-products');
 const filterSelects = document.querySelectorAll('.wp-block-glimp-filters-attribute__dropdown');
 const filterButtonsContainers = document.querySelectorAll('.wp-block-glimp-filters-attribute__buttons');
 const inStockElement = document.querySelector('.wp-block-glimp-filters-availability__input');
-const currentPageTaxonomy = productsContainer?.getAttribute('data-taxonomy');
-const currentPageTerm = productsContainer?.getAttribute('data-term');
 const loadingTrigger = document.querySelector('.wp-block-glimp-loader');
 const cardLoader = document.querySelector('.wp-block-glimp-loader__card');
+
 
 const currentFilters: ICurrentFilters = {
   sort: 'date',
@@ -18,6 +17,17 @@ const currentFilters: ICurrentFilters = {
   in_stock: false,
   attributes: [],
 };
+let isGrid = true;
+if (!productsContainer) {
+  productsContainer = document.querySelector('.wp-block-glimp-all-products_list');
+  isGrid = false;
+  const table = productsContainer?.getAttribute('data-table');
+  if (table) currentFilters.table = JSON.parse(table);
+}
+
+const currentPageTaxonomy = productsContainer?.getAttribute('data-taxonomy');
+const currentPageTerm = productsContainer?.getAttribute('data-term');
+
 let isLoading = false;
 let productCount: string | number = productsContainer
   ?.querySelector('.wp-block-glimp-all-products__count')
@@ -87,7 +97,7 @@ const getProductsList = (data: IProductData[]) => {
   const fragment = document.createDocumentFragment();
   data.forEach((product: IProductData) => {
     if (favoritesList.includes(product.id)) product.is_favorite = true;
-    const card = createProductCard(product);
+    const card = createProductCard(product, isGrid? 'simple' : 'big');
     fragment.appendChild(card);
   });
   return fragment;
