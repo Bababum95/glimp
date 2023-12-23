@@ -29,6 +29,8 @@
 }
 
 @mixin product-card-rating() {
+    @extend %flex-center;
+    gap: 6px;
     border-radius: 7px;
     padding: 6px 10px;
     background-color: $color-white;

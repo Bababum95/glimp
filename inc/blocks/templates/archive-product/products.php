@@ -1,6 +1,7 @@
 <?php
 
 $is_grid = $attributes['view'] == 'grid';
+$main_categories_ids = array(33, 34, 730);
 
 $render_product_card_function = function($product_id) {
 	render_product_card($product_id);
@@ -65,7 +66,7 @@ if (woocommerce_product_loop()) {
 				$product_count++;
 				$product = wc_get_product($product_id);
 			
-				if ($product && $product->is_type('variable')) {
+				if ($product && $product->is_type('variable') && !in_array($term_id, $main_categories_ids)) {
 					$variations_ids = $product->get_children();
 
 					foreach ($variations_ids as $variation_id) {

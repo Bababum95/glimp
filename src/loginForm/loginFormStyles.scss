@@ -70,6 +70,10 @@
         &-label {
             font-size: 14px;
         }
+
+        &-checkmark {
+            margin-top: 0;
+        }
     }
 
     &__bottom {
@@ -89,6 +93,15 @@
 
     &__forgot {
         cursor: pointer;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        text-decoration-line: underline;
+
+        &:hover {
+            color: $color-primary;
+        }
     }
 
     &__lost-password {
@@ -101,6 +114,7 @@
         padding: 20px;
         border-radius: 12px;
         display: none;
+        margin-top: 20px;
 
         a {
             color: $color-grey;
@@ -236,18 +250,21 @@
         }
 
         &__content {
-            width: 100%;
+            width: 100% !important;
         }
     }
 
     @include media('phone') {
-        &__heading h2 {
-            font-size: 20px;
+        &__heading {
+            margin-bottom: 24px;
+
+            h2 {
+                font-size: 20px;
+            }
         }
 
         &__bottom {
             flex-direction: column;
-            align-items: flex-start;
             gap: 16px;
         }
 
@@ -282,6 +299,12 @@
 
         &__content {
             width: 60%;
+            max-height: 80vh;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
         }
     }
 
@@ -322,5 +345,20 @@
                 padding: 20px;
             }
         }
+    }
+
+    @include media('phone') {
+
+        .glimp-login {
+            &__content {
+                padding: 0;
+                box-shadow: none;
+            }
+        }
+
+        &-container {
+            padding: 32px 20px;
+        }
+
     }
 }

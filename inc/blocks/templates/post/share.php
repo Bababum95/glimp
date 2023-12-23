@@ -34,17 +34,17 @@ $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
             Email
         </a>
         <a
-            href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode( $url ); ?>&title=<?php echo $title ?>&summary=<?php echo $summary ?>&source=<?php echo $url ?>"
+            href="https://api.whatsapp.com/send?text=<?php echo urlencode( $title . ' ' . $url ); ?>" 
             onclick="window.open(this.href, this.title, 'toolbar=0, status=0, width=548, height=325'); return false"
-            title="LinkedIn"
+            title="WhatsApp"
             target="_parent"
             class="wp-block-glimp-share__link"
         >
             <img
-                src="<?php echo get_template_directory_uri() . '/assets/icons/LinkedIn.png' ?>"
-                alt="LinkedIn"
+                src="<?php echo get_template_directory_uri() . '/assets/icons/whatsapp.svg' ?>"
+                alt="WhatsApp"
             >
-            LinkedIn
+            WhatsApp
         </a>
         <a
             href="http://www.facebook.com/sharer.php?s=100&p[url]=<?php echo urlencode( $url ); ?>&p[title]=<?php echo $title ?>&p[summary]=<?php echo $summary ?>&p[images][0]=<?php echo $image_url ?>"
@@ -71,19 +71,6 @@ $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                 alt="Twitter"
             >
             Twitter
-        </a>
-        <a
-            href="https://reddit.com/submit?url=<?php echo urlencode( $url ); ?>&title=<?php echo $title ?>"
-            onclick="window.open(this.href, this.title, 'toolbar=0, status=0, width=548, height=325'); return false"
-            title="Reddit"
-            target="_parent"
-            class="wp-block-glimp-share__link"
-        >
-            <img
-                src="<?php echo get_template_directory_uri() . '/assets/icons/Reddit.png' ?>"
-                alt="Reddit"
-            >
-            Reddit
         </a>
     </div>
 </div>

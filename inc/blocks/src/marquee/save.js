@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import { useBlockProps, RichText } from '@wordpress/block-editor';
-import { notificationBell } from '../assets/icons';
+import { bellIcon } from '../assets/icons';
 import { CircularClose } from '../assets/icons-components';
 
 export function Save({ attributes }) {
@@ -23,7 +23,9 @@ export function Save({ attributes }) {
 					blockProps.className
 				)}
 			>
-				<img src={notificationBell} />
+				<span className='wp-block-glimp-marquee__bell'>
+					{bellIcon}
+				</span>
 				<div className="wp-block-glimp-marquee__text-wrapper">
 					<RichText.Content
 						tagName="p"

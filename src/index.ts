@@ -1,7 +1,10 @@
 import { addToCart } from './helpers/addToCart';
-import { addToFavorites, removeFromFavorites } from './helpers/api';
+import { addToFavorites } from './helpers/addToFavorites';
 const addToCartButtons = document.querySelectorAll('button[data-action="add-to-cart"]');
 const addToFavoritesButtons = document.querySelectorAll('.add-to-favorites');
+const header = document.querySelector('header');
+
+let prevScrollPos = window.pageYOffset;
 
 addToCartButtons.forEach((button) => {
     button.addEventListener('click', (evt) => {
@@ -11,29 +14,18 @@ addToCartButtons.forEach((button) => {
 
 addToFavoritesButtons.forEach((button) => {
     button.addEventListener('click', (evt) => {
-        evt.preventDefault()
-        const id = button.getAttribute('data-id')
-        if (!id) return
-        if (button.classList.contains('active')) {
-            button.classList.remove('active')
-            removeFromFavorites(id)
-                .then((data) => {
-                    console.log(data)
-                })
-                .catch((err) => {
-                    console.log(err)
-                    button.classList.add('active')
-                })
-        } else {
-            button.classList.add('active')
-            addToFavorites(id)
-                .then((data) => {
-                    console.log(data)
-                })
-                .catch((err) => {
-                    console.log(err)
-                    button.classList.remove('active')
-                })
-        }
+        addToFavorites(evt, button as HTMLButtonElement);
     })
 })
+
+window.addEventListener('scroll', () => {
+    if (!header) return;
+
+    const currentScrollPos = window.pageYOffset;
+    if (currentScrollPos < 100) {
+        header.classList.remove('hidden');
+    } else {
+        currentScrollPos > prevScrollPos ? header.classList.add('hidden') : header.classList.remove('hidden');
+    }
+    prevScrollPos = currentScrollPos;
+});

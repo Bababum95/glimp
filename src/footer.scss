@@ -51,10 +51,6 @@
         }
     }
 
-    &__whatsapp {
-        display: none !important;
-    }
-
     &__social {
         gap: 20px;
 
@@ -129,6 +125,14 @@
                     transform: scale(1.1);
                 }
             }
+        }
+    }
+
+    &__trusted {
+        gap: 16px;
+        
+        .wp-block-image {
+            width: 50px;
         }
     }
 
@@ -252,10 +256,6 @@
                     justify-content: space-between !important;
                 }
             }
-        }
-
-        &__whatsapp {
-            display: block !important;
         }
 
         &__subscribe {

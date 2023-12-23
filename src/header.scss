@@ -54,6 +54,10 @@
                 background-repeat: no-repeat;
             }
         }
+
+        @include media('phone') {
+            max-width: 100%;
+        }
     }
 
     .divider {
@@ -166,13 +170,51 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background-color: $color-white;
     z-index: 11;
+    transition: background-size 0.4s ease-in-out;
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    background-size: 2px 200px;
+    background-position: 0 0%;
+    background-repeat: repeat-x;
+
+    @include media('tablet') {
+        &.hidden {
+            transition: background-size 0.2s ease-in-out;
+            background-size: 2px 50px;
+
+            .header {
+                &__search {
+                    transform: translateY(-125px);
+                }
+            }
+
+            .wp-block-glimp-marquee {
+                transform: translateY(-125px);
+            }
+        }
+    }
 }
 
 .header {
+    &__main {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: block;
+            height: 62px;
+            background-color: $color-white;
+            z-index: -5;
+        }
+    }
+
     &__search {
         flex: 1;
+        transition: all 0.3s;
 
         .dgwt-wcas-sf-wrapp {
             padding: 0;
@@ -181,16 +223,6 @@ header {
                 top: 11px;
                 left: 13px;
             }
-        }
-
-        @include media('tablet') {
-            .dgwt-wcas-search-wrapp {
-                max-width: 100%;
-            }
-
-            width: 100%;
-            flex: auto;
-            order: 2;
         }
     }
 
@@ -204,5 +236,51 @@ header {
 
     &__logo {
         width: 85px;
+    }
+
+
+    @include media('tablet') {
+        &__search {
+
+            z-index: -10;
+
+            .dgwt-wcas-search-wrapp {
+                max-width: 100%;
+            }
+
+            width: 100%;
+            flex: auto;
+            order: 2;
+        }
+    }
+
+    @include media('tablet-small') {
+        &__main {
+
+            &::before {
+                height: 50px;
+            }
+        }
+
+        &__logo {
+            width: 70px;
+        }
+
+        &__left {
+            gap: 20px;
+        }
+
+    }
+}
+
+@keyframes overlay-menu__fade-in-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(-1.5em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

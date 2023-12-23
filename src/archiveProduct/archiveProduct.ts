@@ -10,12 +10,12 @@ const inStockElement = document.querySelector('.wp-block-glimp-filters-availabil
 const loadingTrigger = document.querySelector('.wp-block-glimp-loader');
 const cardLoader = document.querySelector('.wp-block-glimp-loader__card');
 
-
 const currentFilters: ICurrentFilters = {
   sort: 'date',
   offset: 0,
   in_stock: false,
   attributes: [],
+  variation: true
 };
 let isGrid = true;
 if (!productsContainer) {
@@ -97,7 +97,7 @@ const getProductsList = (data: IProductData[]) => {
   const fragment = document.createDocumentFragment();
   data.forEach((product: IProductData) => {
     if (favoritesList.includes(product.id)) product.is_favorite = true;
-    const card = createProductCard(product, isGrid? 'simple' : 'big');
+    const card = createProductCard(product, isGrid ? 'simple' : 'big');
     fragment.appendChild(card);
   });
   return fragment;
@@ -140,7 +140,11 @@ const setFiltersElements = (data: IFilterResult) => {
 }
 
 if (currentPageTaxonomy && currentPageTerm) {
+  const main_categories_ids = [33, 34, 730];
   currentFilters.attributes.push({ taxonomy: currentPageTaxonomy, exclude: false, value: [currentPageTerm] });
+  if (main_categories_ids.includes(Number(currentPageTerm))) {
+    currentFilters.variation = false;
+  }
 }
 
 if (inStockElement && inStockElement instanceof HTMLInputElement) {

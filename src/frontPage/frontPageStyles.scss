@@ -3,6 +3,8 @@
 .glimp-preview {
     img {
         border-radius: 14px;
+        min-width: 143px;
+        object-fit: cover;
     }
 
     @include media('tablet') {

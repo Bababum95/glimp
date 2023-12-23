@@ -21,6 +21,7 @@ const AllOWED_BLOCKS = [
     'glimp/review',
     'glimp/crossels-products',
     'core/image',
+    'woocommerce/product-categories',
 ]
 
 export const Edit = ({ clientId, attributes, setAttributes }) => {

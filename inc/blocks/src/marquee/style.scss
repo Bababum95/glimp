@@ -16,6 +16,11 @@
         z-index: 2;
     }
 
+    &__bell svg {
+        fill: $color-white;
+        width: 30px;
+    }
+
     &__submarquee {
         height: 48px;
         position: absolute;
@@ -24,8 +29,6 @@
         width: 100%;
         text-align: center;
         box-sizing: border-box;
-        border-top: $grey-line;
-        border-bottom: $grey-line;
 
         &-text {
             @include flex-layout(space-between, center);
@@ -72,11 +75,8 @@
 
         a {
             color: inherit;
-
-            &:hover {
-                color: inherit;
-                text-decoration: underline;
-            }
+            font-size: inherit;
+            text-decoration: underline;
         }
     }
 
@@ -87,11 +87,26 @@
         cursor: pointer;
     }
 
+    &.hide {
+        .wp-block-glimp-marquee {
+            &__main {
+                display: none;
+            }
+
+            &__submarquee {
+                border-top: $grey-line;
+                border-bottom: $grey-line;
+            }
+        }
+    }
+
     @include media('tablet') {
+        z-index: -10;
+        transition: all 0.3s;
+
         &__submarquee {
             @include flex-layout(space-between, flex-start);
-            border-top: $grey-line;
-            border-bottom: $grey-line;
+            z-index: -11;
             padding: 0 20px;
 
             &-text {
@@ -134,9 +149,11 @@
                     &:nth-of-type(2) {
                         animation-delay: 2.5s;
                     }
+
                     &:nth-of-type(3) {
                         animation-delay: 5s;
                     }
+
                     &:nth-of-type(4) {
                         animation-delay: 7.5s;
                     }
@@ -144,10 +161,34 @@
             }
         }
     }
+
+    @include media('phone') {
+        height: 40px;
+
+        &__text {
+            font-size: 14px;
+        }
+
+        &__bell svg {
+            width: 25px;
+            transform: translateY(2px);
+        }
+
+        &__close svg {
+            width: 22px;
+            transform: translateY(2px);
+        }
+
+        &__submarquee {
+            height: 40px;
+        }
+    }
 }
 
 @keyframes marquee {
-    0%, 5% {
+
+    0%,
+    5% {
         transform: translateX(0);
     }
 
@@ -184,10 +225,14 @@
 }
 
 @keyframes change-color {
-    0%, 20% {
+
+    0%,
+    20% {
         background-color: $color-black;
     }
-    25%, 100% {
+
+    25%,
+    100% {
         background-color: $color-grey;
     }
 }

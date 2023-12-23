@@ -5,6 +5,7 @@ $upsell_ids = $product->get_upsell_ids();
 
 if ($upsell_ids) {
 ?>
+    <h2>Das könnte dir auch gefallen …</h2>
     <div class="wp-block-glimp-upsells">
         <div class="wp-block-glimp-upsells__wrapper">
             <?php

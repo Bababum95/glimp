@@ -117,7 +117,7 @@ class Products_Handler {
                 $product_count++;
 
                 if ($product) {
-                    if ($product->is_type('variable')) {
+                    if ($product->is_type('variable') && $data['variation']) {
                         foreach ($product->get_children() as $child_id) {
                             $child_product = wc_get_product($child_id);
                             if($data['in_stock'] && !$child_product->is_in_stock()) {
@@ -168,7 +168,7 @@ class Products_Handler {
             'id' => $id,
             'parent_id' => $parent_id,
             'is_variation' => $is_variation,
-            'is_variable' => $product->is_type('variable'),
+            'is_variable' => $product->is_type('variable') || $product->is_type('bundle'),
             'link' => $product_permalink,
             'name' => $product->get_name(),
             'price' => $price,

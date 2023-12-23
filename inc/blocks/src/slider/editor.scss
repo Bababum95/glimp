@@ -4,8 +4,9 @@
     transform: none;
     width: 100%;
 
-    .block-editor-block-list__layout,
-    .wp-block-glimp-multiple-product-card {
+    .block-editor-block-list__layout:not(.inner-slider),
+    .wp-block-glimp-multiple-product-card,
+    .inner-slider {
         display: grid;
         align-items: start;
         grid-auto-flow: column;

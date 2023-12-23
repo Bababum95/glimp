@@ -11,8 +11,9 @@ export interface ICurrentFilters {
   sort: string;
   offset: number | string;
   in_stock: boolean;
-  attributes: attribute[],
-  table?: []
+  attributes: attribute[];
+  table?: [];
+  variation: boolean;
 };
 
 
