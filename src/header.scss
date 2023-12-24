@@ -254,7 +254,7 @@ header {
         }
     }
 
-    @include media('tablet-small') {
+    @include media('phone') {
         &__main {
 
             &::before {

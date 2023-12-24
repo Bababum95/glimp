@@ -1,8 +1,10 @@
-window.addEventListener('load', function () {
-	const links = document.querySelectorAll(
-		'.wp-block-glimp-sidebar__navlink'
-	);
-	if (!links.length) return;
+import { handleScroll } from '../assets/utils';
+const sidebar = document.querySelector('.wp-block-glimp-sidebar');
+const links = document.querySelectorAll('.wp-block-glimp-sidebar__navlink');
+
+handleScroll(sidebar, 'top');
+
+if (links.length) {
 	links.forEach((li) => {
 		const link = li.querySelector('a');
 		if (!link) return;
@@ -13,9 +15,9 @@ window.addEventListener('load', function () {
 			event.preventDefault();
 			const section = document.getElementById(id);
 			window.scrollTo({
-				top: section.offsetTop - 140,
+				top: section.offsetTop - 160,
 				behavior: 'smooth',
 			});
 		});
 	});
-});
+}

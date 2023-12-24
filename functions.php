@@ -23,3 +23,6 @@ require_once get_template_directory() . '/inc/ajax/index.php';
 require_once get_template_directory() . '/inc/transfer-favorites-on-login.php';
 require_once get_template_directory() . '/inc/api/class-api-init.php';
 require_once get_template_directory() . '/inc/newsletters-signup.php';
+
+//old scripts needed changes in the future
+require_once get_template_directory() . '/inc/old_functions.php';

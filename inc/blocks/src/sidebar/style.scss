@@ -8,6 +8,7 @@
     top: $header-height;
     height: fit-content;
     flex-basis: 310px;
+    min-width: 180px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -26,16 +27,24 @@
         line-height: normal;
         box-sizing: border-box;
         box-shadow: $box-shadow;
-    }
-}
 
-@media screen and (max-width: 992px) {
-    .wp-block-glimp-sidebar {
-        top: 0;
+        &:hover {
+            color: $color-black;
+            background-color: $color-grey;
+        }
+
+    }
+    
+    @include media('tablet') {
+        background-color: $color-white;
         flex-basis: auto;
         flex-direction: row;
-        overflow: auto;
+        overflow-x: auto;
         padding: 12px 0;
+        width: 100%;
+        top: $header-height-tablet-full;
+        transition: all 0.3s;
+        z-index: 15;
 
         &__navlink>* {
             white-space: nowrap;
@@ -44,8 +53,24 @@
             padding: 10px 16px;
         }
 
-        &::-webkit-progress-bar {
+        &::-webkit-scrollbar {
             display: none;
+        }
+
+        &.top {
+            position: fixed;
+            top: $header-height-tablet-simple;
+            width: auto;
+            left: 20px;
+            right: 20px;
+        }
+    }
+
+    @include media('phone') {
+        top: $header-height-phone-full;
+
+        &.top {
+            top: $header-height-phone-simple;
         }
     }
 }

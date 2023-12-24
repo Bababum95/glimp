@@ -1,10 +1,10 @@
 import { addToCart } from './helpers/addToCart';
 import { addToFavorites } from './helpers/addToFavorites';
+import { handleScroll } from './helpers/handleScroll';
+
 const addToCartButtons = document.querySelectorAll('button[data-action="add-to-cart"]');
 const addToFavoritesButtons = document.querySelectorAll('.add-to-favorites');
 const header = document.querySelector('header');
-
-let prevScrollPos = window.pageYOffset;
 
 addToCartButtons.forEach((button) => {
     button.addEventListener('click', (evt) => {
@@ -18,14 +18,4 @@ addToFavoritesButtons.forEach((button) => {
     })
 })
 
-window.addEventListener('scroll', () => {
-    if (!header) return;
-
-    const currentScrollPos = window.pageYOffset;
-    if (currentScrollPos < 100) {
-        header.classList.remove('hidden');
-    } else {
-        currentScrollPos > prevScrollPos ? header.classList.add('hidden') : header.classList.remove('hidden');
-    }
-    prevScrollPos = currentScrollPos;
-});
+handleScroll(header as Element);

@@ -9,6 +9,10 @@
 
     &__main {
         width: 80%;
+
+        @include media('desktop') {
+            width: calc(100% - 240px);
+        }
     }
 
     &__section {
@@ -26,6 +30,10 @@
 
         &:last-of-type {
             margin-bottom: 0;
+        }
+
+        a {
+            line-break: anywhere;
         }
     }
 
@@ -141,6 +149,14 @@
                     font-size: 15px;
                 }
             }
+        }
+    }
+
+    @include media('tablet') {
+        flex-direction: column;
+
+        &__main {
+            width: 100%;
         }
     }
 }

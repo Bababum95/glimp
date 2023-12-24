@@ -1,2 +1,8 @@
-$header-height: 140px;
+@import '../mixins';
+
+$header-height: 160px;
+$header-height-tablet-full: 186px;
+$header-height-tablet-simple: 60px;
+$header-height-phone-full: 164px;
+$header-height-phone-simple: 50px;
 $conten-size: var(--wp--style--global--content-size, 1290px);
