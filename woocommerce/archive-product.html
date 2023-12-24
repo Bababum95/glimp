@@ -1,0 +1,56 @@
+<!-- wp:template-part {"slug":"header","theme":"glimp"} /-->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"right":"20px","left":"20px"}}},"layout":{"inherit":true,"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-right:20px;padding-left:20px"><!-- wp:woocommerce/breadcrumbs /-->
+
+    <!-- wp:query-title {"type":"archive","showPrefix":false,"align":"wide","style":{"spacing":{"margin":{"bottom":"12px"}}}} /-->
+
+    <!-- wp:term-description {"style":{"spacing":{"margin":{"top":"0px","bottom":"32px"}}}} /-->
+
+    <!-- wp:woocommerce/store-notices /-->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:glimp/slider {"desctop":"198px","phone":"154px"} -->
+<div class="wp-block-glimp-slider"
+    style="width:100vw;--padding-container:0 calc(50vw - 645px) 20px;--padding-container-phone:0 20px 20px;--slider-gap:20px;--width-teamplate-desctop:198px;--width-teamplate-phone:154px">
+    <div class="wp-block-glimp-slider__wrapper">
+        <!-- wp:woocommerce/product-categories {"hasCount":false,"hasImage":true,"showChildrenOnly":true,"className":"glimp-category"} /-->
+    </div><button class="wp-block-glimp-slider__button left hide"></button><button
+        class="wp-block-glimp-slider__button right"></button>
+</div>
+<!-- /wp:glimp/slider -->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"right":"20px","left":"20px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-right:20px;padding-left:20px">
+    <!-- wp:group {"className":"glimp-main","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
+    <div class="wp-block-group glimp-main">
+        <!-- wp:template-part {"slug":"produktfilter","theme":"glimp","area":"uncategorized"} /-->
+
+        <!-- wp:glimp/all-products {"attributes":["pa_dev","pa_geschmack","pa_strength","pa_zuge-type","","","",""]} /-->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:glimp/loader -->
+    <div class="wp-block-glimp-loader">
+        <div class="wp-block-glimp-loader__card"></div>
+    </div>
+    <!-- /wp:glimp/loader -->
+
+    <!-- wp:glimp/discovery /-->
+
+    <!-- wp:glimp/spectrum /-->
+
+    <!-- wp:glimp/listing /-->
+
+    <!-- wp:glimp/pros-and-cons {"type":"archive"} /-->
+
+    <!-- wp:glimp/technical-features /-->
+
+    <!-- wp:glimp/faqs {"type":"archive"} /-->
+
+    <!-- wp:glimp/overview /-->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"glimp"} /-->
