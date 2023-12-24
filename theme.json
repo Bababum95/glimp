@@ -189,6 +189,11 @@
 			"title": "Header"
 		},
 		{
+			"area": "uncategorized",
+			"name": "produktfilter",
+			"title": "Produktfilter"
+		},
+		{
 			"area": "footer",
 			"name": "footer",
 			"title": "Footer"
