@@ -274,6 +274,10 @@ h1 {
                     background-position: center;
                     background-image: url(../assets/icons/arow.svg);
                 }
+
+                @include media('tablet') {
+                    display: none;
+                }
             }
 
             .button-scroll-bottom {

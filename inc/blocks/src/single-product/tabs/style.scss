@@ -6,6 +6,7 @@
 .wp-block-glimp-tabs {
     &__navigator {
         @include flex-layout(flex-start, center);
+        border-top: $grey-line;
         position: fixed;
         left: 0;
         right: 0;
@@ -60,6 +61,10 @@
     &__add-to-cart {
         @include submit-button-primary-style;
         @include submit-button-size(14px 40px, auto, 43px, 8px, 14px);
+
+        &.loading {
+            max-width: 43px;
+        }
     }
 
     @include media('desktop-large') {
@@ -71,6 +76,16 @@
     @include media('desktop') {
         &__button {
             display: none;
+        }
+    }
+
+    @include media('phone') {
+        &__price-wrapper {
+            display: none;
+        }
+        &__add-to-cart,
+        &__right {
+            width: 100%;
         }
     }
 }

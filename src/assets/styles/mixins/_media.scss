@@ -17,3 +17,9 @@ $breakpoints: (
     @warn "Неверный медиа-запрос: '#{$breakpoint}'.";
   }
 }
+
+@mixin hover() {
+  @media (any-hover: hover) {
+    @content;
+  }
+}

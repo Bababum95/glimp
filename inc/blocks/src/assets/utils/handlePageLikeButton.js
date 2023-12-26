@@ -1,11 +1,13 @@
 import { addPageLike, removePageLike } from './index';
 
 export const handlePageLikeButton = (button) => {
-    const postId = button.getAttribute('data-post-id');
+    if (button.hasAttribute('data-listener-attached')) return;
 
+    button.setAttribute('data-listener-attached', true);
     button.addEventListener('click', (evt) => {
         evt.preventDefault();
-
+        const postId = button.getAttribute('data-post-id');
+    
         if (button.classList.contains('active')) {
             button.classList.remove('active');
             removePageLike(postId)

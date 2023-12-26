@@ -101,7 +101,6 @@
     }
 
     @include media('tablet') {
-        z-index: -10;
         transition: all 0.3s;
 
         &__submarquee {

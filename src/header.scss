@@ -54,10 +54,6 @@
                 background-repeat: no-repeat;
             }
         }
-
-        @include media('phone') {
-            max-width: 100%;
-        }
     }
 
     .divider {
@@ -177,12 +173,29 @@ header {
     background-position: 0 0%;
     background-repeat: repeat-x;
 
+    &:has(.has-modal-open),
+    &:has(.wp-block-glimp-account__popup.open) {
+        z-index: 50;
+    }
+
+    .header__main {
+
+        &:has(.has-modal-open),
+        &:has(.wp-block-glimp-account__popup.open) {
+            z-index: 50;
+        }
+    }
+
     @include media('tablet') {
         &.hidden {
             transition: background-size 0.2s ease-in-out;
             background-size: 2px 50px;
 
             .header {
+                &__main::before {
+                    border-bottom: $grey-line;
+                }
+
                 &__search {
                     transform: translateY(-125px);
                 }
@@ -199,6 +212,10 @@ header {
     &__main {
         position: relative;
 
+        &>div {
+            gap: 15px;
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -206,15 +223,16 @@ header {
             left: 0;
             width: 100%;
             display: block;
-            height: 62px;
+            height: $header-height-tablet-simple;
             background-color: $color-white;
-            z-index: -5;
+            z-index: 1;
         }
     }
 
     &__search {
         flex: 1;
         transition: all 0.3s;
+        z-index: 2;
 
         .dgwt-wcas-sf-wrapp {
             padding: 0;
@@ -228,10 +246,12 @@ header {
 
     &__right {
         gap: 20px;
+        z-index: 2;
     }
 
     &__left {
         gap: 40px;
+        z-index: 3;
     }
 
     &__logo {
@@ -241,16 +261,29 @@ header {
 
     @include media('tablet') {
         &__search {
-
-            z-index: -10;
-
-            .dgwt-wcas-search-wrapp {
-                max-width: 100%;
-            }
-
             width: 100%;
             flex: auto;
             order: 2;
+
+            .dgwt-wcas-search-wrapp {
+                max-width: 100%;
+
+                input {
+                    font-size: 15px !important;
+                    line-height: 130% !important;
+                    padding-top: 10px !important;
+                    padding-bottom: 10px !important;
+                }
+
+                button.dgwt-wcas-search-submit {
+                    top: 5px;
+
+                    svg {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
         }
     }
 
@@ -258,7 +291,7 @@ header {
         &__main {
 
             &::before {
-                height: 50px;
+                height: $header-height-phone-simple;
             }
         }
 

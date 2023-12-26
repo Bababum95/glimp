@@ -44,7 +44,7 @@
         width: 100%;
         top: $header-height-tablet-full;
         transition: all 0.3s;
-        z-index: 15;
+        z-index: 5;
 
         &__navlink>* {
             white-space: nowrap;
@@ -63,6 +63,7 @@
             width: auto;
             left: 20px;
             right: 20px;
+            z-index: 12;
         }
     }
 

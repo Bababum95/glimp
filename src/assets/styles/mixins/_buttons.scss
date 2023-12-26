@@ -1,5 +1,6 @@
 @import '../variables/colors';
 @import '../placeholders/flex';
+@import './media';
 
 @mixin favorite-button($width: 28px) {
     @extend %flex-center;
@@ -10,11 +11,13 @@
         height: $width;
     }
 
-    &:hover {
-        cursor: pointer;
+    @include hover() {
+        &:hover {
+            cursor: pointer;
 
-        path {
-            fill: $color-black;
+            path {
+                fill: $color-black;
+            }
         }
     }
 
@@ -28,16 +31,6 @@
                 fill: $color-white;
             }
         }
-
-        &:hover {
-            svg {
-                stroke: $color-black;
-
-                path {
-                    fill: $color-black;
-                }
-            }
-        }
     }
 }
 
@@ -47,9 +40,11 @@
     width: 24px;
     height: 24px;
 
-    &:hover {
-        background-color: $color-grey-active;
-        cursor: pointer;
+    @include hover() {
+        &:hover {
+            background-color: $color-grey-active;
+            cursor: pointer;
+        }
     }
 }
 
@@ -63,8 +58,10 @@
     border: none;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 
-    &:hover {
-        background-color: $color-primary;
+    @include hover() {
+        &:hover {
+            background-color: $color-primary;
+        }
     }
 }
 
@@ -99,12 +96,14 @@
         transform: translate(-50%, -50%) rotate(-45deg);
     }
 
-    &:hover {
-        background-color: $color-black;
+    @include hover() {
+        &:hover {
+            background-color: $color-black;
 
-        &::after,
-        &::before {
-            background-color: $color-white;
+            &::after,
+            &::before {
+                background-color: $color-white;
+            }
         }
     }
 }
@@ -122,9 +121,11 @@
     background-color: transparent;
     font-size: inherit;
 
-    &:hover {
-        background-color: $color-grey-active;
-        cursor: pointer;
+    @include hover() {
+        &:hover {
+            background-color: $color-grey-active;
+            cursor: pointer;
+        }
     }
 
     &.active {
@@ -161,9 +162,11 @@
     background-color: $color-grey;
     padding: 12px 26px;
 
-    &:hover {
-        background-color: $color-grey-active;
-        cursor: pointer;
+    @include hover() {
+        &:hover {
+            background-color: $color-grey-active;
+            cursor: pointer;
+        }
     }
 
     &.active {
@@ -190,13 +193,15 @@
         transform: rotate(305deg);
     }
 
-    &:hover {
-        background-color: $color-primary;
-        color: $color-white;
-        cursor: pointer;
+    @include hover() {
+        &:hover {
+            background-color: $color-primary;
+            color: $color-white;
+            cursor: pointer;
 
-        &::before {
-            border-color: $color-white;
+            &::before {
+                border-color: $color-white;
+            }
         }
     }
 }

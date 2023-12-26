@@ -293,7 +293,7 @@ $choices-z-index: 1 !default;
   }
   .#{$choices-selector}__item {
     position: relative;
-    padding: 10px;
+    padding: 10px 24px;
     font-size: $choices-font-size-md;
 
     [dir="rtl"] & {

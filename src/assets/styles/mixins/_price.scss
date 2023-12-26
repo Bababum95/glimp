@@ -14,6 +14,10 @@
         font-weight: 700;
         line-height: normal;
         color: $color-black;
+
+        &::after {
+            content: ' *';
+        }
     }
 
     del {

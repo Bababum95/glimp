@@ -14,6 +14,7 @@
     padding: 14px 20px;
     animation: show-notices 3s ease-in-out;
     z-index: 20;
+    white-space: nowrap;
 
     span {
         @include checkmark($color-white, 12px, 2px);
@@ -31,6 +32,10 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+
+        @include media('phone-small') {
+            font-size: 14px;
+        }
     }
 }
 
@@ -39,7 +44,7 @@
         bottom: -50px;
     }
     5%, 95% {
-        bottom: 20px;
+        bottom: 40px;
     }
     100% {
         bottom: -50px;

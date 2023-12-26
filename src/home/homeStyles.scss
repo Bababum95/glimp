@@ -1,3 +1,6 @@
-.home {
-    background-color: transparent;
+@import '../assets/styles/mixins';
+
+
+h1.wp-block-heading {
+    @include responsive-font-size(28px, 36px, 45px);
 }

@@ -1,4 +1,5 @@
 @import '../page-card/style';
+@import '../assets/styles/mixins';
 
 .wp-block-glimp-all-posts {
     display: grid;
@@ -6,5 +7,21 @@
     grid-auto-rows: 157px;
     gap: 20px;
     padding: 0;
-    margin: 40px 0;
+    margin: 40px 0 120px;
+
+    @include media('desktop') {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        margin: 32px 0 60px;
+
+        .wp-block-glimp-loader__card {
+            height: 240px;
+        }
+    }
+
+    @include media('phone') {
+        .wp-block-glimp-loader__card {
+            height: 340px;
+        }
+    }
 }

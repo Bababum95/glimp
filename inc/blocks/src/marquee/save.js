@@ -49,11 +49,11 @@ export function Save({ attributes }) {
 			{submarquee && (
 				<div className="wp-block-glimp-marquee__submarquee">
 					<div className="wp-block-glimp-marquee__submarquee-text">
-						<p><strong>Kostenlose Lieferung</strong> ab 39€ Bestellwert</p>
-						<p><strong>Schneller Support</strong> via WhatsApp</p>
+						<p><strong>Größte Auswahl</strong> an Vapes</p>
 						<p><strong>Faire Preise</strong> sind mehr als wettbewerbsfähig</p>
-						<p><strong>Größte Auswahl an eZigaretten</strong> und eine garantierte Verfügbarkeit</p>
+						<p><strong>Schneller Support</strong> via WhatsApp</p>
 						<p><strong>Kostenlose Lieferung</strong> ab 39€ Bestellwert</p>
+						<p><strong>Größte Auswahl</strong> an Vapes</p>
 					</div>
 					<div className="wp-block-glimp-marquee__submarquee-dots">
 						<span />

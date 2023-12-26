@@ -71,4 +71,66 @@
             @extend %flex-center;
         }
     }
+
+    @include media('tablet') {
+        &.open {
+            height: 120px;
+        }
+
+        &__popup {
+            max-width: 100%;
+            position: absolute;
+            left: 0;
+            top: 45px;
+            box-sizing: border-box;
+            background-color: $color-grey-active;
+            padding: 12px;
+            border-radius: 8px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -45px;
+                right: 0;
+                left: 130px;
+                display: block;
+                background-color: $color-grey-active;
+                height: 100%;
+                z-index: -1;
+                border-radius: 8px;
+            }
+        }
+    }
+
+    @include media('phone') {
+        &.open {
+            height: 97px;
+        }
+
+        &__popup {
+            gap: 5px;
+            width: 100%;
+            padding: 8px;
+        }
+
+        &__copy,
+        &__link {
+            width: 20%;
+            font-size: 10px;
+            padding: 4px 3px;
+            gap: 2px;
+        }
+    }
+
+    @include media('phone-small') {
+        &.open {
+            height: 94px;
+        }
+
+        &__copy,
+        &__link {
+            font-size: 8px;
+            padding: 4px 2px;
+        }
+    }
 }

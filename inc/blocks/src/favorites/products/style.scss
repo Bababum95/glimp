@@ -1,3 +1,5 @@
+@import '../../assets/styles/mixins';
+
 .wp-block-glimp-favorites-products {
     display: grid;
     justify-content: start;
@@ -7,5 +9,10 @@
 
     &__count {
         display: none;
+    }
+
+    @include media('tablet-small') {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 }

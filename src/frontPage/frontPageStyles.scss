@@ -1,4 +1,5 @@
 @import '../assets/styles/mixins';
+@import '../assets/styles/variables';
 
 .glimp-preview {
     img {
@@ -94,5 +95,104 @@
                 width: 100%;
             }
         }
+    }
+}
+
+.glimp-about {
+    h2.wp-block-heading {
+        @include responsive-font-size(24px, 36px, 45px);
+    }
+
+    h3.wp-block-heading {
+        @include responsive-font-size(20px, 22px, 24px);
+    }
+
+    .wp-block-details {
+        summary {
+            @include summary;
+        }
+    }
+
+    p, li {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    &__columns {
+        gap: 20px;
+
+        &-item {
+            border-radius: 12px;
+
+            p.glimp-about__columns-item-title {
+                font-size: 22px;
+                font-weight: 600;
+                margin: 22px 0 12px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &__categories {
+        gap: 20px;
+
+        .wp-block-glimp-link-with-image {
+            width: 198px;
+            box-shadow: $box-shadow;
+            border-radius: 12px;
+        }
+
+        @include media('phone') {
+            gap: 8px;
+
+            .wp-block-glimp-link-with-image {
+                width: 48%;
+            }
+        }
+    }
+
+    &__table-wrapper {
+        margin: 16px 0 24px;
+        font-size: 14px;
+
+        @include table('odd');
+        overflow: auto;
+        max-width: 100%;
+    
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: start;
+            white-space: nowrap;
+        }
+
+        tr {
+            vertical-align: top;
+        }
+
+        td {
+            min-width: 160px;
+            box-sizing: border-box;
+        }
+
+        th, tr, td {
+            padding: 20px;
+        }
+    }
+
+    &__baner img {
+        min-height: 135px;
+        object-fit: cover;
     }
 }

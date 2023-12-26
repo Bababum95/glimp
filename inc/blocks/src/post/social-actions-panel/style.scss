@@ -3,7 +3,7 @@
 .wp-block-glimp-social-actions-panel {
     @include flex-layout(flex-start, flex-start);
     gap: 6px;
-
+    position: relative;
 
     &__likes,
     &__comments {

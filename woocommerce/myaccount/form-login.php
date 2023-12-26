@@ -205,16 +205,15 @@ do_action('woocommerce_before_customer_login_form'); ?>
 		<div class="glimp-login__lost-password">
 			<button class="glimp-login__back">Zurück</button>
 			<p  class="glimp-login__title">
-				Hast du dein Passwort vergessen?
+				Hast Du Dein Passwort vergessen?
 			</p>
 			<p  class="glimp-login__description">
-				Bitte gib deinen Benutzernamen oder E-Mail-Adresse ein. Du erhältst einen Link
-				per E-Mail, womit du dir ein neues Passwort erstellen kannst.
+				Bitte gib Deinen Benutzernamen oder E-Mail-Adresse ein. Du erhältst einen Link per E-Mail, womit Du Dir ein neues Passwort erstellen kannst.
 			</p>
 			<form class="glimp-login__form" method="post" data-type="lost-password">
 				<div class="glimp-login__notice">
 					<p class="glimp-login__notice-message">
-						Prüfen Sie Ihre E-Mail auf den Bestätigungslink und besuchen Sie dann die
+						Prüfe Deine E-Mail auf den Bestätigungslink und besuche dann die 
 						<a href="<?php echo wc_get_page_permalink('myaccount'); ?>">Anmeldeseite.</a>
 					</p>
 				</div>

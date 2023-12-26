@@ -65,7 +65,7 @@ const Referral = () => {
                         Sende eine Einladung
                     </p>
                     <p className="wp-block-glimp-referral__list-item-text">
-                        Gib die E-Mail Adresse deines Freundes an und sende eine Einladung. Auf diese E-Mail kommt eine Nachricht mit einem Aktionscode
+                        Gib die E-Mail Adresse Deines Freundes an und sende eine Einladung. Auf diese E-Mail kommt eine Nachricht mit einem Aktionscode
                     </p>
                 </li>
                 <li className="wp-block-glimp-referral__list-item">

@@ -13,6 +13,14 @@
         }
     }
 
+    @include media('desktop') {
+        &.has-sidebar {
+            &>div {
+                width: 100%;
+            }
+        }
+    }
+
     @include media('tablet') {
         margin-top: 24px;
     }

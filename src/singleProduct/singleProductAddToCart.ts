@@ -1,4 +1,4 @@
-export function singleProductAddToCart(form: HTMLFormElement, button: HTMLButtonElement) {
+export function singleProductAddToCart(form: HTMLFormElement, button: HTMLButtonElement, cartButton: boolean = false) {
 	const formData = new FormData(form);
 	formData.append(button.getAttribute('name')!, button.getAttribute('value')!);
 
@@ -33,7 +33,7 @@ export function singleProductAddToCart(form: HTMLFormElement, button: HTMLButton
 			document.body.dispatchEvent(event);
 			let goToCartButton = form.querySelector('.go-to-cart-button') as HTMLButtonElement;
 
-			if (!goToCartButton) {
+			if (!goToCartButton && cartButton) {
 				goToCartButton = document.createElement('button');
 				goToCartButton.type = 'button';
 				goToCartButton.innerText = 'Warenkorb anzeigen';
