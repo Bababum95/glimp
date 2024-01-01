@@ -110,6 +110,7 @@
     .wp-block-details {
         summary {
             @include summary;
+            font-size: 14px;
         }
     }
 

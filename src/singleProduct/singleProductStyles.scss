@@ -104,6 +104,10 @@ h1 {
                 @include select-input;
             }
 
+            .woocommerce-variation-availability {
+                display: none;
+            }
+
             &.bundle_form {
                 flex-wrap: wrap;
                 gap: 12px;
@@ -216,7 +220,6 @@ h1 {
         }
 
         .go-to-cart-button {
-            max-width: calc(50% - 64px);
             margin: 0 0 0 12px;
         }
     }

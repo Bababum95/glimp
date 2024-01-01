@@ -156,26 +156,25 @@ const getPrice = (data: IProductData): HTMLElement => {
     const priceSpan = document.createElement('span');
     priceSpan.className = 'glimp-product-card__price';
     if (data.is_on_sale) {
-      const originalPrice = document.createElement('del');
-      originalPrice.innerHTML = `<span class="woocommerce-Price-amount amount">
+        const originalPrice = document.createElement('del');
+        originalPrice.innerHTML = `<span class="woocommerce-Price-amount amount">
                                     <bdi>
-                                        ${data.regular_price}
+                                        ${data.regular_price.replace('.', ',')} <!-- Заменяем точку на запятую -->
                                         <span class="woocommerce-Price-currencySymbol">€</span>
                                     </bdi>
                                  </span>`;
-      priceSpan.appendChild(originalPrice);
+        priceSpan.appendChild(originalPrice);
     }
 
     const salePrice = document.createElement('ins');
     salePrice.innerHTML = `<span class="woocommerce-Price-amount amount">
                             <bdi>
-                                ${data.price}
+                                ${data.price.replace('.', ',')} <!-- Заменяем точку на запятую -->
                                 <span class="woocommerce-Price-currencySymbol">€</span>
                             </bdi>
                           </span>`;
     priceSpan.appendChild(salePrice);
 
-  
     return priceSpan;
 }
 
@@ -189,10 +188,10 @@ const getBadges = (data: IProductData): HTMLElement => {
         badgesDiv.appendChild(inStockBadge);
     }
 
-    if (data.nikotinfrai) {
-        const nikotinfraiBadge = document.createElement('span');
-        nikotinfraiBadge.className = 'wc-block-components-product-badge__nikotinfrai';
-        badgesDiv.appendChild(nikotinfraiBadge);
+    if (data.nikotinfrei) {
+        const nikotinfreiBadge = document.createElement('span');
+        nikotinfreiBadge.className = 'wc-block-components-product-badge__nikotinfrei';
+        badgesDiv.appendChild(nikotinfreiBadge);
     }
 
     if (data.is_on_sale && data.is_in_stock) {

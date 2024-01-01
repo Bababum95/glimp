@@ -8,3 +8,13 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: block-based, custom, business, react, full page build
 */
+
+
+
+.glimp-hidden {
+    display: none;
+}
+
+.wp-block-woocommerce-cart .wp-block-woocommerce-cart-cross-sells-block__products {
+    padding: 0 0 20px !important;
+}

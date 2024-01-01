@@ -44,12 +44,13 @@ export interface IProductData {
   is_favorite?: boolean;
   link: string;
   name: string;
-  nikotinfrai: boolean;
+  nikotinfrei: boolean;
   parent_id: number;
   price: string;
   regular_price: string;
   rating: string;
   table?: { [key: string]: string[] }
+  attributes?: { [key: string]: string }
 }
 
 export interface IFilterResultPair {

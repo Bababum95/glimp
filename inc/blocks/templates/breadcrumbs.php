@@ -15,9 +15,13 @@ if($attributes['has']) {
 
 if ($parent_ids) {
     foreach ($parent_ids as $parent_id) {
-        $breadcrumbs .= '<li class="wp-block-glimp-breadcrumbs__item">
+        $post_slug = get_post_field('post_name', $parent_id);
+        $post_slug_with_spaces = str_replace('-', ' ', $post_slug);
+        $post_slug = str_replace(' e zigaretten', ' E-Zigaretten', $post_slug_with_spaces);
+
+        $breadcrumbs .= '<li class="wp-block-glimp-breadcrumbs__item wp-block-glimp-breadcrumbs__item_parent">
                             <a href="' . esc_url(get_permalink($parent_id)) . '">'
-                                . esc_html(get_the_title($parent_id))
+                                . esc_html($post_slug)
                             . '</a>
                         </li>';
     }

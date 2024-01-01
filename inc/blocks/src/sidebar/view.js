@@ -1,6 +1,9 @@
 import { handleScroll } from '../assets/utils';
 const sidebar = document.querySelector('.wp-block-glimp-sidebar');
 const links = document.querySelectorAll('.wp-block-glimp-sidebar__navlink');
+const headerHeight = document.querySelector('header').clientHeight;
+
+sidebar.style.setProperty('--header-height-full', `${headerHeight}px`);
 
 handleScroll(sidebar, 'top');
 

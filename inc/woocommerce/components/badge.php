@@ -7,16 +7,16 @@ function render_badges( $product ) {
     $product_id  = $product->is_type('variation') ? $product->get_parent_id() : $product->get_id();
     $is_on_sale   = $product->is_on_sale();
     $out_of_stock = !$product->is_in_stock();
-    $nikotinfrai  = has_term('einweg-e-zigarette-ohne-nikotin', 'product_tag', $product_id );
+    $nikotinfrei  = has_term('einweg-e-zigarette-ohne-nikotin', 'product_tag', $product_id );
     
-    if (!$is_on_sale && !$out_of_stock && !$nikotinfrai) {
+    if (!$is_on_sale && !$out_of_stock && !$nikotinfrei) {
         return null;
     }
 
     $output  = '<div class="wp-block-woocommerce-product-badge">';
 
-    if ( $nikotinfrai ) {
-        $output .= '<span class="wc-block-components-product-badge__nikotinfrai"></span>';
+    if ( $nikotinfrei ) {
+        $output .= '<span class="wc-block-components-product-badge__nikotinfrei"></span>';
     }
 
     if ( $is_on_sale && !$out_of_stock ) {

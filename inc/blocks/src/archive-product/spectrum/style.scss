@@ -7,7 +7,7 @@
         @include title;
     }
     
-    p {
+    p, li {
         @include text;
     }
 

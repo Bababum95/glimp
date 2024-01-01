@@ -21,6 +21,7 @@
         padding: 30px;
         background-color: var(--wp--preset--color--glimp-grey, #F2F2F2);
         max-width: 635px;
+        flex: 1;
 
         ol,
         ul {
@@ -45,6 +46,12 @@
             font-style: normal;
             font-weight: 700;
             line-height: 120%;
+        }
+    }
+
+    @include media('tablet') {
+        &__contents {
+            flex-direction: column;
         }
     }
 }

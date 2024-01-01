@@ -19,9 +19,9 @@ const AllOWED_BLOCKS = [
     'glimp/multiple-product-card',
     'glimp/page-card',
     'glimp/review',
-    'glimp/crossels-products',
     'core/image',
     'woocommerce/product-categories',
+    'woocommerce/cart-cross-sells-products-block',
 ]
 
 export const Edit = ({ clientId, attributes, setAttributes }) => {

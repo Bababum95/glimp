@@ -295,6 +295,9 @@ $choices-z-index: 1 !default;
     position: relative;
     padding: 10px 24px;
     font-size: $choices-font-size-md;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
     [dir="rtl"] & {
       text-align: right;
@@ -302,7 +305,7 @@ $choices-z-index: 1 !default;
   }
   .#{$choices-selector}__item--selectable {
     @media (min-width: 640px) {
-      padding-right: 100px;
+      // padding-right: 100px;
 
       &::after {
         content: attr(data-select-text);

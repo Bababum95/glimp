@@ -6,7 +6,7 @@ $args = [
     'comment_type' => 'review'
 ];
 $reviews = get_comments($args);
-$content = '<div ' . wp_kses_post(get_block_wrapper_attributes()) . '>';
+$content = '<div ' . wp_kses_post(get_block_wrapper_attributes()) . ' id="reviews">';
 
 ob_start();
 get_template_part('/woocommerce/single-product/comments/comment-popup');

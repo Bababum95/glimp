@@ -29,7 +29,7 @@ if($is_variation) {
 } else {
     $button_data = 'data-product="' . $id . '"';
 }
-if($product->is_type('variable') || $product->is_type('bandle')) {
+if($product->is_type('variable') || $product->is_type('bundle')) {
     $button_content = '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="2" viewBox="0 0 8 2" fill="none">
                             <path d="M2 1L-7.45058e-09 1" stroke="#9C48F7" stroke-width="1.5"/>
                             <path d="M5 1L3 1" stroke="#9C48F7" stroke-width="1.5"/>

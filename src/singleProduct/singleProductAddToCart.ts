@@ -40,7 +40,7 @@ export function singleProductAddToCart(form: HTMLFormElement, button: HTMLButton
 				goToCartButton.classList.add('go-to-cart-button', 'button');
 
 				goToCartButton.addEventListener('click', () => {
-					window.location.href = '/warenkorb';
+					window.location.href = '/cart';
 				});
 
 				button.after(goToCartButton);

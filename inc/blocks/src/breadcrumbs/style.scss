@@ -21,6 +21,10 @@
         font-weight: 600;
         line-height: 140%;
 
+        &_parent {
+            text-transform: capitalize;
+        }
+
         a {
             color: $color-dark-grey;
             font-size: 14px;

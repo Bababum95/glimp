@@ -3,7 +3,8 @@
 
 @mixin price-style($justify: flex-start) {
     @include flex-layout($justify, center);
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 2px 10px;
 
     &>* {
         text-decoration: none;

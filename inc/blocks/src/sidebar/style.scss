@@ -1,6 +1,8 @@
 @import '../assets/styles/variables';
 
 .wp-block-glimp-sidebar {
+    --header-height-full: $header-height-phone-full;
+
     padding: 0;
     list-style: none !important;
     position: sticky;
@@ -42,7 +44,7 @@
         overflow-x: auto;
         padding: 12px 0;
         width: 100%;
-        top: $header-height-tablet-full;
+        top: var(--header-height-full);
         transition: all 0.3s;
         z-index: 5;
 
@@ -68,8 +70,6 @@
     }
 
     @include media('phone') {
-        top: $header-height-phone-full;
-
         &.top {
             top: $header-height-phone-simple;
         }

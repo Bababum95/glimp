@@ -66,12 +66,29 @@ class Products_Handler {
             $taxonomy_array[] = $attribute['taxonomy'];
         }
 
+        $exclude_taxanomies = array();
+        if (!empty($data)) {
+            foreach ($data as $attribute) {
+                if(!empty($attribute['value']) && $attribute['exclude']) {
+                    $exclude_taxanomies[] = $attribute['taxonomy'];
+                    $args['tax_query'][] = array(
+                        'taxonomy' => $attribute['taxonomy'],
+                        'field'    => 'term_id',
+                        'terms'    => $attribute['value'],
+                    );
+                }
+            }
+        }
+
+        $query_exclude = new WP_Query($args);
+        $product_exclude_ids = $query_exclude->posts;
+
         $terms = get_terms(array(
             'taxonomy' => $taxonomy_array,
             'hide_empty' => false,
-            'object_ids' => $product_ids,
+            'object_ids' => $product_exclude_ids,
         ));
-
+        
         $sorted_terms = array();
         foreach ($terms as $term) {
             $taxonomy = $term->taxonomy;
@@ -79,6 +96,25 @@ class Products_Handler {
                 $sorted_terms[$taxonomy] = array();
             }
             $sorted_terms[$taxonomy][] = $term;
+        }
+
+
+        $terms = get_terms(array(
+            'taxonomy' => $taxonomy_array,
+            'hide_empty' => false,
+            'object_ids' => $product_ids,
+        ));
+
+        foreach ($terms as $term) {
+            $taxonomy = $term->taxonomy;
+            if (in_array($taxonomy, $exclude_taxanomies)) {
+                if (!isset($sorted_terms[$taxonomy])) {
+                    $sorted_terms[$taxonomy] = array();
+                }
+                if(!in_array($term, $sorted_terms[$taxonomy])) {
+                    $sorted_terms[$taxonomy][] = $term;
+                }
+            }
         }
 
         return $sorted_terms;
@@ -151,7 +187,7 @@ class Products_Handler {
         $parent_id = $product->get_parent_id();
         $is_variation = $product->is_type('variation');
         $product_permalink = $is_variation ? get_permalink($parent_id) : get_permalink($id);
-        $nikotinfrai = $is_variation
+        $nikotinfrei = $is_variation
             ? has_term('einweg-e-zigarette-ohne-nikotin', 'product_tag', $parent_id )
             : has_term('einweg-e-zigarette-ohne-nikotin', 'product_tag', $id );
         $price = $product->get_price();
@@ -176,7 +212,7 @@ class Products_Handler {
             'is_in_stock' => $product->is_in_stock(),
             'rating' => $product->get_average_rating(),
             'is_on_sale' => $product->is_on_sale(),
-            'nikotinfrai' => $nikotinfrai,
+            'nikotinfrei' => $nikotinfrei,
             'rating' => $product->get_average_rating(),
             'image' =>  wp_get_attachment_image_src($product->get_image_id(), 'woocommerce_thumbnail'),
         ];

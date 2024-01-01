@@ -37,11 +37,11 @@ body::-webkit-scrollbar {
             content: 'Sale';
         }
     }
-    &__nikotinfrai {
+    &__nikotinfrei {
         @include badge-style($color-secondary);
         @include badge-size(4px 14px, 14px, 6px);
         &::after {
-            content: 'Nikotinfrai';
+            content: 'Nikotinfrei';
         }
     }
 }
@@ -62,7 +62,7 @@ body::-webkit-scrollbar {
     .wc-block-components-product-badge {
         &__out-of-stock,
         &__sale,
-        &__nikotinfrai {
+        &__nikotinfrei {
             @include badge-size(4px 8px, 12px, 5px);
         }
     }    

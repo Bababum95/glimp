@@ -79,7 +79,8 @@
         &__price {
             flex-direction: row;
             align-items: center;
-            gap: 12px;
+            flex-wrap: wrap;
+            gap: 6px 12px;
         }
 
         &__image {
@@ -117,7 +118,7 @@
     .wp-block-glimp-bundles-simple-item {
         &__price {
             @include price-size(14px, 13px);
-            gap: 6px;
+            gap: 4px 6px;
         }
     }
 }

@@ -167,11 +167,16 @@ header {
     left: 0;
     right: 0;
     z-index: 11;
-    transition: background-size 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
     background: linear-gradient(to bottom, #fff 0%, #fff 100%);
     background-size: 2px 200px;
     background-position: 0 0%;
     background-repeat: repeat-x;
+    border-bottom: $grey-line;
+
+    &:has(.wp-block-glimp-marquee) {
+        border-bottom: none;
+    }
 
     &:has(.has-modal-open),
     &:has(.wp-block-glimp-account__popup.open) {
@@ -188,8 +193,9 @@ header {
 
     @include media('tablet') {
         &.hidden {
-            transition: background-size 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
             background-size: 2px 50px;
+            border-bottom-color: transparent;
 
             .header {
                 &__main::before {
@@ -241,6 +247,10 @@ header {
                 top: 11px;
                 left: 13px;
             }
+        }
+
+        .dgwt-wcas-tpd-image {
+            border: none;
         }
     }
 
