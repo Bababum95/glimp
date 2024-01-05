@@ -302,58 +302,66 @@ h1 {
     }
 }
 
-.woocommerce div.product form.cart div.quantity {
-    @extend %flex-center;
-    border-radius: 10px;
-    background: $color-grey;
-    border: 1px solid $color-grey;
-    max-width: 104px;
-    box-sizing: border-box;
-    height: 53px;
-    font-size: 16px;
-    font-weight: 600;
-    color: $color-black;
-    padding: 0 6px;
-    margin-right: 12px;
+.woocommerce div.product form.cart {
+    div.quantity {
+        @extend %flex-center;
+        border-radius: 10px;
+        background: $color-grey;
+        border: 1px solid $color-grey;
+        max-width: 104px;
+        box-sizing: border-box;
+        height: 53px;
+        font-size: 16px;
+        font-weight: 600;
+        color: $color-black;
+        padding: 0 6px;
+        margin-right: 12px;
 
-    &:has(input:focus) {
-        border-color: $color-black;
-    }
+        &:has(input:focus) {
+            border-color: $color-black;
+        }
 
-    input[type=number] {
-        -moz-appearance: textfield;
-        appearance: textfield;
-        border: none;
-        background-color: transparent;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-size: inherit;
-        font-weight: inherit;
-        color: inherit;
-        width: 35px;
-        outline: none;
-
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
+        input[type=number] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+            border: none;
+            background-color: transparent;
             margin: 0;
+            padding: 0;
+            height: 100%;
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            width: 35px;
+            outline: none;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &::-webkit-clear-button,
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
         }
 
-        &::-webkit-clear-button,
-        &::-webkit-inner-spin-button {
-            display: none;
+        .quantity__increase,
+        .quantity__decrease {
+            @include quantity-button;
+            font-weight: inherit;
+        }
+
+        .quantity__decrease {
+            font-size: 12px;
         }
     }
 
-    .quantity__increase,
-    .quantity__decrease {
-        @include quantity-button;
-        font-weight: inherit;
-    }
-
-    .quantity__decrease {
-        font-size: 12px;
+    &.bundled_products {
+        div.quantity {
+            background-color: $color-black;
+        }
     }
 }
 

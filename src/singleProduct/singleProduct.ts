@@ -27,7 +27,9 @@ if(productVariationElements) {
 			const attributeValue = variation.attributes[slug];
 			options.forEach((option) => {
 			  if (option.value === attributeValue) {
-				  option.textContent = `${option.textContent} (In Kürze)`
+				if(!option.textContent?.includes('In Kürze')) {
+					option.textContent = `${option.textContent} (In Kürze)`
+				}
 			  }
 			});
 		  });
@@ -40,9 +42,11 @@ quantity?.forEach((el) => {
 	const quantityIncrease = el.querySelector('.quantity__increase');
 	quantityDecrease?.addEventListener('click', () => {
 		input!.value = Math.max((parseInt(input!.value, 10) - 1), 1).toString();
+		input?.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
 	})
 	quantityIncrease?.addEventListener('click', () => {
 		input!.value = (parseInt(input!.value, 10) + 1).toString();
+		input?.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
 	})
 })
 

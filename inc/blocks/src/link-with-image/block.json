@@ -18,6 +18,10 @@
 			"type": "boolean",
 			"default": false
 		},
+		"nofollow": {
+			"type": "boolean",
+			"default": false
+		},
 		"target": {
 			"type": "boolean",
 			"default": false

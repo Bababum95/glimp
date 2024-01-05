@@ -1,5 +1,19 @@
 @import './assets/styles/variables';
 @import './assets/styles/mixins';
+@import './assets//styles/mixins/submit-button';
+
+@mixin serch-modal {
+    border: $grey-line !important;
+    box-shadow: $box-shadow;
+    border-radius: 15px !important;
+    max-height: calc(100vh - 120px) !important;
+    overflow-y: auto !important;
+    height: fit-content !important;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
 
 .header-menu {
     gap: 20px;
@@ -244,13 +258,9 @@ header {
             padding: 0;
 
             button.dgwt-wcas-search-submit {
-                top: 11px;
                 left: 13px;
+                top: 11px;
             }
-        }
-
-        .dgwt-wcas-tpd-image {
-            border: none;
         }
     }
 
@@ -314,6 +324,265 @@ header {
         }
 
     }
+}
+
+
+.dgwt-wcas-sf-wrapp {
+    padding: 0;
+
+    button.dgwt-wcas-search-submit {
+        top: 11px;
+        left: 13px;
+    }
+}
+
+.dgwt-wcas-suggestions-wrapp {
+    @include serch-modal;
+}
+
+.dgwt-wcas-open-pirx .dgwt-wcas-suggestions-wrapp>.dgwt-wcas-suggestion:not(.dgwt-wcas-suggestion-headline, .dgwt-wcas-suggestion-more) {
+    box-shadow: $box-shadow;
+    border-radius: 12px;
+    padding: 8px;
+    margin: 0 20px 8px;
+    width: calc(100% - 40px);
+    text-decoration-line: none !important;
+}
+
+.dgwt-wcas-suggestion-selected,
+.dgwt-wcas-has-headings .dgwt-wcas-suggestion.dgwt-wcas-suggestion-tax.dgwt-wcas-suggestion-selected,
+.dgwt-wcas-has-headings .dgwt-wcas-suggestion.dgwt-wcas-suggestion-tax:hover {
+    background-color: $color-grey;
+}
+
+.dgwt-wcas-has-headings {
+    .dgwt-wcas-suggestion-headline .dgwt-wcas-st {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: capitalize;
+        border: none;
+    }
+
+    .dgwt-wcas-suggestion-tax .dgwt-wcas-st {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+
+        strong {
+            color: $color-black;
+        }
+
+        .dgwt-wcas-st-breadcrumbs {
+            color: $color-black;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 130%;
+        }
+    }
+}
+
+.dgwt-wcas-st strong,
+.dgwt-wcas-sd strong {
+    color: $color-black !important;
+}
+
+.dgwt-wcas-st-title {
+    @include product-card-title(16px);
+}
+
+.dgwt-wcas-si {
+    width: 60px !important;
+    overflow: hidden;
+
+    img {
+        border: none;
+        max-height: 100%;
+        padding: 0;
+        background-color: transparent;
+        aspect-ratio: 1/1;
+    }
+}
+
+.dgwt-wcas-sp {
+    font-size: 0;
+    @include price-style();
+    @include price-size(20px, 14px);
+
+    &>span {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        @include price-style();
+        @include price-size(20px, 14px);
+    }
+}
+
+.dgwt-wcas-details-wrapp {
+    @include serch-modal;
+    margin-left: 8px;
+}
+
+.dgwt-wcas-datails-title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.dgwt-wcas-details-title-tax {
+    text-transform: capitalize;
+    font-weight: inherit;
+}
+
+.dgwt-wcas-tax-product-details {
+    box-shadow: $box-shadow;
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.dgwt-wcas-tpd-image {
+    border: none;
+    aspect-ratio: 1/1;
+    height: 100%;
+    width: auto;
+    max-width: 80px;
+    max-height: 80px;
+    padding: 0;
+    overflow: hidden;
+
+    img {
+        height: 100%;
+    }
+}
+
+.dgwt-wcas-tpd-rest {
+    flex: 1;
+}
+
+.dgwt-wcas-tpd-rest-title {
+    @include product-card-title(14px);
+}
+
+.woocommerce {
+    .star-rating {
+        &::before {
+            color: $color-grey;
+        }
+
+        span::before {
+            color: $color-gold-star;
+        }
+    }
+}
+
+.dgwt-wcas-pd-rating {
+    letter-spacing: 2px;
+
+    .star-rating {
+        width: 6.1em;
+    }
+
+    .dgwt-wcas-pd-review {
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
+.dgwt-wcas-tpd-price {
+    @include price-style();
+    @include price-size(16px, 13px);
+}
+
+.dgwt-wcas-details-inner.dgwt-wcas-details-inner-active {
+    padding-top: 10px;
+}
+
+.dgwt-wcas-details-main-image {
+    border: none;
+
+    img {
+        border-radius: 12px !important;
+        margin: 0;
+    }
+}
+
+.dgwt-wcas-pd-price {
+    @include price-style();
+    @include price-size(24px, 16px);
+}
+
+.dgwt-wcas-pd-addtc-form {
+    flex-direction: column;
+    gap: 10px;
+
+    &>* {
+        width: 100%;
+    }
+
+    .quantity {
+        display: none;
+        // @extend %flex-center;
+        // background-color: $color-grey;
+        // margin: 0;
+        // border-radius: 12px;
+
+        // .quantity__decrease,
+        // .quantity__increase {
+        //     @extend %flex-center;
+        //     height: 100%;
+        //     width: 15%;
+        //     font-size: 16px;
+        //     font-style: normal;
+        //     font-weight: 700;
+        //     line-height: normal;
+        //     cursor: pointer;
+        // }
+
+        // input {
+        //     flex: 1;
+        //     max-width: 30%;
+        //     background-color: transparent;
+        //     height: 50px;
+        //     border: none;
+        //     padding: 0;
+        //     font-size: 16px;
+        //     font-style: normal;
+        //     font-weight: 700;
+        //     line-height: normal;
+
+        //     &::-webkit-outer-spin-button,
+        //     &::-webkit-inner-spin-button {
+        //         -webkit-appearance: none;
+        //         margin: 0;
+        //     }
+        // }
+    }
+
+    .wp-element-button,
+    .wp-block-button__link {
+        @include submit-button-primary-style;
+        @include submit-button-size(16px, 100%, 50px);
+        @extend %flex-center;
+    }
+}
+
+.dgwt-wcas-st-more {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-transform: none;
+    color: $color-dark-grey;
 }
 
 @keyframes overlay-menu__fade-in-animation {

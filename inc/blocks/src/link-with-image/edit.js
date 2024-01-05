@@ -36,6 +36,13 @@ export const Edit = ({ attributes, setAttributes }) => {
                             setAttributes({ target })
                         }
                     />
+                    <ToggleControl
+                        label="nofollow"
+                        checked={attributes.nofollow}
+                        onChange={(nofollow) =>
+                            setAttributes({ nofollow })
+                        }
+                    />
                 </PanelBody>
             </InspectorControls>
         </div>
