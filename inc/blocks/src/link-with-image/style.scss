@@ -5,7 +5,7 @@
     box-sizing: border-box;
 
     & * {
-        width: var(--children-width);
+        // width: var(--children-width);
         box-sizing: border-box;
     }
 }

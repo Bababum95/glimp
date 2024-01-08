@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "glimp/post-sidebar",
+	"name": "glimp/post-caption",
 	"version": "1.0.0",
-	"title": "Post Sidebar",
-	"icon": "align-pull-right",
+	"title": "Post caption",
+	"icon": "cover-image",
 	"category": "theme",
 	"description": "The part of the Glimp theme.",
 	"attributes": {},
@@ -12,8 +12,8 @@
 	"supports": {
 		"html": false
 	},
-	"textdomain": "glimp/post-sidebar",
+	"textdomain": "glimp/post-caption",
 	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-    "style": "file:./style-index.css"
+    "style": "file:./style-index.css",
+	"render": "file:./render.php"
 }

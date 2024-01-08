@@ -30,8 +30,8 @@ export const Save = ({ attributes }) => {
 			<div className='wp-block-glimp-slider__wrapper'>
 				<InnerBlocks.Content />
 			</div>
-			<button className='wp-block-glimp-slider__button left hide' />
-			<button className='wp-block-glimp-slider__button right' />
+			<button className='wp-block-glimp-slider__button left hide' aria-label="Scroll left" />
+			<button className='wp-block-glimp-slider__button right' aria-label="Scroll right" />
 		</div>
 	);
 };

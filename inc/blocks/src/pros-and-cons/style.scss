@@ -3,11 +3,11 @@
 .wp-block-glimp-pros-and-cons {
     margin: 60px 0;
     
-    &>h2 {
+    h2, h3 {
         @include title;
     }
     
-    &>p {
+    p {
         @include text;
     }
     
@@ -41,11 +41,15 @@
             }
         }
 
-        p {
-            font-size: 26px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 120%;
+        // p {
+        //     font-size: 26px;
+        //     font-style: normal;
+        //     font-weight: 700;
+        //     line-height: 120%;
+        // }
+
+        figure {
+            margin-top: 12px;
         }
     }
 

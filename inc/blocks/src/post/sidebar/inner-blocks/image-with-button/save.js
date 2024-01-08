@@ -2,7 +2,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 import './style.scss';
 
 export const Save = ({ attributes }) => {
-	const { mediaURL, title, button } = attributes;
+	const { mediaURL, title, button, withProduct } = attributes;
 	const blockProps = useBlockProps.save();
 
 	return (
@@ -26,6 +26,9 @@ export const Save = ({ attributes }) => {
 					value={button}
 				/>
 			</div>
+			{withProduct && (
+				<div className='product-placeholder'></div>
+			)}
 		</div>
 	);
 };

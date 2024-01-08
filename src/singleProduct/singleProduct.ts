@@ -11,6 +11,7 @@ const largeImageContainer = document.querySelector('.wc-block-product-gallery-la
 const thumbnailsContainer = document.querySelector('.wc-block-product-gallery-thumbnails');
 const quantity = form?.querySelectorAll('.quantity');
 const productVariationElements = document.querySelectorAll('[data-product_variations]');
+const bundleProducts = document.querySelectorAll('.bundled_product')
 
 if(productVariationElements) {
 	productVariationElements.forEach((el) => {
@@ -49,6 +50,24 @@ quantity?.forEach((el) => {
 		input?.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
 	})
 })
+
+const bundleQuantityStart = (evt: Event) => {
+    evt.preventDefault();
+    const target = evt.target as HTMLElement;
+	target.classList.add('show');
+    const input = target.querySelector('input') as HTMLInputElement | null;
+
+    if (input) {
+        input.value = (parseInt(input.value, 10) + 1).toString();
+        input.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
+        target.removeEventListener('click', bundleQuantityStart);
+    }
+};
+
+bundleProducts?.forEach((el) => {
+    const quantity = el.querySelector('.quantity') as HTMLElement | null;
+    quantity?.addEventListener('click', bundleQuantityStart);
+});
 
 if (largeImageContainer && thumbnailsContainer) {
 	const scrollThumbnail = initThumbnails(thumbnailsContainer as HTMLElement);

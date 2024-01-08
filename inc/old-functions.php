@@ -5,8 +5,6 @@ remove_filter( 'the_title', 'capital_P_dangit', 11 );
 remove_filter( 'the_content', 'capital_P_dangit', 11 );
 remove_filter( 'comment_text', 'capital_P_dangit', 31 );
 
-
-
 /* 3. Order total more 20 euro */
 
 add_action( 'woocommerce_check_cart_items', 'required_min_cart_subtotal_amount' );
@@ -29,12 +27,9 @@ function required_min_cart_subtotal_amount() {
 }
 
 
-
 /* 5. Edit order on all statuses */
 
 add_filter( 'wc_order_is_editable', '__return_true' );
-
-
 
 /* 6. Send email germanized */
 
@@ -43,9 +38,6 @@ add_filter( 'woocommerce_gzd_instant_order_confirmation', 'my_child_disable_inst
 function my_child_disable_instant_order_confirmation( $disable ) {
 	return false;
 }
-
-
-
 
 function redirect_uppercase_to_lowercase() {
 	$url = $_SERVER['REQUEST_URI'];
@@ -331,46 +323,6 @@ function register_product_review_popup_settings() {
 	register_setting( 'product-review-popup-settings-group', 'glimp_popup_text' );
 }
 
-function product_review_popup_page() {
-	?>
-<div class="wrap">
-<h1>Product Review Popup</h1>
-
-<form method="post" action="options.php">
-	<?php settings_fields( 'product-review-popup-settings-group' ); ?>
-	<?php do_settings_sections( 'product-review-popup-settings-group' ); ?>
-	<table class="form-table">
-		<tr valign="top">
-		<th scope="row">Popup Heading</th>
-		<td><input style="width: 100%;" type="text" name="glimp_popup_heading" value="<?php echo esc_attr( get_option( 'glimp_popup_heading' ) ); ?>" /></td>
-		</tr>
-		 
-		<tr valign="top">
-		<th scope="row">Popup Text</th>
-		<td><input style="width: 100%;" type="text" name="glimp_popup_text" value="<?php echo esc_attr( get_option( 'glimp_popup_text' ) ); ?>" /></td>
-		</tr>
-	</table>
-	
-	<?php submit_button(); ?>
-
-</form>
-</div>
-	<?php
-}
-// Get the values from the database
-// $popup_heading = get_option('glimp_popup_heading');
-// $popup_text = get_option('glimp_popup_text');
-
-/*
-function redirect_paginated_pages() {
-	global $wp_query;
-
-	if ( is_paged() ) {
-		wp_redirect( get_pagenum_link( 1 ), 301 );
-		exit();
-	}
-}
-add_action( 'template_redirect', 'redirect_paginated_pages' );*/
 
 // Added June 26, 2023
 function custom_email_blacklist( $errors, $sanitized_user_login, $user_email ) {
@@ -388,14 +340,6 @@ function reverse_reviews_order_on_product_page($args) {
     $args['order'] = 'ASC';  // Oldest to newest
     return $args;
 }
-
-// before price
-// function cw_change_product_price_display( $price ) {
-//     $price .= '*';
-//     return $price;
-// }
-// add_filter( 'woocommerce_get_price_html', 'cw_change_product_price_display' );
-// add_filter( 'woocommerce_cart_item_price', 'cw_change_product_price_display' );
 
 
 add_filter( 'post_class', 'filter_product_post_class', 10, 3 );

@@ -1,11 +1,14 @@
 @import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/placeholders';
+@import '../../../../assets/styles/mixins/submit-button';
+
 
 .wp-block-glimp-image-with-button {
     box-shadow: $box-shadow;
     border-radius: 12px;
     padding: 15px 20px;
-    width: fit-content;
-    max-width: 100%;
+    width: 100%;
     box-sizing: border-box;
 
     &__title {
@@ -18,12 +21,11 @@
 
     &__content {
         position: relative;
-        width: fit-content;
-        max-width: 100%;
+        width: 100%;
         box-sizing: border-box;
 
         img {
-            max-width: 100%;
+            width: 100%;
         }
     }
 
@@ -42,7 +44,7 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
-        
+
         a {
             color: $color-white;
 
@@ -50,10 +52,70 @@
                 color: $color-white;
             }
         }
-        
+
         &:hover {
             cursor: pointer;
             background-color: $color-primary;
+        }
+    }
+}
+
+.products-list {
+    @extend %flex-column;
+    margin-top: 28px;
+    gap: 14px;
+}
+
+.glimp-sidebar-product-card {
+    width: 100%;
+
+    &__link {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        gap: 20px;
+        align-items: center;
+    }
+
+    ;
+
+    &__image img {
+        width: 152px;
+        height: 152px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    &__title {
+        @include product-card-title(22px);
+        font-weight: 700;
+        margin: 0 0 8px;
+        color: $color-black;
+    }
+
+    &__price {
+        @include price-style;
+        @include price-size(18px, 15px);
+    }
+
+    &__description {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 2px 0 0;
+        color: $color-black;
+    }
+
+    &__button {
+        @include submit-button-primary-style;
+        @include submit-button-size(8px, 100%, 31px, 8px, 14px, 600);
+        margin-top: 12px;
+
+        &.loading {
+            margin-left: 50%;
+            transform: translate(-50%, 0);
+            max-width: 31px;
         }
     }
 }

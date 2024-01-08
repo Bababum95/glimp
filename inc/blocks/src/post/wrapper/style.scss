@@ -3,21 +3,16 @@
 .wp-block-glimp-post-wrapper {
     margin-top: 32px;
     padding: 0 20px;
-    
-    &.has-sidebar {
-        @include flex-layout(flex-start, flex-start);
-        gap: 30px;
+    @include flex-layout(flex-start, flex-start);
+    gap: 30px;
 
-        &>div {
-            width: 64%;
-        }
+    &>div {
+        width: 64%;
     }
 
     @include media('desktop') {
-        &.has-sidebar {
-            &>div {
-                width: 100%;
-            }
+        &>div {
+            width: 100%;
         }
     }
 

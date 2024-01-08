@@ -11,7 +11,7 @@ const loadingTrigger = document.querySelector('.wp-block-glimp-loader');
 const cardLoader = document.querySelector('.wp-block-glimp-loader__card');
 
 const currentFilters: ICurrentFilters = {
-  sort: 'date',
+  sort: 'popularity',
   offset: 0,
   in_stock: false,
   attributes: [],
@@ -144,6 +144,10 @@ if (currentPageTaxonomy && currentPageTerm) {
   currentFilters.attributes.push({ taxonomy: currentPageTaxonomy, exclude: false, value: [currentPageTerm] });
   if (main_categories_ids.includes(Number(currentPageTerm))) {
     currentFilters.variation = false;
+    if (inStockElement instanceof HTMLInputElement) {
+      inStockElement.checked = true;
+      currentFilters.in_stock = true;
+    }
   }
 }
 

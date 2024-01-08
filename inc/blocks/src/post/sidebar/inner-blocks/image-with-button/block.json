@@ -26,13 +26,28 @@
 			"source": "attribute",
 			"selector": "img",
 			"attribute": "src"
+		},
+		"productList": {
+			"type": "array",
+			"default": [
+				{
+					"id": "0",
+					"variation": "0"
+				}
+			]
+		},
+		"withProduct": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"example": {},
 	"supports": {
 		"html": false
 	},
+	"parent": ["glimp/post-sidebar"],
 	"textdomain": "glimp/image-with-button",
 	"editorScript": "file:./index.js",
-    "style": "file:./style-index.css"
+    "style": "file:./style-index.css",
+	"render": "file:./render.php"
 }

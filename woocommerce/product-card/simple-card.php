@@ -67,9 +67,9 @@ $button = '<button class="' . $button_classes . '"' . $button_data . '>' . $butt
                 ?>
             </div>
             <?php echo render_badges($product); ?>
-            <h3 class="glimp-product-card__title">
+            <p class="glimp-product-card__title">
                 <?php echo esc_html($title); ?> 
-            </h3>
+            </p>
             <div class="glimp-product-card__bottom">
                 <span class="glimp-product-card__price">
                     <?php echo $product->get_price_html(); ?>

@@ -35,6 +35,8 @@ export default defineConfig({
         notFoundStyles: resolve(__dirname, '/src/notFound/notFoundStyles.scss'),
         home: resolve(__dirname, '/src/home/home.ts'),
         homeStyles: resolve(__dirname, '/src/home/homeStyles.scss'),
+        cart: resolve(__dirname, '/src/cart/cart.ts'),
+        cartStyles: resolve(__dirname, '/src/cart/cartStyles.scss'),
       },
     },
   },

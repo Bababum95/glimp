@@ -12,3 +12,4 @@ export { default as expressLieferservice } from './express-lieferservice.jpg';
 export { default as erhalte } from './erhalte.jpg';
 export { default as bonuspunkte } from './bonuspunkte.jpg';
 export { default as stelleDein } from './stelle-dein.jpg';
+export { default as logoImage } from './glimp-logo.png';

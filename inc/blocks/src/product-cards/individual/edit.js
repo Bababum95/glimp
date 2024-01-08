@@ -28,20 +28,28 @@ export function Edit({ attributes, setAttributes }) {
 	}
 
 	const handleChange = (value, index) => {
-		const updatedIds = [...variationIds];
+		let updatedIds = [...variationIds];
 		updatedIds[index] = value;
+		if(count) {
+			updatedIds = updatedIds.slice(0, count);
+		}
 		setAttributes({ variationIds: updatedIds });
 	};
 
+	const setCount = (value) => {
+		setAttributes({ count: value })
+		if(value < variationIds.length) {
+			setAttributes({ variationIds: variationIds.slice(0, value) })
+		}
+	}
 
 	useEffect(() => {
 		if (!id || !variation) return;
-		api.get(`products/${id}/variations`)
+		api.get(`products/${id}/variations`, { per_page: 50 })
 			.then(data => {
 				setVariations(data.data);
 			})
 	}, [id, variation]);
-	console.log(variations)
 
 	useEffect(() => {
 		if (!id || !products) return;
@@ -77,7 +85,7 @@ export function Edit({ attributes, setAttributes }) {
 										<RangeControl
 											label="Number of Variations to Display"
 											value={count === -1 ? 0 : count}
-											onChange={(value) => setAttributes({ count: value })}
+											onChange={(value) => setCount(value)}
 											disabled={count === -1}
 											min={1}
 											max={50}

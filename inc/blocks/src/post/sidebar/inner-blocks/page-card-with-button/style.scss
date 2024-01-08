@@ -1,0 +1,37 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins/submit-button';
+
+.wp-block-glimp-page-card-with-button {
+    box-shadow: $box-shadow;
+    border-radius: 12px;
+    overflow: hidden;
+
+    &__link {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image {
+        width: 100%;
+
+        &.logo {
+            width: 75px;
+            margin: 20px 0 0 20px;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+        margin: 16px 20px;
+    }
+
+    &__button {
+        @include submit-button-primary-style;
+        @include submit-button-size(14px, calc(100% - 40px));
+        margin: 0 20px 20px;
+    }
+}

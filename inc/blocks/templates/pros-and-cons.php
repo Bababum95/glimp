@@ -56,10 +56,10 @@ echo '<div ' . wp_kses_data(get_block_wrapper_attributes()) . '>';
     if (!empty($check_list) && !empty($cross_list)) : ?>
         <div class="wp-block-glimp-pros-and-cons__contents">
             <div class="wp-block-glimp-pros-and-cons__list">
-                <?php echo apply_filters('the_content', get_field('check_list')); ?>
+                <?php echo apply_filters('the_content', $check_list); ?>
             </div>
             <div class="wp-block-glimp-pros-and-cons__list">
-                <?php echo apply_filters('the_content', get_field('cross_list')); ?>
+                <?php echo apply_filters('the_content', $cross_list); ?>
             </div>
         </div>
     <?php endif;

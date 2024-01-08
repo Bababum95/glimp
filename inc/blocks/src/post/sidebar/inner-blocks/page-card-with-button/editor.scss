@@ -1,0 +1,13 @@
+.wp-block-glimp-page-card {
+    display: flex;
+    flex-direction: var(--flex-direction);
+
+    &__title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+}

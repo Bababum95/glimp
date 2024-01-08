@@ -19,7 +19,7 @@ function render_page_card($id, $direction = 'row') {
     }
 
     return sprintf(
-        '<li class="wp-block-glimp-page-card" style="--flex-direction: %s; --image-width: %s;">
+        '<article class="wp-block-glimp-page-card" style="--flex-direction: %s; --image-width: %s;">
             <a class="wp-block-glimp-page-card__link" href="%s" title="%s">
                 <img class="wp-block-glimp-page-card__image" src="%s" alt="%s" onerror="this.onerror=null;this.src=\'%s\';" />
                 <div class="wp-block-glimp-page-card__info">
@@ -30,7 +30,7 @@ function render_page_card($id, $direction = 'row') {
                     </div>
                 </div>
             </a>
-        </li>',
+        </article>',
         esc_attr($direction),
         esc_attr($imageWidth),
         esc_url(get_permalink($id)),

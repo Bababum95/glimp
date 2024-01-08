@@ -9,7 +9,7 @@ function render_page_like_button($post_id, $button_class = 'wp-block-glimp-page-
     $button_classes = $button_class . ($is_liked ? ' active' : '');
 
     return sprintf(
-        '<button class="%s" data-post-id="%d" data-action="%s">%d</button>',
+        '<button class="%s" data-post-id="%d" data-action="%s" aria-label="add to favorites">%d</button>',
         esc_attr($button_classes),
         esc_attr($post_id),
         esc_attr($button_action),

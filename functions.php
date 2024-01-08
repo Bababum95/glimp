@@ -25,6 +25,7 @@ require_once get_template_directory() . '/inc/api/class-api-init.php';
 require_once get_template_directory() . '/inc/newsletters-signup.php';
 require_once get_template_directory() . '/inc/comment-form.php';
 require_once get_template_directory() . '/inc/disable-rel-links.php';
+require_once get_template_directory() . '/inc/page-taxonomy.php';
 
 //old scripts needed changes in the future
 require_once get_template_directory() . '/inc/old-functions.php';

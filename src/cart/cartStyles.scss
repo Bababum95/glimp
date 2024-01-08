@@ -1,0 +1,35 @@
+@import '../assets/styles/variables';
+
+.wr-cart-balance-value {
+    display: flex;
+    align-items: center;
+
+    &::after {
+        content: '';
+        background-image: url('./coin.png');
+        background-size: cover;
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        display: inline-block;
+        object-fit: cover;
+    }
+}
+
+.wc-block-components-notice-banner.is-error {
+    background-color: $color-grey;
+    border: none;
+    border-radius: 12px;
+
+    .wc-block-components-notice-banner__content {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+    }
+
+    &>svg {
+        background-color: transparent;
+        fill: $color-black;
+    }
+}

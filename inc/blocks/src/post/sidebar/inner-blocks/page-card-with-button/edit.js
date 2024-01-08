@@ -1,14 +1,19 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, ToggleControl } from '@wordpress/components';
+import { PanelBody,
+    TextControl,
+    __experimentalToggleGroupControl as ToggleGroupControl,
+    __experimentalToggleGroupControlOption as ToggleGroupControlOption,
+} from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
-import { SelectPages } from '../assets/components';
-import { PageCard } from '../assets/components/PageCard';
+import { SelectPages } from '../../../../assets/components';
+import { PageCard } from '../../../../assets/components/PageCard';
+import { logoImage } from '../../../../assets/images';
 import './editor.scss';
 
 export const Edit = ({ attributes, setAttributes }) => {
-    const { id, direction } = attributes;
+    const { id, view, buttonText } = attributes;
     const [currentPage, setCurrentPage] = useState(null);
     const blockProps = useBlockProps();
 
@@ -18,7 +23,6 @@ export const Edit = ({ attributes, setAttributes }) => {
             '_embed': true,
         });
     }, []);
-
 
     useEffect(() => {
         if (!id || !pages) return;
@@ -36,20 +40,17 @@ export const Edit = ({ attributes, setAttributes }) => {
     }, [id, pages])
 
     return (
-        <div
-            {...blockProps}
-            style={{
-                '--flex-direction': direction,
-                '--image-width': direction === 'column' ? '100%' : '50%',
-            }}
-        >
+        <div {...blockProps} >
             {currentPage ? (
                 <PageCard
-                    image={currentPage.image}
+                    image={view === 'logo' ? logoImage : currentPage.image}
                     title={currentPage.title}
                     likes={currentPage.currentPage}
                     comments={currentPage.comments}
                     date={currentPage.date}
+                    logo={view === 'logo'}
+                    buttonText={buttonText}
+                    className='wp-block-glimp-page-card-with-button'
                 />
             ) : (
                 <SelectPages
@@ -65,16 +66,24 @@ export const Edit = ({ attributes, setAttributes }) => {
                         setAttributes={setAttributes}
                         pages={pages}
                     />
-                    <p>Direction</p>
-                    <ToggleControl
-                        label="Row"
-                        checked={direction === 'row'}
-                        onChange={() => setAttributes({ direction: 'row' })}
-                    />
-                    <ToggleControl
-                        label="Column"
-                        checked={direction === 'column'}
-                        onChange={() => setAttributes({ direction: 'column' })}
+                    <ToggleGroupControl
+                        label="View Mode"
+                        value={attributes.view}
+                        onChange={(view) => setAttributes({ view })}
+                    >
+                        <ToggleGroupControlOption
+                            value="thumbnail"
+                            label="Thumbnail"
+                        />
+                        <ToggleGroupControlOption
+                            value="logo"
+                            label="Logo"
+                        />
+                    </ToggleGroupControl>
+                    <TextControl
+                        label="Button Text"
+                        value={buttonText}
+                        onChange={(buttonText) => setAttributes({ buttonText })}
                     />
                 </PanelBody>
             </InspectorControls>

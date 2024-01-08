@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "glimp/page-card-with-button",
+	"version": "1.0.0",
+	"title": "Page card with button",
+	"category": "theme",
+	"description": "The part of the Glimp theme.",
+	"attributes": {
+		"id": {
+			"type": "number",
+			"default": 0
+		},
+		"view" : {
+			"type": "string",
+			"default": "thumbnail"
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Mehr erfahren"
+		}
+	},
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"parent": ["glimp/post-sidebar"],
+	"textdomain": "glimp/page-card-with-button",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

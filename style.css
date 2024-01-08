@@ -9,7 +9,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: block-based, custom, business, react, full page build
 */
 
-
+:root {
+    --header-height: 87px;
+}
 
 .glimp-hidden {
     display: none;

@@ -32,7 +32,6 @@ if ($queried_object instanceof WP_Term) {
 $wrapper .= '>';
 
 if (woocommerce_product_loop()) {
-
 	/**
 	 * Hook: woocommerce_before_shop_loop.
 	 *
@@ -65,6 +64,10 @@ if (woocommerce_product_loop()) {
 			if ( !empty($product_id) ) {
 				$product_count++;
 				$product = wc_get_product($product_id);
+
+				if ( in_array($term_id, $main_categories_ids) && !$product->is_in_stock() ) {
+					continue;
+				}
 			
 				if ($product && $product->is_type('variable') && !in_array($term_id, $main_categories_ids)) {
 					$variations_ids = $product->get_children();

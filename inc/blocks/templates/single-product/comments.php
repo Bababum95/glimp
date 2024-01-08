@@ -48,7 +48,7 @@ if ($reviews) {
         $content .= ob_get_clean();
     }
     if (count($reviews) > 5) {
-        $content .= '<button class="wp-block-glimp-comments__content-button">Produkt bewerten</button>';
+        $content .= '<button class="wp-block-glimp-comments__content-button">Mehr Berichte anzeigen</button>';
     }
     $content .= '</div>';
 } else {

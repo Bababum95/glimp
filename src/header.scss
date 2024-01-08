@@ -25,7 +25,7 @@
 
     .wp-block-navigation__responsive-container {
         max-width: 385px;
-        padding: 40px 35px;
+        padding: 40px 35px !important;
         box-sizing: border-box;
 
         &::-webkit-scrollbar {
@@ -33,7 +33,7 @@
         }
 
         .wp-block-navigation__responsive-container-content {
-            padding: 0;
+            padding: 0 !important;
         }
 
         &-open {
@@ -412,6 +412,10 @@ header {
     @include price-style();
     @include price-size(20px, 14px);
 
+    .amount::after {
+        content: '';
+    }
+
     &>span {
         font-size: 20px;
         font-style: normal;
@@ -420,6 +424,10 @@ header {
 
         @include price-style();
         @include price-size(20px, 14px);
+
+        .amount::after {
+            content: '';
+        }
     }
 }
 

@@ -44,8 +44,12 @@
         }
     }
 
+    &__image {
+        width: 290px;
+    }
+
     @include media('tablet') {
-        img {
+        &__image {
             display: none;
         }
     }

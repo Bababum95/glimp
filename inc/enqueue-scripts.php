@@ -91,6 +91,10 @@ if (!function_exists('glimp_enqueue_scripts')) :
         if (is_home()) {
             glimp_enqueue_dynamic_script('homeStyles-', 'home-');
         }
+
+        if (is_cart()) {
+            glimp_enqueue_dynamic_script('cartStyles-', 'cart-');
+        }
     }
 
 endif;
